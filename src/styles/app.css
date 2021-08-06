@@ -1,0 +1,23 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 아이콘, 버튼 */
+.fas {
+  font-size: 18px;
+  color: hsl(0, 0%, 38%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fas:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
