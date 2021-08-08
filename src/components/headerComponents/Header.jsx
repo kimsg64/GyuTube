@@ -4,12 +4,13 @@ import HeaderLogo from "./headerLogo/HeaderLogo";
 import HeaderSearch from "./headerSearch/HeaderSearch";
 import HeaderBtns from "./headerBtns/HeaderBtns";
 
-const HeaderStyle = styled.div`
+const HeaderStyle = styled.header`
+  width: 100%;
   padding: 0 16px;
   height: 56px;
   display: flex;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   top: 0px;
   left: 0px;
 `;

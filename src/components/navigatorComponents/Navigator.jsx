@@ -5,13 +5,13 @@ import NavigatorHome from "./navigatorHome/NavigatorHome";
 import NavigatorSubscription from "./navigatorSubscription/NavigatorSubscription";
 import NavigatorStorage from "./navigatorStorage/NavigatorStorage";
 
-const NavigatorWrap = styled.div`
+const NavigatorWrap = styled.aside`
   width: 72px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  position: sticky;
+  position: fixed;
   top: 56px;
   left: 0;
 `;
