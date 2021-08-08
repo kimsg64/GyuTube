@@ -13,7 +13,7 @@ const StyledIcon = styled.i`
 const HeaderBtnsMenu = () => {
   return (
     <StyledIcon>
-      <i class="fas fa-th"></i>
+      <i className="fas fa-th"></i>
     </StyledIcon>
   );
 };

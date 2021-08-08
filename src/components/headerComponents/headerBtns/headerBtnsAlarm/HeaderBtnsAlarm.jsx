@@ -13,7 +13,7 @@ const StyledIcon = styled.i`
 const HeaderBtnsAlarm = () => {
   return (
     <StyledIcon>
-      <i class="fas fa-bell"></i>
+      <i className="fas fa-bell"></i>
     </StyledIcon>
   );
 };

@@ -12,7 +12,7 @@ const NavigatorHomeWrap = styled.div`
 const NavigatorHome = () => {
   return (
     <NavigatorHomeWrap>
-      <i class="fas fa-home"></i>
+      <i className="fas fa-home"></i>
     </NavigatorHomeWrap>
   );
 };

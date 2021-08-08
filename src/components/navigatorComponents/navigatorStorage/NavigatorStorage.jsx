@@ -12,7 +12,7 @@ const NavigatorStorageWrap = styled.div`
 const NavigatorStorage = () => {
   return (
     <NavigatorStorageWrap>
-      <i class="fas fa-clone"></i>
+      <i className="fas fa-clone"></i>
     </NavigatorStorageWrap>
   );
 };

@@ -12,7 +12,7 @@ const NavigatorSubscriptionWrap = styled.div`
 const NavigatorSubscription = () => {
   return (
     <NavigatorSubscriptionWrap>
-      <i class="fas fa-layer-group"></i>
+      <i className="fas fa-layer-group"></i>
     </NavigatorSubscriptionWrap>
   );
 };

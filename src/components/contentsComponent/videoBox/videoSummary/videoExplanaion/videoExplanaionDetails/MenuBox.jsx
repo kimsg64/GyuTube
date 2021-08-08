@@ -19,7 +19,7 @@ const MenuBoxWrap = styled.div`
 const MenuBox = () => {
   return (
     <MenuBoxWrap>
-      <i class="fas fa-ellipsis-v"></i>
+      <i className="fas fa-ellipsis-v"></i>
     </MenuBoxWrap>
   );
 };

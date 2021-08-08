@@ -12,7 +12,7 @@ const NavigatorCompassWrap = styled.div`
 const NavigatorCompass = () => {
   return (
     <NavigatorCompassWrap>
-      <i class="fas fa-compass"></i>
+      <i className="fas fa-compass"></i>
     </NavigatorCompassWrap>
   );
 };

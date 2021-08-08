@@ -22,7 +22,7 @@ const HeaderUserInfoCircle = styled.div`
   align-items: center;
   color: white;
   :hover {
-    transform: scale(1.1);
+    transform: none;
     cursor: pointer;
   }
 `;
@@ -30,6 +30,7 @@ const HeaderUserInfoCircle = styled.div`
 const HeaderUserInfo = () => {
   return (
     <HeaderUserInfoWrap>
+      {/* 서버 연결 후 로그인 ID로 바꾸기 */}
       <HeaderUserInfoCircle>Gyu</HeaderUserInfoCircle>
     </HeaderUserInfoWrap>
   );

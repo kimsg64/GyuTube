@@ -13,7 +13,7 @@ const StyledIcon = styled.i`
 const HeaderAddVideo = () => {
   return (
     <StyledIcon>
-      <i class="fas fa-video"></i>
+      <i className="fas fa-video"></i>
     </StyledIcon>
   );
 };
