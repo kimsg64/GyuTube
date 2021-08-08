@@ -11,7 +11,7 @@ const HomeWrap = styled.div`
 
 const Main = () => {
   return (
-    // 여기를 감쌀 flex div가 필요함
+    // 블록이 되어야 하는데...
     <HomeWrap>
       <Header />
       <Navigator />

@@ -37,7 +37,6 @@ const VideoSummary = ({ videoName }) => {
   return (
     <VideoBoxWrap>
       <video
-        // src="././././videos/Cat.mp4"
         src={`././././videos/${videoName}.mp4`}
         onMouseEnter={onMouseEnterVideo}
         onMouseOut={onMouseOutVideo}
