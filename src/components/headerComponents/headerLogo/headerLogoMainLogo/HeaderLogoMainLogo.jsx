@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const HeaderLogoWrap = styled.div`
   width: 129px;
@@ -37,10 +38,12 @@ const HeaderLogoWrap = styled.div`
 const HeaderLogoMainLogo = () => {
   return (
     <HeaderLogoWrap>
-      <i className="fab fa-youtube"></i>
-      <a className="gyutube">
+      <Link to="/" className="gyutube">
+        <i className="fab fa-youtube"></i>
+      </Link>
+      <Link to="/" className="gyutube">
         GyuTube<sup className="sup">KR</sup>
-      </a>
+      </Link>
     </HeaderLogoWrap>
   );
 };

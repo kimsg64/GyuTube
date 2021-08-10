@@ -14,6 +14,11 @@ const FilterBarWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  background-color: white;
+  overflow-x: hidden;
+  .first {
+    margin: 12px 12px 12px 24px;
+  }
 `;
 
 const FilterBar = () => {

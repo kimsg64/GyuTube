@@ -10,7 +10,6 @@ const MenuBoxWrap = styled.div`
   justify-content: center;
   /* padding-top: 12px; */
   border-radius: 100%;
-  background-color: beige;
   .fa-ellipsis-v {
     display: none;
   }

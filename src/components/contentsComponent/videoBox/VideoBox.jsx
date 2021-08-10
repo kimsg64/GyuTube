@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import VideoSummary from "./videoSummary/VideoSummary";
 import styled from "styled-components";
 
@@ -11,10 +11,9 @@ const VideoBoxWrap = styled.ul`
 `;
 
 const VideoBox = () => {
-  // const [chosen, setChosen] = useState([]);
-
   const getName = () => {
     // Name 선택하는 부분은 차후 백엔드 로직을 배워서 입력하고 우선 videos 내의 파일 이름순으로 배치
+    // 썸네일 동영상 최대 4개, 최소 1개 반응형으로 배치
     const candidate = [
       "Cat",
       "DancingMan",
@@ -32,7 +31,6 @@ const VideoBox = () => {
 
   return (
     <VideoBoxWrap>
-      {/* chosen의 길이만큼 VideoSummary list를 생성하고 chosen을 전달 */}
       {getName().map((movie) => {
         return <VideoSummary key={movie} videoName={movie} />;
       })}

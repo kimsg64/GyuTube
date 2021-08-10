@@ -5,14 +5,16 @@ import HeaderSearch from "./headerSearch/HeaderSearch";
 import HeaderBtns from "./headerBtns/HeaderBtns";
 
 const HeaderStyle = styled.header`
-  width: 100%;
-  padding: 0 16px;
+  width: 97%;
   height: 56px;
+  padding: 0 16px;
   display: flex;
   justify-content: space-between;
+  z-index: 20;
   position: fixed;
   top: 0px;
   left: 0px;
+  background-color: white;
 `;
 
 const Header = () => {

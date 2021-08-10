@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import VideoExplanaion from "./videoExplanaion/VideoExplanaion";
 import { Link } from "react-router-dom";
@@ -23,7 +23,12 @@ const VideoBoxWrap = styled.li`
 const onMouseEnterVideo = (e) => {
   // console.log(e);
   // console.log(e.target);
-  e.target.play();
+  const playPromise = e.target.play();
+  if (playPromise !== undefined) {
+    playPromise
+      .then(console.log("여기에 뭘 해야될게 있나?"))
+      .catch(console.log("아마 없을 듯"));
+  }
 };
 
 const onMouseOutVideo = (e) => {
@@ -32,17 +37,17 @@ const onMouseOutVideo = (e) => {
 };
 
 const VideoSummary = ({ videoName }) => {
-  const [changePage, setChangePage] = useState(false);
-
+  // const [changePage, setChangePage] = useState(false);
   return (
     <VideoBoxWrap>
-      <video
-        src={`././././videos/${videoName}.mp4`}
-        onMouseEnter={onMouseEnterVideo}
-        onMouseOut={onMouseOutVideo}
-        muted={true}
-      />
-      <Link to="/playing" />
+      <Link to={`/playing/${videoName}`}>
+        <video
+          src={`./videos/${videoName}.mp4`}
+          onMouseEnter={onMouseEnterVideo}
+          onMouseOut={onMouseOutVideo}
+          muted={true}
+        />
+      </Link>
       {/* muted: 크롬 정책에 의해 이걸 안 쓰면 자동 재생 안됨!! */}
       <VideoExplanaion />
     </VideoBoxWrap>
