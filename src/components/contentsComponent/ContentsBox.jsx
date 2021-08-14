@@ -7,6 +7,8 @@ const ContentsBoxWrap = styled.article`
   width: calc(100% - 72px);
   margin-left: 72px;
   padding-top: calc(56px + 56px);
+  display: flex;
+  justify-content: center;
 `;
 
 const ContentsBox = () => {

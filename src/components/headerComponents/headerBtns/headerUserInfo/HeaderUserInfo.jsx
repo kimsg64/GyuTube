@@ -14,7 +14,7 @@ const HeaderUserInfoCircle = styled.div`
   width: calc(36px - 0px);
   height: calc(36px - 4px);
   padding-bottom: 4px;
-  padding-right: 0px;
+  /* padding-right: 0px; */
   border-radius: 100%;
   background-color: hsl(17, 18%, 47%);
   display: flex;
@@ -31,7 +31,7 @@ const HeaderUserInfo = () => {
   return (
     <HeaderUserInfoWrap>
       {/* 서버 연결 후 로그인 ID로 바꾸기 */}
-      <HeaderUserInfoCircle>Gyu</HeaderUserInfoCircle>
+      <HeaderUserInfoCircle className="usericon">Gyu</HeaderUserInfoCircle>
     </HeaderUserInfoWrap>
   );
 };

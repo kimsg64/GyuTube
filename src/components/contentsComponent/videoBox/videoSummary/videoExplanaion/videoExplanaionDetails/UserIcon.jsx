@@ -17,7 +17,7 @@ const UserIconWrap = styled.div`
 const UserIcon = () => {
   return (
     <UserIconWrap>
-      <img src="././././././images/Hope.png" alt="FACE" />
+      <img src="/images/Hope.png" alt="FACE" />
     </UserIconWrap>
   );
 };

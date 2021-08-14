@@ -5,12 +5,18 @@ import { Link } from "react-router-dom";
 
 const VideoBoxWrap = styled.li`
   list-style: none;
-  width: 274px;
-  height: 300px;
+  max-width: 359px;
+  max-height: 298px;
+  min-width: 250px;
+  min-height: 140px;
+  width: 23%;
   margin: 0 8px 40px 8px;
   video {
-    /* how to add black bar??? > 세로 영상 대응이 안되는데 iframe? video? */
-    max-width: 100%;
+    /* how to add black bar??? > 세로 영상 대응이 안된다... iframe? video? */
+    /* video background를 black...? */
+    width: 100%;
+    height: 60%;
+    background-color: black;
   }
   :hover {
     cursor: pointer;
@@ -42,14 +48,14 @@ const VideoSummary = ({ videoName }) => {
     <VideoBoxWrap>
       <Link to={`/playing/${videoName}`}>
         <video
-          src={`./videos/${videoName}.mp4`}
+          src={`/videos/${videoName}.mp4`}
           onMouseEnter={onMouseEnterVideo}
           onMouseOut={onMouseOutVideo}
           muted={true}
         />
       </Link>
-      {/* muted: 크롬 정책에 의해 이걸 안 쓰면 자동 재생 안됨!! */}
       <VideoExplanaion />
+      {/* muted: 크롬 정책에 의해 이걸 안 쓰면 자동 재생 안됨!! */}
     </VideoBoxWrap>
   );
 };

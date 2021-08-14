@@ -14,7 +14,7 @@ const TitleBoxWrap = styled.div`
   }
   div {
     /* div 나눠서 부모만 height: 36px */
-    font-size: 14px;
+    font-size: 13px;
     color: hsl(0, 0%, 38%);
   }
 `;

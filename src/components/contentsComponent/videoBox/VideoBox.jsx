@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 const VideoBoxWrap = styled.ul`
   margin-top: 24px;
-  width: 100%;
+  max-width: 88vw;
+  /* width: 80vw; */
   height: 100%;
   display: flex;
   flex-wrap: wrap;

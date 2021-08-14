@@ -3,7 +3,7 @@ import styled from "styled-components";
 import FilterBtns from "./filterBtns/FilterBtns";
 
 const FilterBarWrap = styled.div`
-  width: 100%;
+  width: 92vw;
   height: 56px;
   position: fixed;
   top: 0;
@@ -12,6 +12,7 @@ const FilterBarWrap = styled.div`
   border-top: solid 1px hsl(0, 0%, 80%);
   border-bottom: solid 1px hsl(0, 0%, 80%);
   display: flex;
+
   align-items: center;
   justify-content: flex-start;
   background-color: white;

@@ -11,7 +11,6 @@ const HeaderLogoWrap = styled.div`
   :hover {
     cursor: pointer;
   }
-  /* .fa-youtube { */
   .fa-youtube {
     font-size: 28px;
     color: hsl(0, 100%, 50%);
