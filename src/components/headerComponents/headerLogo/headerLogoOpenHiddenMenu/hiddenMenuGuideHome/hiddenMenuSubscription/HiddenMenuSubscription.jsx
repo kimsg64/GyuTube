@@ -5,7 +5,7 @@ import HeaderUserInfo from "../../../../headerBtns/headerUserInfo/HeaderUserInfo
 
 const HiddenMenuSubscriptionWrap = styled.div`
   min-height: 371px;
-  height: 100%;
+  /* height: 100%; */
   padding: 12px 8px;
   display: flex;
   flex-direction: column;

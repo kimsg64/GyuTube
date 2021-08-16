@@ -1,6 +1,7 @@
 import React from "react";
 import VideoCommentsContent from "./videoCommentsContent/VideoCommentsContent";
 import VideoCommentsHeader from "./videoCommentsHeader/VideoCommentsHeader";
+import VideoCommentsLeaveComment from "./videoCommentsLeaveComment/VideoCommentsLeaveComment";
 import styled from "styled-components";
 
 const VideoCommentsWrap = styled.div`
@@ -10,8 +11,9 @@ const VideoCommentsWrap = styled.div`
 const VideoComments = () => {
   return (
     <VideoCommentsWrap>
-      <VideoCommentsHeader></VideoCommentsHeader>
-      <VideoCommentsContent></VideoCommentsContent>
+      <VideoCommentsHeader />
+      <VideoCommentsLeaveComment />
+      <VideoCommentsContent />
     </VideoCommentsWrap>
   );
 };

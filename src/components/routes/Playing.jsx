@@ -4,6 +4,7 @@ import styled from "styled-components";
 import VideoTitle from "../playingPage/primaryComponents/videoInfo/VideoTitle";
 import VideoInfo from "../playingPage/primaryComponents/videoInfo/VideoInfo";
 import VideoMeta from "../playingPage/primaryComponents/videoMeta/VideoMeta";
+import VideoComments from "../playingPage/primaryComponents/videoComments/VideoComments";
 
 const StyledColumnsWrap = styled.div`
   top: 56px;
@@ -47,6 +48,7 @@ const MetaWrap = styled.div``;
 const CommentsWrap = styled.div``;
 
 const Playing = ({ match }) => {
+  console.log(match);
   const { params } = match;
   return (
     <>
@@ -55,7 +57,7 @@ const Playing = ({ match }) => {
         <PrimaryWrap>
           <PlayerWrap>
             {/* 경로를 ./으로 하면 안되고 다 지우거나 ../로 하니까 된다. */}
-            {/* 리액트 라우터가 마치 url을 이동하고 있는 것 같이생겼지만 사실은 그냥 컴포넌트 갈아끼워서 페이지 이동한 것 처럼 보이게하는 눈속임 마술을 부리는 새끼라서  */}
+            {/* 리액트 라우터가 마치 url을 이동하고 있는 것 같이 생겼지만 사실은 그냥 컴포넌트 갈아끼워서 페이지 이동한 것 처럼 보이게하는 눈속임 마술을 부리는 새끼라서  */}
             <video src={`/videos/${params.videoName}.mp4`} controls />
           </PlayerWrap>
 
@@ -67,7 +69,10 @@ const Playing = ({ match }) => {
           <MetaWrap>
             <VideoMeta></VideoMeta>
           </MetaWrap>
-          <CommentsWrap></CommentsWrap>
+
+          <CommentsWrap>
+            <VideoComments></VideoComments>
+          </CommentsWrap>
         </PrimaryWrap>
         {/* aside */}
         <aside>aside</aside>

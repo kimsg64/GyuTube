@@ -4,33 +4,48 @@ import ReportAndScripts from "./reportAndScripts/ReportAndScripts";
 
 const VideoBtnsWrap = styled.div`
   display: flex;
+  align-items: center;
+  width: 350.75px;
 `;
 
-const IconsWrap = styled.div`
+const BtnsBox = styled.div`
+  flex-shrink: 0;
   display: flex;
-  div {
-    margin-left: 8px;
-    display: flex;
+`;
+
+const BtnWrap = styled.div`
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  :hover {
+    cursor: pointer;
+  }
+  .fas {
+    transform: none;
   }
 `;
 
 const VideoBtns = () => {
   return (
     <VideoBtnsWrap>
-      <IconsWrap>
-        <div>
-          <i class="fas fa-thumbs-up"></i>55.1천
-        </div>
-        <div>
-          <i class="fas fa-thumbs-down"></i>1천
-        </div>
-        <div>
-          <i class="fas fa-share"></i>공유
-        </div>
-        <div>
-          <i class="fas fa-plus-square"></i>저장
-        </div>
-      </IconsWrap>
+      <BtnsBox>
+        <BtnWrap className="like">
+          <i className="fas fa-thumbs-up"></i>
+          <div>55.1천</div>
+        </BtnWrap>
+        <BtnWrap className="like">
+          <i className="fas fa-thumbs-down"></i>
+          <div>1천</div>
+        </BtnWrap>
+        <BtnWrap>
+          <i className="fas fa-share"></i>
+          <div>공유</div>
+        </BtnWrap>
+        <BtnWrap>
+          <i className="fas fa-plus-square"></i>
+          <div>저장</div>
+        </BtnWrap>
+      </BtnsBox>
       <ReportAndScripts></ReportAndScripts>
     </VideoBtnsWrap>
   );

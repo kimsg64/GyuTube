@@ -10,8 +10,9 @@ import HiddenMenuCopyRight from "./hiddenMenuCopyRight/HiddenMenuCopyRight";
 const HiddenMenuGuideHomeWrap = styled.div`
   width: inherit;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
+  display: inline-block;
   overflow-y: scroll;
 `;
 

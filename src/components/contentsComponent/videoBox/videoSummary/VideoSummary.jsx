@@ -45,7 +45,8 @@ const onMouseOutVideo = (e) => {
 const VideoSummary = ({ videoName }) => {
   // const [changePage, setChangePage] = useState(false);
   return (
-    <VideoBoxWrap>
+    // video태그와 explanation 태그를 묶어서 저장할 것이므로... 이걸로 글자에 마우스 올려도 비디오 자동재생하기
+    <VideoBoxWrap onMouseEnter={(e) => console.log(e.target)}>
       <Link to={`/playing/${videoName}`}>
         <video
           src={`/videos/${videoName}.mp4`}

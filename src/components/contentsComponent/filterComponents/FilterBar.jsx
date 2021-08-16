@@ -12,11 +12,10 @@ const FilterBarWrap = styled.div`
   border-top: solid 1px hsl(0, 0%, 80%);
   border-bottom: solid 1px hsl(0, 0%, 80%);
   display: flex;
-
   align-items: center;
   justify-content: flex-start;
   background-color: white;
-  overflow-x: hidden;
+  overflow: hidden;
   .first {
     margin: 12px 12px 12px 24px;
   }
