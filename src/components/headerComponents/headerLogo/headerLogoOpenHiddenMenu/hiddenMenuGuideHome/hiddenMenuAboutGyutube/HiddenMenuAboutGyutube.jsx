@@ -86,37 +86,37 @@ const HiddenMenuAboutGyutube = () => {
       <TitleWrap>GyuTube 더보기</TitleWrap>
       <ItemsWrap>
         <ItemBar>
-          <IconWrap>
+          <IconWrap className="globalIconBtnRect">
             <i class="fab fa-youtube"></i>
           </IconWrap>
           <TextBar>GyuTube Premium</TextBar>
         </ItemBar>
         <ItemBar>
-          <IconWrap>
+          <IconWrap className="globalIconBtnRect">
             <i class="fas fa-film"></i>
           </IconWrap>
           <TextBar>영화</TextBar>
         </ItemBar>
         <ItemBar>
-          <IconWrap>
+          <IconWrap className="globalIconBtnRect">
             <i class="fas fa-gamepad"></i>
           </IconWrap>
           <TextBar>게임</TextBar>
         </ItemBar>
         <ItemBar>
-          <IconWrap>
+          <IconWrap className="globalIconBtnRect">
             <i class="fas fa-podcast"></i>
           </IconWrap>
           <TextBar>실시간</TextBar>
         </ItemBar>
         <ItemBar>
-          <IconWrap>
+          <IconWrap className="globalIconBtnRect">
             <i class="fas fa-lightbulb"></i>
           </IconWrap>
           <TextBar>학습</TextBar>
         </ItemBar>
         <ItemBar>
-          <IconWrap>
+          <IconWrap className="globalIconBtnRect">
             <i class="fas fa-trophy"></i>
           </IconWrap>
           <TextBar>스포츠</TextBar>

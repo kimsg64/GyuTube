@@ -15,6 +15,7 @@ const StyledBtn = styled.button`
   border: none;
   .fa-search {
     font-size: 16px;
+    color: hsl(0, 0%, 38%);
   }
 `;
 

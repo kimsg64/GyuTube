@@ -16,7 +16,7 @@ const NavigatorStorageWrap = styled.div`
 
 const NavigatorStorage = () => {
   return (
-    <NavigatorStorageWrap>
+    <NavigatorStorageWrap className="globalIconBtnRect">
       <i className="fas fa-clone"></i>
       <div className="text">보관함</div>
     </NavigatorStorageWrap>

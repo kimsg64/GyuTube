@@ -8,6 +8,7 @@ const NavigatorSubscriptionWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   div {
     margin-top: 6px;
     font-size: 10px;
@@ -16,9 +17,9 @@ const NavigatorSubscriptionWrap = styled.div`
 
 const NavigatorSubscription = () => {
   return (
-    <NavigatorSubscriptionWrap>
+    <NavigatorSubscriptionWrap className="globalIconBtnRect">
       <i className="fas fa-layer-group"></i>
-      <div className="text">보관함</div>
+      <div className="text">구독</div>
     </NavigatorSubscriptionWrap>
   );
 };

@@ -8,7 +8,6 @@ const HiddenMenuWrap = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  /* height: 1000px; */
   height: 100vh;
   display: flex;
   justify-content: flex-start;

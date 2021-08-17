@@ -2,17 +2,17 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledIcon = styled.i`
-  width: 40px;
-  height: 40px;
+  /* width: 40px;
+  height: 40px; */
   margin-right: 8px;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 `;
 
 const HeaderBtnsAlarm = () => {
   return (
-    <StyledIcon>
+    <StyledIcon className="globalIconBtn">
       <i className="fas fa-bell"></i>
     </StyledIcon>
   );

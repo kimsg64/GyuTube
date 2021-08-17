@@ -85,26 +85,26 @@ const HiddenMenuSettings = () => {
     <HiddenMenuSettingsWrap>
       <ItemsWrap>
         <ItemBar>
-          <IconWrap>
-            <i class="fas fa-cog"></i>
+          <IconWrap className="globalIconBtnRect">
+            <i className="fas fa-cog"></i>
           </IconWrap>
           <TextBar>설정</TextBar>
         </ItemBar>
         <ItemBar>
-          <IconWrap>
-            <i class="fas fa-flag"></i>
+          <IconWrap className="globalIconBtnRect">
+            <i className="fas fa-flag"></i>
           </IconWrap>
           <TextBar>신고 기록</TextBar>
         </ItemBar>
         <ItemBar>
-          <IconWrap>
-            <i class="fas fa-question-circle"></i>
+          <IconWrap className="globalIconBtnRect">
+            <i className="fas fa-question-circle"></i>
           </IconWrap>
           <TextBar>고객센터</TextBar>
         </ItemBar>
         <ItemBar>
-          <IconWrap>
-            <i class="fas fa-comment-alt"></i>
+          <IconWrap className="globalIconBtnRect">
+            <i className="fas fa-comment-alt"></i>
           </IconWrap>
           <TextBar>의견 보내기</TextBar>
         </ItemBar>

@@ -17,7 +17,7 @@ const MenuBoxWrap = styled.div`
 
 const MenuBox = () => {
   return (
-    <MenuBoxWrap>
+    <MenuBoxWrap className="globalIconBtn">
       <i className="fas fa-ellipsis-v"></i>
     </MenuBoxWrap>
   );

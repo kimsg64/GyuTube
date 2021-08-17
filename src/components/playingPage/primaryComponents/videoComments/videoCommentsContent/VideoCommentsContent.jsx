@@ -26,7 +26,12 @@ const NameBox = styled.div``;
 
 const CommentContent = styled.div``;
 
-const Icons = styled.div``;
+const Icons = styled.div`
+  display: flex;
+  height: 36px;
+  align-items: center;
+  color: hsl(0, 0%, 56%);
+`;
 
 const VideoCommentsContent = () => {
   return (
@@ -45,7 +50,6 @@ const VideoCommentsContent = () => {
           <div>10</div>
           <i className="fas fa-thumbs-down"></i>
           <div>2</div>
-
           <div>답글</div>
         </Icons>
         <VideoCommentsLeaveComment />

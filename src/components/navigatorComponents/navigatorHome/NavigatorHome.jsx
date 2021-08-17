@@ -16,7 +16,7 @@ const NavigatorHomeWrap = styled.div`
 
 const NavigatorHome = () => {
   return (
-    <NavigatorHomeWrap>
+    <NavigatorHomeWrap className="globalIconBtnRect">
       <i className="fas fa-home"></i>
       <div className="text">홈</div>
     </NavigatorHomeWrap>

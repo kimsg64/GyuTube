@@ -16,7 +16,7 @@ const NavigatorCompassWrap = styled.div`
 
 const NavigatorCompass = () => {
   return (
-    <NavigatorCompassWrap>
+    <NavigatorCompassWrap className="globalIconBtnRect">
       <i className="fas fa-compass"></i>
       <div className="text">탐색</div>
     </NavigatorCompassWrap>

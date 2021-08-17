@@ -63,25 +63,25 @@ const HiddenMenuPreference = () => {
         <TextBar>보관함</TextBar>
       </ItemBar>
       <ItemBar>
-        <IconWrap>
+        <IconWrap className="globalIconBtnRect">
           <i class="fas fa-history"></i>
         </IconWrap>
         <TextBar>시청 기록</TextBar>
       </ItemBar>
       <ItemBar>
-        <IconWrap>
+        <IconWrap className="globalIconBtnRect">
           <i class="far fa-play-circle"></i>
         </IconWrap>
         <TextBar>내 동영상</TextBar>
       </ItemBar>
       <ItemBar>
-        <IconWrap>
+        <IconWrap className="globalIconBtnRect">
           <i class="fas fa-clock"></i>
         </IconWrap>
         <TextBar>나중에 볼 동영상</TextBar>
       </ItemBar>
       <ItemBar>
-        <IconWrap>
+        <IconWrap className="globalIconBtnRect">
           <i class="fas fa-thumbs-up"></i>
         </IconWrap>
         <TextBar>좋아요 표시한 동영상</TextBar>

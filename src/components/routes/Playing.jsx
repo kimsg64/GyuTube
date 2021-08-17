@@ -5,6 +5,7 @@ import VideoTitle from "../playingPage/primaryComponents/videoInfo/VideoTitle";
 import VideoInfo from "../playingPage/primaryComponents/videoInfo/VideoInfo";
 import VideoMeta from "../playingPage/primaryComponents/videoMeta/VideoMeta";
 import VideoComments from "../playingPage/primaryComponents/videoComments/VideoComments";
+import NextVideoList from "../playingPage/asideComponents/NextVideoList";
 
 const StyledColumnsWrap = styled.div`
   top: 56px;
@@ -75,7 +76,7 @@ const Playing = ({ match }) => {
           </CommentsWrap>
         </PrimaryWrap>
         {/* aside */}
-        <aside>aside</aside>
+        <NextVideoList />
       </StyledColumnsWrap>
     </>
   );

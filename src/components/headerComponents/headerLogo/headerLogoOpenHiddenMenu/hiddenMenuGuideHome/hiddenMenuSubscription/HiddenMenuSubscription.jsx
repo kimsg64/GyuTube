@@ -137,7 +137,7 @@ const HiddenMenuSubscription = () => {
         </ItemBar>
       </ItemsWrap>
       <ItemBar onClick={onClickMore}>
-        <ArrowWrap>
+        <ArrowWrap className="globalIconBtnRect">
           <i class="fas fa-chevron-down"></i>
         </ArrowWrap>
         <TextBar>100개 더보기</TextBar>
