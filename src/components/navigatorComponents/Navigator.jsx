@@ -19,10 +19,10 @@ const NavigatorWrap = styled.aside`
 const Navigator = () => {
   return (
     <NavigatorWrap>
-      <NavigatorHome></NavigatorHome>
-      <NavigatorCompass></NavigatorCompass>
-      <NavigatorSubscription></NavigatorSubscription>
-      <NavigatorStorage></NavigatorStorage>
+      <NavigatorHome />
+      <NavigatorCompass />
+      <NavigatorSubscription />
+      <NavigatorStorage />
     </NavigatorWrap>
   );
 };

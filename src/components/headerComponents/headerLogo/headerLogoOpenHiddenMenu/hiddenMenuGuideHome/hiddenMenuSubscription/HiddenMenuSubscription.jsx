@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import UserIcon from "../../../../../contentsComponent/videoBox/videoSummary/videoExplanaion/videoExplanaionDetails/UserIcon";
-import HeaderUserInfo from "../../../../headerBtns/headerUserInfo/HeaderUserInfo";
 
 const HiddenMenuSubscriptionWrap = styled.div`
   min-height: 371px;
-  /* height: 100%; */
-  padding: 12px 8px;
+  padding: 12px 10px;
   display: flex;
   flex-direction: column;
   border-bottom: solid 1px hsl(0, 0%, 80%);
@@ -43,19 +41,19 @@ const ItemBar = styled.div`
   align-items: center;
   div {
     height: 40px;
-    margin: 0 8px 0 0;
     img {
       width: 24px;
       height: 24px;
     }
   }
-  .text {
-    display: none;
-  }
   div:first-child {
-    height: 20px;
+    height: 24px;
     width: 24px;
     font-size: 12px;
+    margin: 0 8px 0 0;
+  }
+  .seeMore {
+    padding: 0px 12px;
   }
   :hover {
     cursor: pointer;
@@ -71,17 +69,14 @@ const TextBar = styled.div`
   height: 20px;
   display: flex;
   align-items: center;
-  font-size: 12.98px;
+  font-size: 13px;
   font-weight: 400;
 `;
 
 const ArrowWrap = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  .fa-chevron-down {
-    font-size: 14px;
-  }
 `;
 
 const HiddenMenuSubscription = () => {
@@ -104,11 +99,11 @@ const HiddenMenuSubscription = () => {
           <TextBar>규튜브</TextBar>
         </ItemBar>
         <ItemBar>
-          <HeaderUserInfo></HeaderUserInfo>
+          <UserIcon></UserIcon>
           <TextBar>규튜브다맨이야</TextBar>
         </ItemBar>
         <ItemBar>
-          <HeaderUserInfo></HeaderUserInfo>
+          <UserIcon></UserIcon>
           <TextBar>너무길면뒤에잘라</TextBar>
         </ItemBar>
         <ItemBar>
@@ -120,25 +115,25 @@ const HiddenMenuSubscription = () => {
           <TextBar>요위까지ㄱㅊ</TextBar>
         </ItemBar>
         <ItemBar>
-          <HeaderUserInfo></HeaderUserInfo>
+          <UserIcon></UserIcon>
           <TextBar>귀찮당</TextBar>
         </ItemBar>
         <ItemBar>
-          <HeaderUserInfo></HeaderUserInfo>
+          <UserIcon></UserIcon>
           <TextBar>리액트넘얼여워용</TextBar>
         </ItemBar>
         <ItemBar>
-          <HeaderUserInfo></HeaderUserInfo>
+          <UserIcon></UserIcon>
           <TextBar>히히!</TextBar>
         </ItemBar>
         <ItemBar>
-          <HeaderUserInfo></HeaderUserInfo>
+          <UserIcon></UserIcon>
           <TextBar>너는숨겨질것이야</TextBar>
         </ItemBar>
       </ItemsWrap>
-      <ItemBar onClick={onClickMore}>
+      <ItemBar onClick={onClickMore} className="seeMore">
         <ArrowWrap className="globalIconBtnRect">
-          <i class="fas fa-chevron-down"></i>
+          <i className="fas fa-chevron-down"></i>
         </ArrowWrap>
         <TextBar>100개 더보기</TextBar>
       </ItemBar>

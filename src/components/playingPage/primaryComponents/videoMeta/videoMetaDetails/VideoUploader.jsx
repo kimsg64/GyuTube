@@ -67,12 +67,14 @@ const SubscriptionBtnActive = styled(SubscriptionBtn)`
 
 const SubscriptionBtnInactive = styled(SubscriptionBtn)`
   width: 42px;
-  color: hsl(0, 0%, 40%);
+  color: hsl(0, 0%, 38%);
   background-color: hsl(0, 0%, 90%);
 `;
 
 const SubscriptionAlarm = styled.div`
-  color: hsl(0, 0%, 80%);
+  width: 38px;
+  height: 38px;
+  color: hsl(0, 0%, 38%);
 `;
 
 const VideoUploader = () => {
@@ -108,7 +110,7 @@ const VideoUploader = () => {
         )}
 
         {subscription ? (
-          <SubscriptionAlarm>
+          <SubscriptionAlarm className="globalIconBtn">
             <i className="far fa-bell"></i>
           </SubscriptionAlarm>
         ) : null}

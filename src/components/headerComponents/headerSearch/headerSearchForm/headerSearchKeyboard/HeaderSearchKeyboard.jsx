@@ -11,6 +11,10 @@ const HeaderSearchFormKeyboard = styled.div`
   .fa-keyboard {
     color: hsl(0, 0%, 38%);
   }
+  .fa-keyboard:hover {
+    cursor: pointer;
+    color: black;
+  }
 `;
 
 const HeaderSearchKeyboard = () => {

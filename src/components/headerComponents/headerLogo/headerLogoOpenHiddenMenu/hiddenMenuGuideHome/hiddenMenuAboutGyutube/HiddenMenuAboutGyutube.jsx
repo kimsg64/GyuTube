@@ -8,17 +8,6 @@ const HiddenMenuAboutGyutubeWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  .fab {
-    font-size: 18px;
-    color: hsl(0, 0%, 38%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .fab:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-  }
 `;
 
 const TitleWrap = styled.div`
@@ -42,13 +31,6 @@ const ItemBar = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  div {
-    height: 40px;
-    margin-right: 24px;
-  }
-  .text {
-    display: none;
-  }
   :hover {
     cursor: pointer;
     background-color: hsl(0, 0%, 90%);
@@ -63,21 +45,14 @@ const TextBar = styled.div`
   height: 20px;
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
 `;
 
 const IconWrap = styled.div`
   width: 30px;
-  height: 74px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  div {
-    margin-top: 6px;
-    font-size: 10px;
-  }
+  height: 30px;
+  margin-right: 18px;
 `;
 
 const HiddenMenuAboutGyutube = () => {
@@ -87,37 +62,37 @@ const HiddenMenuAboutGyutube = () => {
       <ItemsWrap>
         <ItemBar>
           <IconWrap className="globalIconBtnRect">
-            <i class="fab fa-youtube"></i>
+            <i className="fab fa-youtube"></i>
           </IconWrap>
           <TextBar>GyuTube Premium</TextBar>
         </ItemBar>
         <ItemBar>
           <IconWrap className="globalIconBtnRect">
-            <i class="fas fa-film"></i>
+            <i className="fas fa-film"></i>
           </IconWrap>
           <TextBar>영화</TextBar>
         </ItemBar>
         <ItemBar>
           <IconWrap className="globalIconBtnRect">
-            <i class="fas fa-gamepad"></i>
+            <i className="fas fa-gamepad"></i>
           </IconWrap>
           <TextBar>게임</TextBar>
         </ItemBar>
         <ItemBar>
           <IconWrap className="globalIconBtnRect">
-            <i class="fas fa-podcast"></i>
+            <i className="fas fa-podcast"></i>
           </IconWrap>
           <TextBar>실시간</TextBar>
         </ItemBar>
         <ItemBar>
           <IconWrap className="globalIconBtnRect">
-            <i class="fas fa-lightbulb"></i>
+            <i className="fas fa-lightbulb"></i>
           </IconWrap>
           <TextBar>학습</TextBar>
         </ItemBar>
         <ItemBar>
           <IconWrap className="globalIconBtnRect">
-            <i class="fas fa-trophy"></i>
+            <i className="fas fa-trophy"></i>
           </IconWrap>
           <TextBar>스포츠</TextBar>
         </ItemBar>

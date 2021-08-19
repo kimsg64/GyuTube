@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const BtnsWrap = styled.button`
+const BtnsWrap = styled.div`
+  display: flex;
+  justify-content: flex-start;
+`;
+
+const StyledBtn = styled.button`
   margin: 12px;
   padding: 0 12px;
   height: 32px;
@@ -12,45 +17,23 @@ const BtnsWrap = styled.button`
   /* width > 반응형, 글자 수를 받아와서 그만큼 넓히기 ? n rem(글자수) + 24px(패딩) */
 `;
 
-const ArrowWrap = styled.div`
-  height: 36px;
-  width: 36px;
-  border-radius: 100%;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .fas {
-    font-size: 10px;
-  }
-  :active {
-    background-color: hsl(0, 0%, 80%);
-  }
-`;
-
 const FilterBtns = () => {
   return (
-    <>
-      <ArrowWrap>
-        <i class="fas fa-chevron-left"></i>
-      </ArrowWrap>
-      <BtnsWrap className="first">전체</BtnsWrap>
-      <BtnsWrap>농구</BtnsWrap>
-      <BtnsWrap>요리 프로그램</BtnsWrap>
-      <BtnsWrap>음악</BtnsWrap>
-      <BtnsWrap>믹스</BtnsWrap>
-      <BtnsWrap>피트니스</BtnsWrap>
-      <BtnsWrap>스포츠 비디오 게임</BtnsWrap>
-      <BtnsWrap>배구</BtnsWrap>
-      <BtnsWrap>침착맨</BtnsWrap>
-      <BtnsWrap>케인인</BtnsWrap>
-      <BtnsWrap>반려동물</BtnsWrap>
-      <BtnsWrap>최근에 업로드된 동영상</BtnsWrap>
-      <BtnsWrap>감상한 동영상</BtnsWrap>
-      <ArrowWrap>
-        <i class="fas fa-chevron-right"></i>
-      </ArrowWrap>
-    </>
+    <BtnsWrap>
+      <StyledBtn className="first">전체</StyledBtn>
+      <StyledBtn>농구</StyledBtn>
+      <StyledBtn>요리 프로그램</StyledBtn>
+      <StyledBtn>음악</StyledBtn>
+      <StyledBtn>믹스</StyledBtn>
+      <StyledBtn>피트니스</StyledBtn>
+      <StyledBtn>스포츠 비디오 게임</StyledBtn>
+      <StyledBtn>배구</StyledBtn>
+      <StyledBtn>침착맨</StyledBtn>
+      <StyledBtn>케인인</StyledBtn>
+      <StyledBtn>반려동물</StyledBtn>
+      <StyledBtn>최근에 업로드된 동영상</StyledBtn>
+      <StyledBtn>감상한 동영상</StyledBtn>
+    </BtnsWrap>
   );
 };
 

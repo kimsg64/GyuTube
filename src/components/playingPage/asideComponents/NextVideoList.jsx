@@ -7,6 +7,14 @@ const NextVideoListWrap = styled.aside`
   flex-direction: column;
 `;
 
+const OneVideo = styled.div`
+  height: 94px;
+`;
+
+// 비디오 크기 아래로 고정
+// width: 168px;
+// height: 94px;
+
 const NextVideoList = () => {
   return (
     <NextVideoListWrap>

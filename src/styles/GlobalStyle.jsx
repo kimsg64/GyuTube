@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalIconStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   .globalIconBtnRect {
     flex-shrink: 0;
     display: flex;
@@ -12,7 +12,7 @@ const GlobalIconStyle = createGlobalStyle`
       cursor: pointer;
     }
     :active {
-      background-color: hsl(0, 0%, 80%);
+      background-color: hsl(0, 0%, 70%);
     }
   }
 
@@ -30,10 +30,9 @@ const GlobalIconStyle = createGlobalStyle`
       background-color: hsl(0, 0%, 80%);
     }
     :hover {
-      /* transform: scale(1.1); */
       cursor: pointer;
     }
 }
 `;
 
-export default GlobalIconStyle;
+export default GlobalStyle;

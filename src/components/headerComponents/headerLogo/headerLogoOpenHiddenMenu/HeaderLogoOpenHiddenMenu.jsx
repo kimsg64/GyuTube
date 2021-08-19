@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import HeaderLogoMainLogo from "../headerLogoMainLogo/HeaderLogoMainLogo";
 import HeaderLogoOpenMenu from "../headerLogoOpenMenu/HeaderLogoOpenMenu";
@@ -19,6 +19,20 @@ const HiddenMenuWrap = styled.div`
   .sup {
     display: none;
   }
+
+  /* 선택됐을 때 */
+  .selected i {
+    color: red;
+    background-color: inherit;
+  }
+  .selected:hover i,
+  .selected:hover {
+    background-color: inherit;
+  }
+  .selected:active i,
+  .selected:active {
+    background-color: inherit;
+  }
 `;
 
 const HiddenMenuLogoWrap = styled.div`
@@ -38,6 +52,8 @@ const HiddenMenuGuideWrap = styled.div`
 `;
 
 const HeaderLogoOpenHiddenMenu = ({ willBeShown, setWillBeShown }) => {
+  const [isSelected, setIsSelected] = useState(false);
+
   return (
     <HiddenMenuWrap className={willBeShown ? "visible" : "invisible"}>
       <HiddenMenuLogoWrap className={willBeShown ? "visible" : "invisible"}>
@@ -48,7 +64,10 @@ const HeaderLogoOpenHiddenMenu = ({ willBeShown, setWillBeShown }) => {
         <HeaderLogoMainLogo />
       </HiddenMenuLogoWrap>
       <HiddenMenuGuideWrap>
-        <HiddenMenuGuideHome />
+        <HiddenMenuGuideHome
+          isSelected={isSelected}
+          setIsSelected={setIsSelected}
+        />
       </HiddenMenuGuideWrap>
     </HiddenMenuWrap>
   );

@@ -37,16 +37,9 @@ const PlayerWrap = styled.div`
   max-height: 720px;
 `;
 
-//
 const InfoWrap = styled.div`
   padding: 20px 0 8px 0;
 `;
-
-// 작성자 코멘트
-const MetaWrap = styled.div``;
-
-// 댓글
-const CommentsWrap = styled.div``;
 
 const Playing = ({ match }) => {
   console.log(match);
@@ -67,13 +60,9 @@ const Playing = ({ match }) => {
             <VideoInfo></VideoInfo>
           </InfoWrap>
 
-          <MetaWrap>
-            <VideoMeta></VideoMeta>
-          </MetaWrap>
+          <VideoMeta></VideoMeta>
 
-          <CommentsWrap>
-            <VideoComments></VideoComments>
-          </CommentsWrap>
+          <VideoComments></VideoComments>
         </PrimaryWrap>
         {/* aside */}
         <NextVideoList />

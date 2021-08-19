@@ -8,7 +8,7 @@ const HeaderSearchFormWrap = styled.form`
   display: flex;
   align-items: center;
   border: solid 1.5px hsl(0, 0%, 80%);
-  border-right: 0px;
+  /* border-right: 0px; */
   padding: 0 0 0 4px;
   margin: 0 0 0 40px;
 `;

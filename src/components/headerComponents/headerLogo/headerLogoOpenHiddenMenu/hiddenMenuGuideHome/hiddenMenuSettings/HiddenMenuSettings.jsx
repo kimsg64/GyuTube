@@ -21,16 +21,6 @@ const HiddenMenuSettingsWrap = styled.div`
   }
 `;
 
-const TitleWrap = styled.div`
-  height: 40px;
-  padding: 0px 24px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 14px;
-  color: hsl(0, 0%, 40%);
-`;
-
 const ItemsWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,13 +32,6 @@ const ItemBar = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  div {
-    height: 40px;
-    margin-right: 24px;
-  }
-  .text {
-    display: none;
-  }
   :hover {
     cursor: pointer;
     background-color: hsl(0, 0%, 90%);
@@ -63,21 +46,14 @@ const TextBar = styled.div`
   height: 20px;
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
 `;
 
 const IconWrap = styled.div`
   width: 30px;
-  height: 74px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  div {
-    margin-top: 6px;
-    font-size: 10px;
-  }
+  height: 30px;
+  margin-right: 18px;
 `;
 
 const HiddenMenuSettings = () => {

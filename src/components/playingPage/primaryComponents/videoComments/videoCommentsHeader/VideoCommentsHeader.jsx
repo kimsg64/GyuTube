@@ -28,10 +28,7 @@ const SortBy = styled.div`
     background-color: hsl(0, 0%, 80%);
   }
   .fas {
-    border-radius: 0;
-    :hover {
-      transform: scale(1);
-    }
+    margin-right: 8px;
   }
 `;
 

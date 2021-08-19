@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
 
 // 글로벌 스타일을 부여해서 삭제 가능
 // const HeaderLogoOpenMenuWrap = styled.div`

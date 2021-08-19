@@ -16,7 +16,8 @@ const HiddenMenuGuideHomeWrap = styled.div`
   overflow-y: scroll;
 `;
 
-const HiddenMenuGuideHome = () => {
+const HiddenMenuGuideHome = ({ isSelected, setIsSelected }) => {
+  // 여기서 props를 ItemBar가 있는 곳까지 더 내려야 하나?
   return (
     <HiddenMenuGuideHomeWrap>
       <HiddenMenuHome />

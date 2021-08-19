@@ -15,8 +15,9 @@ const InputCommentWrap = styled.div`
 `;
 
 const InputComment = styled.input`
-  border: none;
   margin-bottom: 3.5px;
+  padding-bottom: 4px;
+  border: none;
   border-bottom: 1px solid hsl(0, 0%, 56%);
   font-size: 14px;
   :focus {

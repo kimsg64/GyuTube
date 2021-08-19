@@ -4,7 +4,7 @@ import ReportAndScripts from "./reportAndScripts/ReportAndScripts";
 
 const VideoBtnsWrap = styled.div`
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
   width: 350.75px;
 `;
 
@@ -20,9 +20,14 @@ const BtnWrap = styled.div`
   :hover {
     cursor: pointer;
   }
-  .fas {
-    transform: none;
-  }
+`;
+
+const IconsWrap = styled.div`
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const VideoBtns = () => {
@@ -30,23 +35,31 @@ const VideoBtns = () => {
     <VideoBtnsWrap>
       <BtnsBox>
         <BtnWrap className="like">
-          <i className="fas fa-thumbs-up"></i>
+          <IconsWrap className="globalIconBtn">
+            <i className="fas fa-thumbs-up"></i>
+          </IconsWrap>
           <div>55.1천</div>
         </BtnWrap>
         <BtnWrap className="like">
-          <i className="fas fa-thumbs-down"></i>
+          <IconsWrap className="globalIconBtn">
+            <i className="fas fa-thumbs-down"></i>
+          </IconsWrap>
           <div>1천</div>
         </BtnWrap>
         <BtnWrap>
-          <i className="fas fa-share"></i>
+          <IconsWrap className="globalIconBtn">
+            <i className="fas fa-share"></i>
+          </IconsWrap>
           <div>공유</div>
         </BtnWrap>
         <BtnWrap>
-          <i className="fas fa-plus-square"></i>
+          <IconsWrap className="globalIconBtn">
+            <i className="fas fa-plus-square"></i>
+          </IconsWrap>
           <div>저장</div>
         </BtnWrap>
       </BtnsBox>
-      <ReportAndScripts></ReportAndScripts>
+      <ReportAndScripts />
     </VideoBtnsWrap>
   );
 };

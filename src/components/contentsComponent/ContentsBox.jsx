@@ -9,6 +9,8 @@ const ContentsBoxWrap = styled.article`
   padding-top: calc(56px + 56px);
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 98%);
 `;
 
 const ContentsBox = () => {
