@@ -4,6 +4,7 @@ import Header from "./headerComponents/Header";
 import Navigator from "./navigatorComponents/Navigator";
 import app from "../styles/app.css";
 import styled from "styled-components";
+import VideoData from "../DB/VideoData.json";
 
 const StyledPage = styled.div`
   position: absolute;
@@ -11,11 +12,13 @@ const StyledPage = styled.div`
 `;
 
 const Main = () => {
+  const videoData = VideoData.videos;
+  console.log("메인", videoData);
   return (
     <StyledPage>
       <Header />
       <Navigator />
-      <ContentsBox />
+      <ContentsBox key={videoData.videoNo} videoData={videoData} />
     </StyledPage>
   );
 };

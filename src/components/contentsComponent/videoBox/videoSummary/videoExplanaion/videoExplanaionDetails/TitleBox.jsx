@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -19,14 +19,42 @@ const TitleBoxWrap = styled.div`
   }
 `;
 
-const TitleBox = () => {
+const TitleBox = ({ videoData }) => {
+  console.log("타이틀박스", videoData);
+  const views = videoData.videoViews;
+  console.log(views);
+
+  const setStr = () => {
+    console.log(parseInt(views));
+    if (parseInt(views) < 1000) {
+      return views;
+    } else if (parseInt(views) < 10000) {
+      return `${views[0]}천`;
+    } else if (parseInt(views) < 100000) {
+      return `${views[0]}만`;
+    } else if (parseInt(views) < 1000000) {
+      return `${views[0] + views[1]}만`;
+    } else if (parseInt(views) < 10000000) {
+      return `${views[0] + views[1] + views[2]}만`;
+    } else if (parseInt(views) < 100000000) {
+      return `${views[0]},${views[1] + views[2] + views[3]}만`;
+    } else if (parseInt(views) < 1000000000) {
+      return `${views[0]}억`;
+    } else if (parseInt(views) < 10000000000) {
+      return `${views[0] + views[1]}억`;
+    } else if (parseInt(views) < 100000000000) {
+      return `${views[0] + views[1] + views[2]}억`;
+    } else if (parseInt(views) < 1000000000000) {
+      return `${views[0]},${views[1] + views[2] + views[3]}억`;
+    }
+  };
   return (
     <Link to="/playing">
       <TitleBoxWrap>
-        <h3>대신 커여운 고양이를 드리겠읍니다.</h3>
+        <h3>{videoData.videoTitle}</h3>
         <div>
-          <div>희망이 넘치는 페페</div>
-          <div>조회수 105만회・20년 전</div>
+          <div>{videoData.userName}</div>
+          <div>조회수 {setStr()}회・20년 전</div>
         </div>
       </TitleBoxWrap>
     </Link>

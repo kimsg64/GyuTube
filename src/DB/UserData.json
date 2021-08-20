@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "userId": "kimsg64",
+      "userPassword": "uketamawaru",
+      "userName": "김승규",
+      "userImageUrl": ""
+    },
+    {
+      "userId": "kimusungyu",
+      "userPassword": "uketamawaru",
+      "userName": "キムスンギュ",
+      "userImageUrl": ""
+    },
+    {
+      "userId": "sunchan",
+      "userPassword": "uketamawaru",
+      "userName": "スンちゃん",
+      "userImageUrl": ""
+    },
+    {
+      "userId": "suyeong",
+      "userPassword": "123456",
+      "userName": "장수영",
+      "userImageUrl": ""
+    },
+    {
+      "userId": "swimmer",
+      "userPassword": "suyeong",
+      "userName": "suyeongsuyeong",
+      "userImageUrl": ""
+    },
+    {
+      "userId": "seungwumother",
+      "userPassword": "123456",
+      "userName": "승우엄마",
+      "userImageUrl": ""
+    }
+  ]
+}

@@ -13,11 +13,12 @@ const ContentsBoxWrap = styled.article`
   background-color: hsl(0, 0%, 98%);
 `;
 
-const ContentsBox = () => {
+const ContentsBox = ({ videoData }) => {
+  console.log("콘텐츠박스", videoData);
   return (
     <ContentsBoxWrap>
       <FilterBar />
-      <VideoBox />
+      <VideoBox key={videoData.videoNo} videoData={videoData} />
     </ContentsBoxWrap>
   );
 };

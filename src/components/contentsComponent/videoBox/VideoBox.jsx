@@ -13,29 +13,17 @@ const VideoBoxWrap = styled.ul`
   flex-wrap: wrap;
 `;
 
-const VideoBox = () => {
-  const getName = () => {
-    // Name 선택하는 부분은 차후 백엔드 로직을 배워서 입력하고 우선 videos 내의 파일 이름순으로 배치
-    // 썸네일 동영상 최대 4개, 최소 1개 반응형으로 배치
-    const candidate = [
-      "Cat",
-      "DancingMan",
-      "Firework",
-      "GreenBoat",
-      "OkinawaSun",
-      "Sunset",
-      "Train",
-      "Lake",
-      "KouheiMagic",
-      "Funyafunya",
-    ];
-    return candidate;
-  };
-
+const VideoBox = ({ videoData }) => {
+  console.log("비디오박스", videoData);
+  // Name 선택하는 부분은 차후 백엔드 로직을 배워서 입력하고 우선 videos 내의 파일 이름순으로 배치
+  // 썸네일 동영상 최대 4개, 최소 1개 반응형으로 배치
   return (
     <VideoBoxWrap>
-      {getName().map((movie) => {
-        return <VideoSummary key={movie} videoName={movie} />;
+      {videoData.map((video) => {
+        return (
+          // <VideoSummary key={video.videoNo} videoTitle={video.videoTitle} />
+          <VideoSummary key={video.videoNo} video={video} />
+        );
       })}
     </VideoBoxWrap>
   );

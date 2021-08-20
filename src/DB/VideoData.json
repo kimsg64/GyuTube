@@ -1,0 +1,94 @@
+{
+  "videos": [
+    {
+      "videoNo": "1001",
+      "videoTitle": "Cat",
+      "userName": "김승규",
+      "videoUploadDate": "2019/03/12",
+      "videoUrl": "/videos",
+      "videoViews": "543",
+      "videoThumbUp": "3456789",
+      "videoThumbDown": "5"
+    },
+    {
+      "videoNo": "1002",
+      "videoTitle": "DancingMan",
+      "userName": "김승규",
+      "videoUploadDate": "2019/01/21",
+      "videoUrl": "/videos",
+      "videoViews": "7654",
+      "videoThumbUp": "453",
+      "videoThumbDown": "45"
+    },
+    {
+      "videoNo": "1003",
+      "videoTitle": "Firework",
+      "userName": "スンちゃん",
+      "videoUploadDate": "2019/08/13",
+      "videoUrl": "/videos",
+      "videoViews": "54567",
+      "videoThumbUp": "1232",
+      "videoThumbDown": "21"
+    },
+    {
+      "videoNo": "1004",
+      "videoTitle": "Funyafunya",
+      "userName": "キムスンギュ",
+      "videoUploadDate": "2021/06/04",
+      "videoUrl": "/videos",
+      "videoViews": "987654",
+      "videoThumbUp": "23454",
+      "videoThumbDown": "12"
+    },
+    {
+      "videoNo": "1005",
+      "videoTitle": "GreenBoat",
+      "userName": "김승규",
+      "videoUploadDate": "2017/04/19",
+      "videoUrl": "/videos",
+      "videoViews": "6434567",
+      "videoThumbUp": "1234",
+      "videoThumbDown": "1"
+    },
+    {
+      "videoNo": "1006",
+      "videoTitle": "KouheiMagic",
+      "userName": "スンちゃん",
+      "videoUploadDate": "2019/08/31",
+      "videoUrl": "/videos",
+      "videoViews": "876545678",
+      "videoThumbUp": "12321",
+      "videoThumbDown": "23"
+    },
+    {
+      "videoNo": "1007",
+      "videoTitle": "Lake",
+      "userName": "김승규",
+      "videoUploadDate": "2019/02/14",
+      "videoUrl": "/videos",
+      "videoViews": "987654232",
+      "videoThumbUp": "1234554",
+      "videoThumbDown": "234"
+    },
+    {
+      "videoNo": "1008",
+      "videoTitle": "Sunset",
+      "userName": "김승규",
+      "videoUploadDate": "2017/04/22",
+      "videoUrl": "/videos",
+      "videoViews": "98765432",
+      "videoThumbUp": "8765",
+      "videoThumbDown": "12"
+    },
+    {
+      "videoNo": "1009",
+      "videoTitle": "Train",
+      "userName": "김승규",
+      "videoUploadDate": "2019/02/11",
+      "videoUrl": "/videos",
+      "videoViews": "87654",
+      "videoThumbUp": "15232",
+      "videoThumbDown": "3"
+    }
+  ]
+}
