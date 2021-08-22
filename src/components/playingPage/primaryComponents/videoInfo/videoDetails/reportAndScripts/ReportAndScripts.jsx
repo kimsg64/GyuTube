@@ -13,7 +13,7 @@ const ReportAndScriptsWrap = styled.div`
 const ReportAndScripts = () => {
   return (
     <ReportAndScriptsWrap className="globalIconBtn">
-      <i class="fas fa-ellipsis-h"></i>
+      <i className="fas fa-ellipsis-h"></i>
     </ReportAndScriptsWrap>
   );
 };

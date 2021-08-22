@@ -6,12 +6,16 @@ const ViewAndDateWrap = styled.div`
   font-size: 14px;
 `;
 
-const ViewAndDate = () => {
+const ViewAndDate = ({ videoViews = "", videoUploadDate = "" }) => {
+  const setComma = () => {
+    return parseInt(videoViews).toLocaleString();
+  };
+
   return (
     <ViewAndDateWrap>
-      <div>조회수 1,056,594회</div>
+      <div>조회수 {setComma()}회</div>
       <span>・</span>
-      <div>1992.06.04</div>
+      <div>{videoUploadDate}</div>
     </ViewAndDateWrap>
   );
 };

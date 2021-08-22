@@ -9,7 +9,7 @@ const App = () => {
     <Router>
       <GlobalStyle />
       <Route exact path="/" component={Main} />
-      <Route path="/playing/:videoName" component={Playing} />
+      <Route path="/playing/:videoNo/:videoTitle" component={Playing} />
     </Router>
   );
 };

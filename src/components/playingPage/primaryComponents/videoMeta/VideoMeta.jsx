@@ -12,11 +12,11 @@ const MetaWrap = styled.div`
   font-size: 14px;
 `;
 
-const VideoMeta = () => {
+const VideoMeta = ({ willBeSent = {} }) => {
   return (
     <MetaWrap>
-      <VideoUploader></VideoUploader>
-      <VideoUploaderArticle></VideoUploaderArticle>
+      <VideoUploader willBeSent={willBeSent} />
+      <VideoUploaderArticle post={willBeSent.post} />
     </MetaWrap>
   );
 };

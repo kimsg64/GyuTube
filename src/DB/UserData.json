@@ -4,37 +4,29 @@
       "userId": "kimsg64",
       "userPassword": "uketamawaru",
       "userName": "김승규",
-      "userImageUrl": ""
+      "userImageUrl": "/images/kimsg64.png",
+      "subscriber": ["kimusungyu", "sunchan", "swimmingpool"]
     },
     {
       "userId": "kimusungyu",
       "userPassword": "uketamawaru",
       "userName": "キムスンギュ",
-      "userImageUrl": ""
+      "userImageUrl": "/images/kimusungyu.png",
+      "subscriber": ["sunchan"]
     },
     {
       "userId": "sunchan",
       "userPassword": "uketamawaru",
       "userName": "スンちゃん",
-      "userImageUrl": ""
+      "userImageUrl": "/images/sunchan.png",
+      "subscriber": ["kimusungyu", "swimmingpool"]
     },
     {
-      "userId": "suyeong",
+      "userId": "swimmingpool",
       "userPassword": "123456",
       "userName": "장수영",
-      "userImageUrl": ""
-    },
-    {
-      "userId": "swimmer",
-      "userPassword": "suyeong",
-      "userName": "suyeongsuyeong",
-      "userImageUrl": ""
-    },
-    {
-      "userId": "seungwumother",
-      "userPassword": "123456",
-      "userName": "승우엄마",
-      "userImageUrl": ""
+      "userImageUrl": "/images/swimmingpool.png",
+      "subscriber": []
     }
   ]
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import UserIcon from "../../../../contentsComponent/videoBox/videoSummary/videoExplanaion/videoExplanaionDetails/UserIcon";
 import styled from "styled-components";
+import UserData from "../../../../../DB/UserData.json";
 
 const VideoUploaderWrap = styled.div`
   display: flex;
@@ -31,10 +32,6 @@ const CertificationMark = styled.div`
     width: 13px;
     height: 13px;
     font-size: 12px;
-    :hover {
-      cursor: unset;
-      transform: scale(1);
-    }
   }
 `;
 
@@ -49,7 +46,8 @@ const SubscriptionWrap = styled.div`
 `;
 
 const SubscriptionBtn = styled.div`
-  height: 18px;
+  box-sizing: content-box;
+  height: 20px;
   padding: 10px 16px;
   margin: 0 4px;
   text-align: center;
@@ -77,8 +75,26 @@ const SubscriptionAlarm = styled.div`
   color: hsl(0, 0%, 38%);
 `;
 
-const VideoUploader = () => {
+const VideoUploader = ({ willBeSent = {} }) => {
   const [subscription, setSubscription] = useState(false);
+
+  const user = UserData.users.find((user) => user.userId === willBeSent.userId);
+
+  const setSubscribersNumber = () => {
+    if (user.subscriber.length < 1000) {
+      return user.subscriber.length;
+    } else if (user.subscriber.length < 10000) {
+      return `${user.subscriber.length
+        .toLocaleString("de-DE")
+        .toString()
+        .substring(0, 4)}천`;
+    } else {
+      return `${user.subscriber.length
+        .toLocaleString("de-DE")
+        .toString()
+        .substring(0, 4)}만`;
+    }
+  };
 
   const onClickSubscriptionBtn = () => {
     setSubscription(!subscription);
@@ -87,15 +103,15 @@ const VideoUploader = () => {
   return (
     <VideoUploaderWrap>
       <ProfileWrap>
-        <UserIcon></UserIcon>
+        <UserIcon videoData={willBeSent} />
         <div>
           <Author>
-            침착맨
+            {user.userName}
             <CertificationMark>
-              <i class="fas fa-check-circle"></i>
+              <i className="fas fa-check-circle"></i>
             </CertificationMark>
           </Author>
-          <Subscriber>구독자 1억명</Subscriber>
+          <Subscriber>구독자 {setSubscribersNumber()}명</Subscriber>
         </div>
       </ProfileWrap>
       <SubscriptionWrap>

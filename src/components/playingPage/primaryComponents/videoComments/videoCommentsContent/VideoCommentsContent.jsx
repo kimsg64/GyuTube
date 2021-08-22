@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import MenuBox from "../../../../contentsComponent/videoBox/videoSummary/videoExplanaion/videoExplanaionDetails/MenuBox";
-import HeaderUserInfo from "../../../../headerComponents/headerBtns/headerUserInfo/HeaderUserInfo";
-import VideoCommentsLeaveComment from "../videoCommentsLeaveComment/VideoCommentsLeaveComment";
+import UserData from "../../../../../DB/UserData.json";
+import UserIcon from "../../../../contentsComponent/videoBox/videoSummary/videoExplanaion/videoExplanaionDetails/UserIcon";
+import Pinned from "./pinned/Pinned";
+import CommentLikeBtns from "./commentLikeBtns/CommentLikeBtns";
+// import VideoCommentsLeaveComment from "../videoCommentsLeaveComment/VideoCommentsLeaveComment";
 
 const VideoCommentsContentWrap = styled.div`
   width: 100%;
@@ -23,25 +26,6 @@ const CommentWrap = styled.div`
   flex-direction: column;
   :hover .fa-ellipsis-v {
     display: flex;
-  }
-`;
-
-const PinBox = styled.div`
-  color: hsl(0, 0%, 38%);
-  height: 18px;
-  font-size: 12px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  .fas {
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
-    margin-right: 4px;
-    padding-top: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 `;
 
@@ -68,239 +52,53 @@ const CommentContent = styled.div`
   margin-top: 4px;
 `;
 
-const IconsWrap = styled.div`
-  height: 36px;
-  margin-top: 4px;
-  display: flex;
-  align-items: center;
-  color: hsl(0, 0%, 56%);
-  box-sizing: border-box;
-`;
+const VideoCommentsContent = ({ commentData = {}, willBeSent = {} }) => {
+  console.log("해당 비디오에 작성된 댓글 데이터", commentData);
+  console.log("전체 유저 DB", UserData.users);
+  const users = commentData.map((comment) => comment.userId);
+  console.log("전체 유저 중 댓글 쓴 애들의 ID(PK)", users);
 
-const LikeBox = styled.div`
-  display: flex;
-  align-items: center;
-`;
+  const commenters = UserData.users.filter((user) =>
+    users.includes(user.userId)
+  );
+  console.log("전체 유저 중 댓글 쓴 애들의 유저 데이터", commenters);
 
-const LikeIcon = styled.div`
-  /* 왼쪽으로 4~8px 옮겨야 함... */
-  width: 32px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  .fas {
-    color: hsl(0, 0%, 56%);
-    font-size: 14px;
-    :hover {
-      color: hsl(0, 0%, 38%);
-    }
-  }
-`;
-
-const LikeNumber = styled.div`
-  font-size: 14px;
-  color: hsl(0, 0%, 38%);
-  margin-right: 8px;
-`;
-
-const ReplyBox = styled.div`
-  width: 66px;
-  padding: 8px 16px;
-  font-size: 13px;
-  color: hsl(0, 0%, 38%);
-  :hover {
-    cursor: pointer;
-  }
-`;
-
-const VideoCommentsContent = () => {
   return (
     <VideoCommentsContentWrap>
-      <VideoCommentsContentBox>
-        <HeaderUserInfo />
-        <CommentWrap>
-          <PinBox>
-            <i className="fas fa-thumbtack"></i>
-            <div>규튜브님이 고정함</div>
-          </PinBox>
-          <NameBox>
-            <div>승우엄마</div>
-            <DateWrap>
-              <i class="fas fa-check"></i>
-              5일 전
-            </DateWrap>
-          </NameBox>
-          <CommentContent>
-            <div>이게 가장 좋습니다!</div>
-          </CommentContent>
-          <IconsWrap>
-            <LikeBox>
-              <LikeIcon className="globalIconBtn">
-                <i className="fas fa-thumbs-up"></i>
-              </LikeIcon>
-              <LikeNumber>10</LikeNumber>
-            </LikeBox>
-            <LikeBox>
-              <LikeIcon className="globalIconBtn">
-                <i className="fas fa-thumbs-down"></i>
-              </LikeIcon>
-              <LikeNumber>2</LikeNumber>
-            </LikeBox>
-            <ReplyBox>답글</ReplyBox>
-          </IconsWrap>
-          {/* 얘는 답글 클릭시 나타날 것 */}
-          {/* <VideoCommentsLeaveComment /> */}
-        </CommentWrap>
-        <MenuBox />
-      </VideoCommentsContentBox>
-      <VideoCommentsContentBox>
-        <HeaderUserInfo />
-        <CommentWrap>
-          <PinBox>
-            <i className="fas fa-thumbtack"></i>
-            <div>규튜브님이 고정함</div>
-          </PinBox>
-          <NameBox>
-            <div>승우엄마</div>
-            <DateWrap>
-              <i class="fas fa-check"></i>
-              5일 전
-            </DateWrap>
-          </NameBox>
-          <CommentContent>
-            <div>이게 가장 좋습니다!</div>
-          </CommentContent>
-          <IconsWrap>
-            <LikeBox>
-              <LikeIcon className="globalIconBtn">
-                <i className="fas fa-thumbs-up"></i>
-              </LikeIcon>
-              <LikeNumber>10</LikeNumber>
-            </LikeBox>
-            <LikeBox>
-              <LikeIcon className="globalIconBtn">
-                <i className="fas fa-thumbs-down"></i>
-              </LikeIcon>
-              <LikeNumber>2</LikeNumber>
-            </LikeBox>
-            <ReplyBox>답글</ReplyBox>
-          </IconsWrap>
-          {/* 얘는 답글 클릭시 나타날 것 */}
-          {/* <VideoCommentsLeaveComment /> */}
-        </CommentWrap>
-        <MenuBox />
-      </VideoCommentsContentBox>
-      <VideoCommentsContentBox>
-        <HeaderUserInfo />
-        <CommentWrap>
-          <PinBox>
-            <i className="fas fa-thumbtack"></i>
-            <div>규튜브님이 고정함</div>
-          </PinBox>
-          <NameBox>
-            <div>승우엄마</div>
-            <DateWrap>
-              <i class="fas fa-check"></i>
-              5일 전
-            </DateWrap>
-          </NameBox>
-          <CommentContent>
-            <div>이게 가장 좋습니다!</div>
-          </CommentContent>
-          <IconsWrap>
-            <LikeBox>
-              <LikeIcon className="globalIconBtn">
-                <i className="fas fa-thumbs-up"></i>
-              </LikeIcon>
-              <LikeNumber>10</LikeNumber>
-            </LikeBox>
-            <LikeBox>
-              <LikeIcon className="globalIconBtn">
-                <i className="fas fa-thumbs-down"></i>
-              </LikeIcon>
-              <LikeNumber>2</LikeNumber>
-            </LikeBox>
-            <ReplyBox>답글</ReplyBox>
-          </IconsWrap>
-          {/* 얘는 답글 클릭시 나타날 것 */}
-          {/* <VideoCommentsLeaveComment /> */}
-        </CommentWrap>
-        <MenuBox />
-      </VideoCommentsContentBox>
-      <VideoCommentsContentBox>
-        <HeaderUserInfo />
-        <CommentWrap>
-          <PinBox>
-            <i className="fas fa-thumbtack"></i>
-            <div>규튜브님이 고정함</div>
-          </PinBox>
-          <NameBox>
-            <div>승우엄마</div>
-            <DateWrap>
-              <i class="fas fa-check"></i>
-              5일 전
-            </DateWrap>
-          </NameBox>
-          <CommentContent>
-            <div>이게 가장 좋습니다!</div>
-          </CommentContent>
-          <IconsWrap>
-            <LikeBox>
-              <LikeIcon className="globalIconBtn">
-                <i className="fas fa-thumbs-up"></i>
-              </LikeIcon>
-              <LikeNumber>10</LikeNumber>
-            </LikeBox>
-            <LikeBox>
-              <LikeIcon className="globalIconBtn">
-                <i className="fas fa-thumbs-down"></i>
-              </LikeIcon>
-              <LikeNumber>2</LikeNumber>
-            </LikeBox>
-            <ReplyBox>답글</ReplyBox>
-          </IconsWrap>
-          {/* 얘는 답글 클릭시 나타날 것 */}
-          {/* <VideoCommentsLeaveComment /> */}
-        </CommentWrap>
-        <MenuBox />
-      </VideoCommentsContentBox>
-      <VideoCommentsContentBox>
-        <HeaderUserInfo />
-        <CommentWrap>
-          <PinBox>
-            <i className="fas fa-thumbtack"></i>
-            <div>규튜브님이 고정함</div>
-          </PinBox>
-          <NameBox>
-            <div>승우엄마</div>
-            <DateWrap>
-              <i class="fas fa-check"></i>
-              5일 전
-            </DateWrap>
-          </NameBox>
-          <CommentContent>
-            <div>이게 가장 좋습니다!</div>
-          </CommentContent>
-          <IconsWrap>
-            <LikeBox>
-              <LikeIcon className="globalIconBtn">
-                <i className="fas fa-thumbs-up"></i>
-              </LikeIcon>
-              <LikeNumber>10</LikeNumber>
-            </LikeBox>
-            <LikeBox>
-              <LikeIcon className="globalIconBtn">
-                <i className="fas fa-thumbs-down"></i>
-              </LikeIcon>
-              <LikeNumber>2</LikeNumber>
-            </LikeBox>
-            <ReplyBox>답글</ReplyBox>
-          </IconsWrap>
-          {/* 얘는 답글 클릭시 나타날 것 */}
-          {/* <VideoCommentsLeaveComment /> */}
-        </CommentWrap>
-        <MenuBox />
-      </VideoCommentsContentBox>
+      {commenters.map((commenter) => {
+        console.log(commenter);
+        return (
+          <VideoCommentsContentBox>
+            <UserIcon willBeSent={willBeSent} commenters={commenter} />
+            <CommentWrap>
+              <Pinned willBeSent={willBeSent} />
+              <NameBox>
+                <div>{commenter.userName}</div>
+                <DateWrap>
+                  <i className="fas fa-check"></i>
+                  5일 전
+                </DateWrap>
+              </NameBox>
+              {commentData
+                .filter((comment) => comment.userId === commenter.userId)
+                .map((comment) => {
+                  return (
+                    <>
+                      <CommentContent>
+                        <div>{comment.commentContent}</div>
+                      </CommentContent>
+                      <CommentLikeBtns
+                        commnetThumbUp={comment.commnetThumbUp}
+                        commnetThumbDown={comment.commnetThumbDown}
+                      />
+                    </>
+                  );
+                })}
+            </CommentWrap>
+            <MenuBox />
+          </VideoCommentsContentBox>
+        );
+      })}
     </VideoCommentsContentWrap>
   );
 };

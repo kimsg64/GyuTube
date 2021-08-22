@@ -16,11 +16,7 @@ const OneVideo = styled.div`
 // height: 94px;
 
 const NextVideoList = () => {
-  return (
-    <NextVideoListWrap>
-      <VideoSummary />
-    </NextVideoListWrap>
-  );
+  return <NextVideoListWrap>{/* <VideoSummary /> */}</NextVideoListWrap>;
 };
 
 export default NextVideoList;

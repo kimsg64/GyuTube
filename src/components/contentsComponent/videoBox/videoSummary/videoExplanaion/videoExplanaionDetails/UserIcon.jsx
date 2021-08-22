@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import UserData from "../../../../../../DB/UserData.json";
 
 const UserIconWrap = styled.div`
   height: 36px;
@@ -14,10 +15,37 @@ const UserIconWrap = styled.div`
   }
 `;
 
-const UserIcon = () => {
+const UserIcon = ({ videoData = {}, commenters = {} }) => {
+  // console.log("유저 아이콘", videoData);
+  // console.log("댓글러", commenters);
+
+  const setDefaultPath = () => {
+    return "/images/Happy(default).png";
+  };
+
+  const setCommenterImagePath = () => {
+    return commenters.userImageUrl;
+  };
+
+  const setUserImagePath = () => {
+    const uploader = UserData.users.find(
+      (user) => user.userId === videoData.userId
+    );
+    return uploader.userImageUrl;
+  };
+
   return (
     <UserIconWrap>
-      <img src="/images/Hope.png" alt="FACE" />
+      <img
+        src={
+          Object.keys(commenters).length === 0
+            ? Object.keys(videoData).length === 0
+              ? setDefaultPath()
+              : setUserImagePath()
+            : setCommenterImagePath()
+        }
+        alt="FACE"
+      />
     </UserIconWrap>
   );
 };

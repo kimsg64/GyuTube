@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import VideoExplanaion from "./videoExplanaion/VideoExplanaion";
 import { Link } from "react-router-dom";
-import VideoData from "../../../../DB/VideoData.json";
 
 const VideoBox = styled.li`
   list-style: none;
@@ -44,13 +43,13 @@ const onMouseOutVideo = (e) => {
   e.target.currentTime = 0;
 };
 
-const VideoSummary = ({ video }) => {
-  console.log(video.videoTitle);
+const VideoSummary = ({ video = {} }) => {
+  console.log("비디오 서머리", video);
 
   return (
     // video태그와 explanation 태그를 묶어서 저장할 것이므로... 이걸로 글자에 마우스 올려도 비디오 자동재생하기
     <VideoBox onMouseEnter={(e) => console.log(e.target)}>
-      <Link to={`/playing/${video.videoTitle}`}>
+      <Link to={`/playing/${video.videoNo}/${video.videoTitle}`}>
         <video
           src={`/videos/${video.videoTitle}.mp4`}
           onMouseEnter={onMouseEnterVideo}

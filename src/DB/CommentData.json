@@ -1,12 +1,84 @@
 {
   "comments": [
     {
-      "commentNo": "",
-      "videoNo": "",
-      "userId": "",
-      "commentDate": "",
-      "commentContent": "",
-      "commnetThumbUp": "",
+      "commentNo": "0001",
+      "videoNo": "1002",
+      "userId": "kimsg64",
+      "commentDate": "2021.05.12",
+      "commentContent": "와! 저도 요가를 배우고 싶어요",
+      "commnetThumbUp": "50",
+      "commnetThumbDown": "5"
+    },
+    {
+      "commentNo": "0002",
+      "videoNo": "1002",
+      "userId": "kimusungyu",
+      "commentDate": "2020.09.21",
+      "commentContent": "あいつ何やってんねん（笑）",
+      "commnetThumbUp": "382",
+      "commnetThumbDown": "10"
+    },
+    {
+      "commentNo": "0004",
+      "videoNo": "1001",
+      "userId": "kimusungyu",
+      "commentDate": "2020.05.06",
+      "commentContent": "ㅉㅉ이게 칡이지 삵이냐?",
+      "commnetThumbUp": "2",
+      "commnetThumbDown": "982317"
+    },
+    {
+      "commentNo": "0005",
+      "videoNo": "1001",
+      "userId": "swimmingpool",
+      "commentDate": "2020.05.12",
+      "commentContent": "삵 맞는데요",
+      "commnetThumbUp": "356",
+      "commnetThumbDown": "1"
+    },
+    {
+      "commentNo": "0006",
+      "videoNo": "1003",
+      "userId": "kimusungyu",
+      "commentDate": "2021.01.14",
+      "commentContent": "また行きたいっすねー",
+      "commnetThumbUp": "5",
+      "commnetThumbDown": ""
+    },
+    {
+      "commentNo": "0007",
+      "videoNo": "1005",
+      "userId": "swimmingpool",
+      "commentDate": "2021.04.04",
+      "commentContent": "BTS brought me here!!!😍",
+      "commnetThumbUp": "28121",
+      "commnetThumbDown": ""
+    },
+    {
+      "commentNo": "0008",
+      "videoNo": "1005",
+      "userId": "sunchan",
+      "commentDate": "2021.05.04",
+      "commentContent": "こいつ誰？",
+      "commnetThumbUp": "1",
+      "commnetThumbDown": "321"
+    },
+    {
+      "commentNo": "0009",
+      "videoNo": "1005",
+      "userId": "kimusungyu",
+      "commentDate": "2020.09.09",
+      "commentContent": "2020년 미래에서 왔습니다.",
+      "commnetThumbUp": "592",
+      "commnetThumbDown": ""
+    },
+    {
+      "commentNo": "0010",
+      "videoNo": "1007",
+      "userId": "swimmingpool",
+      "commentDate": "2021.01.24",
+      "commentContent": "찢.었.다.",
+      "commnetThumbUp": "23311",
       "commnetThumbDown": ""
     }
   ]

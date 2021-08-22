@@ -32,12 +32,15 @@ const SortBy = styled.div`
   }
 `;
 
-const VideoCommentsHeader = () => {
+const VideoCommentsHeader = ({ commentData = {} }) => {
+  const setCommentLenghtFormat = () => {
+    return commentData.length.toLocaleString();
+  };
   return (
     <VideoCommentsHeaderWrap>
-      <CommentsNumber>댓글 50,219개</CommentsNumber>
+      <CommentsNumber>댓글 {setCommentLenghtFormat()}개</CommentsNumber>
       <SortBy>
-        <i class="fas fa-sort-amount-down"></i>
+        <i className="fas fa-sort-amount-down"></i>
         <div>정렬 기준</div>
       </SortBy>
     </VideoCommentsHeaderWrap>

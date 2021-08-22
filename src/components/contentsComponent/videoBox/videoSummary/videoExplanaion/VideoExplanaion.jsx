@@ -9,12 +9,12 @@ const VideoExplanationWrap = styled.div`
   display: flex;
 `;
 
-const VideoExplanaion = ({ videoData }) => {
+const VideoExplanaion = ({ videoData = {} }) => {
   console.log("설명박스", videoData);
   return (
     <VideoExplanationWrap>
       <UserIcon videoData={videoData} />
-      <TitleBox videoData={videoData} />
+      <TitleBox key={videoData.videoNo} videoData={videoData} />
       <MenuBox />
     </VideoExplanationWrap>
   );

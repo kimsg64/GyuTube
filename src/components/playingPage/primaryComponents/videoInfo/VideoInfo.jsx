@@ -14,11 +14,17 @@ const VideoInfoWrap = styled.div`
   }
 `;
 
-const VideoInfo = () => {
+const VideoInfo = ({
+  videoViews = "",
+  videoUploadDate = "",
+  videoThumbUp = "",
+  videoThumbDown = "",
+}) => {
+  console.log("비디오정보", videoViews, videoUploadDate);
   return (
     <VideoInfoWrap>
-      <ViewAndDate></ViewAndDate>
-      <VideoBtns></VideoBtns>
+      <ViewAndDate videoViews={videoViews} videoUploadDate={videoUploadDate} />
+      <VideoBtns videoThumbUp={videoThumbUp} videoThumbDown={videoThumbDown} />
     </VideoInfoWrap>
   );
 };
