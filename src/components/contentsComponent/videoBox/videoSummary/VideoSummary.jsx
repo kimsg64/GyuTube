@@ -58,16 +58,6 @@ const VideoSummary = ({ video = {} }) => {
         />
       </Link>
       <VideoExplanaion key={video.videoNo} videoData={video} />
-      {/* <Link to={`/playing/${videoTitle}`}>
-        <video
-          src={`/videos/${videoTitle}.mp4`}
-          onMouseEnter={onMouseEnterVideo}
-          onMouseOut={onMouseOutVideo}
-          muted={true}
-        />
-      </Link>
-      <VideoExplanaion /> */}
-      {/* muted: 크롬 정책에 의해 이걸 안 쓰면 자동 재생 안됨!! */}
     </VideoBox>
   );
 };

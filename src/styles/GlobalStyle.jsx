@@ -1,6 +1,46 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  .globalBlackExplanation {
+    width: auto;
+    padding: 8px 12px;
+    position: absolute;
+    top: 56px;
+    background-color: black;
+    color: white;
+    opacity: 0.7;
+    border-radius: 2px;
+    font-size: 12px;
+    font-style: normal;
+    display: none;
+  }
+  
+
+  .display__on {
+    display: block;
+  }
+  .display__off {
+    display: none;
+  }
+
+
+    /* 선택됐을 때(디폴트) */
+  .selected:nth-child(n),
+  .selected {
+    color: red;
+    background-color: var(--default-bg-color);
+  }
+  .selected:hover i,
+  .selected:hover {
+    background-color: var(--hover-bg-color);
+  }
+  .selected:active i,
+  .selected:active {
+    background-color: var(--active-bg-color);
+  }
+
+
+
   .globalIconBtnRect {
     flex-shrink: 0;
     display: flex;
@@ -10,9 +50,10 @@ const GlobalStyle = createGlobalStyle`
     color: hsl(0, 0%, 38%);
     :hover {
       cursor: pointer;
+      background-color: var(--hover-bg-color);
     }
     :active {
-      background-color: hsl(0, 0%, 70%);
+      background-color: var(--active-bg-color);
     }
   }
 

@@ -53,49 +53,74 @@ const CommentContent = styled.div`
 `;
 
 const VideoCommentsContent = ({ commentData = {}, willBeSent = {} }) => {
-  console.log("해당 비디오에 작성된 댓글 데이터", commentData);
-  console.log("전체 유저 DB", UserData.users);
+  // console.log("해당 비디오에 작성된 댓글 데이터", commentData);
+  // console.log("전체 유저 DB", UserData.users);
   const users = commentData.map((comment) => comment.userId);
-  console.log("전체 유저 중 댓글 쓴 애들의 ID(PK)", users);
+  // console.log("전체 유저 중 댓글 쓴 애들의 ID(PK)", users);
 
   const commenters = UserData.users.filter((user) =>
     users.includes(user.userId)
   );
-  console.log("전체 유저 중 댓글 쓴 애들의 유저 데이터", commenters);
+  // console.log("전체 유저 중 댓글 쓴 애들의 유저 데이터", commenters);
+
+  const setYears = (timeData) => {
+    // 현재 날짜
+    const now = new Date();
+    const thisYear = now.getFullYear();
+    const thisMonth = now.getMonth() + 1;
+    const today = now.getDate();
+
+    // 업로드 날짜
+    const commentYear = parseInt(timeData.split(".")[0]);
+    const commentMonth = parseInt(timeData.split(".")[1]);
+    const commentDate = parseInt(timeData.split(".")[2]);
+
+    const yearGap = thisYear - commentYear;
+    const monthGap = thisMonth - commentMonth;
+    const dateGap = today - commentDate;
+
+    return yearGap >= 1
+      ? `${yearGap}년 `
+      : monthGap >= 1
+      ? `${monthGap}개월 `
+      : `${dateGap}일 `;
+  };
 
   return (
     <VideoCommentsContentWrap>
       {commenters.map((commenter) => {
-        console.log(commenter);
+        // console.log(commenter);
         return (
           <VideoCommentsContentBox>
-            <UserIcon willBeSent={willBeSent} commenters={commenter} />
-            <CommentWrap>
-              <Pinned willBeSent={willBeSent} />
-              <NameBox>
-                <div>{commenter.userName}</div>
-                <DateWrap>
-                  <i className="fas fa-check"></i>
-                  5일 전
-                </DateWrap>
-              </NameBox>
-              {commentData
-                .filter((comment) => comment.userId === commenter.userId)
-                .map((comment) => {
-                  return (
-                    <>
+            {commentData
+              .filter((comment) => comment.userId === commenter.userId)
+              .map((comment) => {
+                return (
+                  <>
+                    <UserIcon willBeSent={willBeSent} commenters={commenter} />
+                    <CommentWrap>
+                      {comment.commentPinned ? (
+                        <Pinned willBeSent={willBeSent} />
+                      ) : null}
+                      <NameBox>
+                        <div>{commenter.userName}</div>
+                        <DateWrap>
+                          <i className="fas fa-check"></i>
+                          {setYears(comment.commentDate)} 전
+                        </DateWrap>
+                      </NameBox>
                       <CommentContent>
                         <div>{comment.commentContent}</div>
                       </CommentContent>
                       <CommentLikeBtns
-                        commnetThumbUp={comment.commnetThumbUp}
-                        commnetThumbDown={comment.commnetThumbDown}
+                        commentThumbUp={comment.commentThumbUp}
+                        commentThumbDown={comment.commentThumbDown}
                       />
-                    </>
-                  );
-                })}
-            </CommentWrap>
-            <MenuBox />
+                    </CommentWrap>
+                    <MenuBox />
+                  </>
+                );
+              })}
           </VideoCommentsContentBox>
         );
       })}

@@ -15,24 +15,22 @@ const HiddenMenuWrap = styled.div`
   background-color: white;
   transition-duration: 0.2s;
   flex-direction: column;
+  z-index: 3;
 
   .sup {
     display: none;
   }
+`;
 
-  /* 선택됐을 때 */
-  .selected i {
-    color: red;
-    background-color: inherit;
-  }
-  .selected:hover i,
-  .selected:hover {
-    background-color: inherit;
-  }
-  .selected:active i,
-  .selected:active {
-    background-color: inherit;
-  }
+const BlackArea = styled.div`
+  position: absolute;
+  background-color: black;
+  top: -56px;
+  opacity: 0.3;
+  height: calc(100vh + 56px);
+  width: calc(100vw);
+  transition-duration: 0.2s;
+  z-index: 1;
 `;
 
 const HiddenMenuLogoWrap = styled.div`
@@ -53,23 +51,32 @@ const HiddenMenuGuideWrap = styled.div`
 
 const HeaderLogoOpenHiddenMenu = ({ willBeShown, setWillBeShown }) => {
   const [isSelected, setIsSelected] = useState(false);
+  const onClickLogo = () => {
+    setWillBeShown(!willBeShown);
+  };
 
   return (
-    <HiddenMenuWrap className={willBeShown ? "visible" : "invisible"}>
-      <HiddenMenuLogoWrap className={willBeShown ? "visible" : "invisible"}>
-        <HeaderLogoOpenMenu
-          willBeShown={willBeShown}
-          setWillBeShown={setWillBeShown}
-        />
-        <HeaderLogoMainLogo />
-      </HiddenMenuLogoWrap>
-      <HiddenMenuGuideWrap>
-        <HiddenMenuGuideHome
-          isSelected={isSelected}
-          setIsSelected={setIsSelected}
-        />
-      </HiddenMenuGuideWrap>
-    </HiddenMenuWrap>
+    <>
+      <HiddenMenuWrap className={willBeShown ? "visible" : "invisible"}>
+        <HiddenMenuLogoWrap className={willBeShown ? "visible" : "invisible"}>
+          <HeaderLogoOpenMenu
+            willBeShown={willBeShown}
+            setWillBeShown={setWillBeShown}
+          />
+          <HeaderLogoMainLogo />
+        </HiddenMenuLogoWrap>
+        <HiddenMenuGuideWrap>
+          <HiddenMenuGuideHome
+            isSelected={isSelected}
+            setIsSelected={setIsSelected}
+          />
+        </HiddenMenuGuideWrap>
+      </HiddenMenuWrap>
+      <BlackArea
+        onClick={onClickLogo}
+        className={willBeShown ? "display__on" : "display__off"}
+      />
+    </>
   );
 };
 

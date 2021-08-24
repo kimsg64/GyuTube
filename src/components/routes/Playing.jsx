@@ -21,6 +21,7 @@ const StyledColumnsWrap = styled.div`
     flex: 3;
     padding: 24px 24px 0 0;
     background-color: powderblue;
+    height: auto;
   }
 `;
 

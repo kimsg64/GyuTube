@@ -14,7 +14,6 @@ const HeaderUserInfoCircle = styled.div`
   width: calc(36px - 0px);
   height: calc(36px - 4px);
   padding-bottom: 4px;
-  /* padding-right: 0px; */
   border-radius: 100%;
   background-color: hsl(17, 18%, 47%);
   display: flex;
@@ -22,7 +21,6 @@ const HeaderUserInfoCircle = styled.div`
   align-items: center;
   color: white;
   :hover {
-    transform: none;
     cursor: pointer;
   }
 `;

@@ -32,7 +32,7 @@ const HeaderLogo = () => {
       <HeaderLogoOpenHiddenMenu
         willBeShown={willBeShown}
         setWillBeShown={setWillBeShown}
-      ></HeaderLogoOpenHiddenMenu>
+      />
     </HeaderLogoWrap>
   );
 };

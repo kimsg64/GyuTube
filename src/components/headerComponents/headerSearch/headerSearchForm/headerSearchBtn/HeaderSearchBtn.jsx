@@ -1,15 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-// 없어도 될것같은데?
-const HeaderSearchBtnWrap = styled.div`
-  /* width: 65px; */
-  /* height: 30px; */
-  /* border: solid 1px hsl(0, 0%, 90%); */
-`;
-
 const StyledBtn = styled.button`
-  width: 65px;
+  width: 72px;
   height: 30px;
   border: none;
   border-left: solid 1.5px hsl(0, 0%, 80%);
@@ -25,15 +18,33 @@ const StyledBtn = styled.button`
     font-size: 16px;
     color: hsl(0, 0%, 38%);
   }
+  .globalBlackExplanation {
+    /* 좌우 이동...??? */
+  }
 `;
 
 const HeaderSearchBtn = () => {
+  const [willBeShown, setWillBeShown] = useState(false);
+  const showBlackExplanation = () => {
+    setWillBeShown(true);
+  };
+  const hideBlackExplanation = () => {
+    setWillBeShown(false);
+  };
   return (
-    <HeaderSearchBtnWrap>
-      <StyledBtn>
-        <i className="fas fa-search"></i>
-      </StyledBtn>
-    </HeaderSearchBtnWrap>
+    <StyledBtn
+      onMouseEnter={showBlackExplanation}
+      onMouseLeave={hideBlackExplanation}
+    >
+      <i className="fas fa-search"></i>
+      <div
+        className={`globalBlackExplanation ${
+          willBeShown ? "display__on" : "display__off"
+        }`}
+      >
+        검색
+      </div>
+    </StyledBtn>
   );
 };
 

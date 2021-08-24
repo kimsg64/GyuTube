@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const IconsWrap = styled.div`
@@ -7,7 +7,6 @@ const IconsWrap = styled.div`
   display: flex;
   align-items: center;
   color: hsl(0, 0%, 56%);
-  box-sizing: border-box;
 `;
 
 const LikeBox = styled.div`
@@ -21,6 +20,11 @@ const LikeIcon = styled.div`
   height: 32px;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  .globalBlackExplanation {
+    white-space: nowrap;
+  }
   .fas {
     color: hsl(0, 0%, 56%);
     font-size: 14px;
@@ -46,21 +50,41 @@ const ReplyBox = styled.div`
   }
 `;
 
-const CommentLikeBtns = ({ commnetThumbUp = "", commnetThumbDown = "" }) => {
+const CommentLikeBtns = ({ commentThumbUp = "", commentThumbDown = "" }) => {
+  const [willBeShown, setWillBeShown] = useState(false);
+  const showBlackExplanation = () => {
+    setWillBeShown(true);
+  };
+  const hideBlackExplanation = () => {
+    setWillBeShown(false);
+  };
+
   return (
     <IconsWrap>
       <LikeBox>
-        <LikeIcon className="globalIconBtn">
+        <LikeIcon
+          className="globalIconBtn"
+          onMouseEnter={showBlackExplanation}
+          onMouseLeave={hideBlackExplanation}
+        >
           <i className="fas fa-thumbs-up"></i>
+          <div
+            className={`globalBlackExplanation ${
+              willBeShown ? "display__on" : "display__off"
+            }`}
+          >
+            좋아요
+          </div>
         </LikeIcon>
-        <LikeNumber>{parseInt(commnetThumbUp).toLocaleString()}</LikeNumber>
+        <LikeNumber>{parseInt(commentThumbUp).toLocaleString()}</LikeNumber>
       </LikeBox>
       <LikeBox>
         <LikeIcon className="globalIconBtn">
           <i className="fas fa-thumbs-down"></i>
+          <div className="globalBlackExplanation">싫어요</div>
         </LikeIcon>
         <LikeNumber>
-          {commnetThumbDown && parseInt(commnetThumbDown).toLocaleString()}
+          {commentThumbDown && parseInt(commentThumbDown).toLocaleString()}
         </LikeNumber>
       </LikeBox>
       <ReplyBox>답글</ReplyBox>

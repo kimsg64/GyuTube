@@ -4,7 +4,7 @@ import UserIcon from "../../../../../contentsComponent/videoBox/videoSummary/vid
 
 const HiddenMenuSubscriptionWrap = styled.div`
   min-height: 371px;
-  padding: 12px 10px;
+  padding: 12px 0;
   display: flex;
   flex-direction: column;
   border-bottom: solid 1px hsl(0, 0%, 80%);
@@ -19,12 +19,12 @@ const HiddenMenuSubscriptionWrap = styled.div`
 
 const TitleWrap = styled.div`
   height: 40px;
-  padding: 8px 12px;
+  padding: 8px 12px 8px 20px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-size: 14px;
-  color: hsl(0, 0%, 50%);
+  color: hsl(0, 0%, 40%);
 `;
 
 const ItemsWrap = styled.div`
@@ -35,7 +35,7 @@ const ItemsWrap = styled.div`
 
 const ItemBar = styled.div`
   height: 40px;
-  padding: 0px 16px;
+  padding: 0px 20px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -50,17 +50,17 @@ const ItemBar = styled.div`
     height: 24px;
     width: 24px;
     font-size: 12px;
-    margin: 0 8px 0 0;
+    margin: 0 16px 0 2px;
   }
   .seeMore {
     padding: 0px 12px;
   }
   :hover {
     cursor: pointer;
-    background-color: hsl(0, 0%, 90%);
+    background-color: var(--hover-bg-color);
   }
   :active {
-    background-color: hsl(0, 0%, 70%);
+    background-color: var(--active-bg-color);
   }
 `;
 
@@ -100,7 +100,8 @@ const HiddenMenuSubscription = () => {
         </ItemBar>
         <ItemBar>
           <UserIcon></UserIcon>
-          <TextBar>규튜브다맨이야</TextBar>
+          <TextBar>구독과좋아요부탁드립니다</TextBar>
+          {/* 10자까지만 표시되므로 9자까지 쓰고 뒤는 ... 으로 변환 */}
         </ItemBar>
         <ItemBar>
           <UserIcon></UserIcon>

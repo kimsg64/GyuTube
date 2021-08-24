@@ -57,9 +57,9 @@ const TitleBox = ({ videoData = {} }) => {
     const today = now.getDate();
 
     // 업로드 날짜
-    const uploadYear = parseInt(videoData.videoUploadDate.split("/")[0]);
-    const uploadMonth = parseInt(videoData.videoUploadDate.split("/")[1]);
-    const uploadDate = parseInt(videoData.videoUploadDate.split("/")[2]);
+    const uploadYear = parseInt(videoData.videoUploadDate.split(".")[0]);
+    const uploadMonth = parseInt(videoData.videoUploadDate.split(".")[1]);
+    const uploadDate = parseInt(videoData.videoUploadDate.split(".")[2]);
 
     const yearGap = thisYear - uploadYear;
     const monthGap = thisMonth - uploadMonth;
@@ -72,9 +72,9 @@ const TitleBox = ({ videoData = {} }) => {
       : `${dateGap}일 `;
   };
 
-  const setTitleLenght = () => {
-    // ???
-  };
+  // ???
+  // const setTitleLenght = () => {
+  // };
 
   return (
     <Link to="/playing">

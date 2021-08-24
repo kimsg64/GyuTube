@@ -13,7 +13,9 @@ const VideoUploaderArticleWrap = styled.div`
     display: none;
   }
   .FullHeight {
-    height: auto;
+    max-height: 100%;
+    overflow: visible;
+    /* height: auto; */
   }
 `;
 

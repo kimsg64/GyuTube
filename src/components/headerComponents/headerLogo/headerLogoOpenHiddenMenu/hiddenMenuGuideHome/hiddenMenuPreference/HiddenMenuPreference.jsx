@@ -21,10 +21,10 @@ const ItemBar = styled.div`
   }
   :hover {
     cursor: pointer;
-    background-color: hsl(0, 0%, 90%);
+    background-color: var(--hover-bg-color);
   }
   :active {
-    background-color: hsl(0, 0%, 70%);
+    background-color: var(--active-bg-color);
   }
 `;
 

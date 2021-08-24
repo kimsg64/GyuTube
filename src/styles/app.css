@@ -1,3 +1,9 @@
+#root {
+  --default-bg-color: hsl(0, 0%, 90%);
+  --hover-bg-color: hsl(0, 0%, 70%);
+  --active-bg-color: hsl(0, 0%, 56%);
+}
+
 html,
 body,
 #root {
@@ -23,7 +29,6 @@ body,
 ::-webkit-scrollbar-track {
   margin: 4px;
   background-color: transparent;
-  /* background-color: hsl(0, 50%, 38%); */
 }
 ::-webkit-scrollbar-thumb {
   background-color: hsl(0, 0%, 38%);

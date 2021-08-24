@@ -6,8 +6,9 @@
       "userId": "kimsg64",
       "commentDate": "2021.05.12",
       "commentContent": "와! 저도 요가를 배우고 싶어요",
-      "commnetThumbUp": "50",
-      "commnetThumbDown": "5"
+      "commentThumbUp": "50",
+      "commentThumbDown": "5",
+      "commentPinned": true
     },
     {
       "commentNo": "0002",
@@ -15,8 +16,9 @@
       "userId": "kimusungyu",
       "commentDate": "2020.09.21",
       "commentContent": "あいつ何やってんねん（笑）",
-      "commnetThumbUp": "382",
-      "commnetThumbDown": "10"
+      "commentThumbUp": "382",
+      "commentThumbDown": "10",
+      "commentPinned": false
     },
     {
       "commentNo": "0004",
@@ -24,8 +26,9 @@
       "userId": "kimusungyu",
       "commentDate": "2020.05.06",
       "commentContent": "ㅉㅉ이게 칡이지 삵이냐?",
-      "commnetThumbUp": "2",
-      "commnetThumbDown": "982317"
+      "commentThumbUp": "2",
+      "commentThumbDown": "982317",
+      "commentPinned": false
     },
     {
       "commentNo": "0005",
@@ -33,8 +36,9 @@
       "userId": "swimmingpool",
       "commentDate": "2020.05.12",
       "commentContent": "삵 맞는데요",
-      "commnetThumbUp": "356",
-      "commnetThumbDown": "1"
+      "commentThumbUp": "356",
+      "commentThumbDown": "1",
+      "commentPinned": false
     },
     {
       "commentNo": "0006",
@@ -42,8 +46,9 @@
       "userId": "kimusungyu",
       "commentDate": "2021.01.14",
       "commentContent": "また行きたいっすねー",
-      "commnetThumbUp": "5",
-      "commnetThumbDown": ""
+      "commentThumbUp": "5",
+      "commentThumbDown": "",
+      "commentPinned": true
     },
     {
       "commentNo": "0007",
@@ -51,8 +56,9 @@
       "userId": "swimmingpool",
       "commentDate": "2021.04.04",
       "commentContent": "BTS brought me here!!!😍",
-      "commnetThumbUp": "28121",
-      "commnetThumbDown": ""
+      "commentThumbUp": "28121",
+      "commentThumbDown": "",
+      "commentPinned": false
     },
     {
       "commentNo": "0008",
@@ -60,8 +66,9 @@
       "userId": "sunchan",
       "commentDate": "2021.05.04",
       "commentContent": "こいつ誰？",
-      "commnetThumbUp": "1",
-      "commnetThumbDown": "321"
+      "commentThumbUp": "1",
+      "commentThumbDown": "321",
+      "commentPinned": false
     },
     {
       "commentNo": "0009",
@@ -69,8 +76,9 @@
       "userId": "kimusungyu",
       "commentDate": "2020.09.09",
       "commentContent": "2020년 미래에서 왔습니다.",
-      "commnetThumbUp": "592",
-      "commnetThumbDown": ""
+      "commentThumbUp": "592",
+      "commentThumbDown": "",
+      "commentPinned": false
     },
     {
       "commentNo": "0010",
@@ -78,8 +86,9 @@
       "userId": "swimmingpool",
       "commentDate": "2021.01.24",
       "commentContent": "찢.었.다.",
-      "commnetThumbUp": "23311",
-      "commnetThumbDown": ""
+      "commentThumbUp": "23311",
+      "commentThumbDown": "",
+      "commentPinned": true
     }
   ]
 }
