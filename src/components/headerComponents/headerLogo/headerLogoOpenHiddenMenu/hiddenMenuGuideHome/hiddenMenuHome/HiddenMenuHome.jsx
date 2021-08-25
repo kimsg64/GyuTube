@@ -22,7 +22,15 @@ const ItemBar = styled.div`
     cursor: pointer;
     background-color: var(--hover-bg-color);
   }
+  :hover .selected,
+  :hover .fas {
+    background-color: var(--hover-bg-color);
+  }
   :active {
+    background-color: var(--active-bg-color);
+  }
+  :active .selected,
+  :active .fas {
     background-color: var(--active-bg-color);
   }
 `;

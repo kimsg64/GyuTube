@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const HeaderSearchMicWrap = styled.div`
@@ -18,30 +18,16 @@ const HeaderSearchMicWrap = styled.div`
   :active {
     background-color: var(--hover-bg-color);
   }
+  :hover .globalBlackExplanation {
+    display: block;
+  }
 `;
 
 const HeaderSearchMic = () => {
-  const [willBeShown, setWillBeShown] = useState(false);
-  const showBlackExplanation = () => {
-    setWillBeShown(true);
-  };
-  const hideBlackExplanation = () => {
-    setWillBeShown(false);
-  };
   return (
-    <HeaderSearchMicWrap
-      className="globalIconBtn"
-      onMouseEnter={showBlackExplanation}
-      onMouseLeave={hideBlackExplanation}
-    >
+    <HeaderSearchMicWrap className="globalIconBtn">
       <i className="fas fa-microphone"></i>
-      <div
-        className={`globalBlackExplanation ${
-          willBeShown ? "display__on" : "display__off"
-        }`}
-      >
-        음성으로 검색
-      </div>
+      <div className="globalBlackExplanation">음성으로 검색</div>
     </HeaderSearchMicWrap>
   );
 };

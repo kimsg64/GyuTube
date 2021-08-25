@@ -20,10 +20,7 @@ const VideoBox = ({ videoData = {} }) => {
   return (
     <VideoBoxWrap>
       {videoData.map((video) => {
-        return (
-          // <VideoSummary key={video.videoNo} videoTitle={video.videoTitle} />
-          <VideoSummary key={video.videoNo} video={video} />
-        );
+        return <VideoSummary key={video.videoNo} video={video} />;
       })}
     </VideoBoxWrap>
   );

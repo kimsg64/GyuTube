@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import HeaderSearchBtn from "./headerSearchBtn/HeaderSearchBtn";
 import HeaderSearchKeyboard from "./headerSearchKeyboard/HeaderSearchKeyboard";
@@ -25,10 +25,26 @@ const HeaderSearchFormBar = styled.div`
 `;
 
 const HeaderSearchForm = () => {
+  const [value, setValue] = useState("");
+
+  const onChangeInput = (e) => {
+    setValue(e.target.value);
+  };
+
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+    console.log(e.target.value);
+  };
   return (
     <HeaderSearchFormWrap>
       <HeaderSearchFormBar>
-        <input placeholder="검색" className="search_input" />
+        <input
+          placeholder="검색"
+          className="search_input"
+          value={value}
+          onChange={onChangeInput}
+          onSubmit={onSubmitForm}
+        />
         <HeaderSearchKeyboard />
       </HeaderSearchFormBar>
       <HeaderSearchBtn />

@@ -6,12 +6,15 @@ const TitleBoxWrap = styled.div`
   overflow: hidden;
   padding-right: 24px;
   h3 {
+    width: calc(100% - 48px - 24px);
     height: 40px;
     margin: 12px 0 4px 0;
     font-size: 14px;
     font-weight: normal;
     color: black;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   div {
     /* div 나눠서 부모만 height: 36px */

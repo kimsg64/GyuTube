@@ -25,17 +25,17 @@ const GlobalStyle = createGlobalStyle`
 
 
     /* 선택됐을 때(디폴트) */
-  .selected:nth-child(n),
-  .selected {
+  .selected,
+  .selected > * {
     color: red;
     background-color: var(--default-bg-color);
   }
-  .selected:hover i,
-  .selected:hover {
+  .selected:hover,
+  .selected:hover > * {
     background-color: var(--hover-bg-color);
   }
-  .selected:active i,
-  .selected:active {
+  .selected:active,
+  .selected:active > * {
     background-color: var(--active-bg-color);
   }
 

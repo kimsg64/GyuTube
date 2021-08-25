@@ -12,13 +12,13 @@ const NavigatorHomeWrap = styled.div`
     margin-top: 6px;
     font-size: 10px;
   }
-  background-color: inherit;
+  /* background-color: inherit;
   :hover {
     background-color: var(--hover-bg-color);
   }
   :active {
     background-color: var(--active-bg-color);
-  }
+  } */
 `;
 
 const NavigatorHome = () => {

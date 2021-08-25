@@ -8,6 +8,11 @@ import VideoComments from "../playingPage/primaryComponents/videoComments/VideoC
 import NextVideoList from "../playingPage/asideComponents/NextVideoList";
 import VideoData from "../../DB/VideoData.json";
 
+const StyledPage = styled.div`
+  position: absolute;
+  width: 100%;
+`;
+
 const StyledColumnsWrap = styled.div`
   top: 56px;
   width: calc(100vw - 56px - 60px);
@@ -54,7 +59,7 @@ const Playing = ({ match = {} }) => {
   );
 
   return (
-    <>
+    <StyledPage>
       <Header />
       <StyledColumnsWrap>
         <PrimaryWrap>
@@ -81,10 +86,9 @@ const Playing = ({ match = {} }) => {
 
           <VideoComments willBeSent={willBeSent} />
         </PrimaryWrap>
-        {/* aside */}
         <NextVideoList />
       </StyledColumnsWrap>
-    </>
+    </StyledPage>
   );
 };
 

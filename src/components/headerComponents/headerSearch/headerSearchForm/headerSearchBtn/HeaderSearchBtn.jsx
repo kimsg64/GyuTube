@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const StyledBtn = styled.button`
@@ -14,36 +14,20 @@ const StyledBtn = styled.button`
       color: black;
     }
   }
+  :hover .globalBlackExplanation {
+    display: block;
+  }
   .fa-search {
     font-size: 16px;
     color: hsl(0, 0%, 38%);
   }
-  .globalBlackExplanation {
-    /* 좌우 이동...??? */
-  }
 `;
 
 const HeaderSearchBtn = () => {
-  const [willBeShown, setWillBeShown] = useState(false);
-  const showBlackExplanation = () => {
-    setWillBeShown(true);
-  };
-  const hideBlackExplanation = () => {
-    setWillBeShown(false);
-  };
   return (
-    <StyledBtn
-      onMouseEnter={showBlackExplanation}
-      onMouseLeave={hideBlackExplanation}
-    >
+    <StyledBtn>
       <i className="fas fa-search"></i>
-      <div
-        className={`globalBlackExplanation ${
-          willBeShown ? "display__on" : "display__off"
-        }`}
-      >
-        검색
-      </div>
+      <div className="globalBlackExplanation">검색</div>
     </StyledBtn>
   );
 };

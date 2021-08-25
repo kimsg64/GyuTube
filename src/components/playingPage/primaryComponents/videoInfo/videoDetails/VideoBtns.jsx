@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import ReportAndScripts from "./reportAndScripts/ReportAndScripts";
 
@@ -19,6 +19,10 @@ const BtnWrap = styled.div`
   align-items: center;
   :hover {
     cursor: pointer;
+  }
+  :hover .globalBlackExplanation {
+    display: block;
+    left: 10px;
   }
 `;
 
@@ -42,18 +46,6 @@ const LikeLine = styled.span`
 `;
 
 const VideoBtns = ({ videoThumbUp = "", videoThumbDown = "" }) => {
-  const [willBeShown, setWillBeShown] = useState(false);
-  // 이벤트가 undefined...
-  const showBlackExplanation = (e) => {
-    console.log(e.target.value);
-    console.log(this);
-    setWillBeShown(true);
-  };
-  const hideBlackExplanation = (e) => {
-    console.log(e.target.value);
-    console.log(this);
-    setWillBeShown(false);
-  };
   const setNumFormat = (number) => {
     const num = parseInt(number);
     if (num < 1000) {
@@ -70,69 +62,37 @@ const VideoBtns = ({ videoThumbUp = "", videoThumbDown = "" }) => {
   return (
     <VideoBtnsWrap>
       <BtnsBox>
-        <BtnWrap
-          onMouseEnter={showBlackExplanation}
-          onMouseLeave={hideBlackExplanation}
-        >
-          <IconsWrap className="globalIconBtn">
-            <i className="fas fa-thumbs-up"></i>
-            <div
-              className={`globalBlackExplanation ${
-                willBeShown ? "display__on" : "display__off"
-              }`}
-            >
+        <BtnWrap>
+          <IconsWrap className="globalIconBtn ">
+            <i className="fas fa-thumbs-up "></i>
+            <div className="globalBlackExplanation">
               이 동영상이 마음에 듭니다.
             </div>
             <LikeLine />
           </IconsWrap>
           <div>{setNumFormat(videoThumbUp)}</div>
         </BtnWrap>
-        <BtnWrap
-          onMouseEnter={showBlackExplanation}
-          onMouseLeave={hideBlackExplanation}
-        >
-          <IconsWrap className="globalIconBtn">
-            <i className="fas fa-thumbs-down"></i>
-            <div
-              className={`globalBlackExplanation ${
-                willBeShown ? "display__on" : "display__off"
-              }`}
-            >
+        <BtnWrap>
+          <IconsWrap className="globalIconBtn ">
+            <i className="fas fa-thumbs-down "></i>
+            <div className="globalBlackExplanation">
               이 동영상이 마음에 들지 않습니다.
             </div>
             <LikeLine />
           </IconsWrap>
           <div>{setNumFormat(videoThumbDown)}</div>
         </BtnWrap>
-        <BtnWrap
-          onMouseEnter={showBlackExplanation}
-          onMouseLeave={hideBlackExplanation}
-        >
-          <IconsWrap className="globalIconBtn">
-            <i className="fas fa-share"></i>
-            <div
-              className={`globalBlackExplanation ${
-                willBeShown ? "display__on" : "display__off"
-              }`}
-            >
-              공유
-            </div>
+        <BtnWrap>
+          <IconsWrap className="globalIconBtn ">
+            <i className="fas fa-share "></i>
+            <div className="globalBlackExplanation">공유</div>
           </IconsWrap>
-          <div>공유</div>
+          <div className="">공유</div>
         </BtnWrap>
-        <BtnWrap
-          onMouseEnter={showBlackExplanation}
-          onMouseLeave={hideBlackExplanation}
-        >
+        <BtnWrap>
           <IconsWrap className="globalIconBtn">
             <i className="fas fa-plus-square"></i>
-            <div
-              className={`globalBlackExplanation ${
-                willBeShown ? "display__on" : "display__off"
-              }`}
-            >
-              저장
-            </div>
+            <div className="globalBlackExplanation">저장</div>
           </IconsWrap>
           <div>저장</div>
         </BtnWrap>

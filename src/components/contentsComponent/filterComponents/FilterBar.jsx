@@ -20,6 +20,11 @@ const FilterBarWrap = styled.div`
   .first {
     margin: 12px 12px 12px 24px;
   }
+  .selected_filter,
+  .selected_filter:hover {
+    background-color: black;
+    color: white;
+  }
 `;
 
 const ArrowWrap = styled.div`

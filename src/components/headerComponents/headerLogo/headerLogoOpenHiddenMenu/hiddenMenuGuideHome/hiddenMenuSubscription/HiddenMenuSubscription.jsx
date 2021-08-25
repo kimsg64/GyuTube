@@ -71,6 +71,9 @@ const TextBar = styled.div`
   align-items: center;
   font-size: 13px;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const ArrowWrap = styled.div`
@@ -101,7 +104,6 @@ const HiddenMenuSubscription = () => {
         <ItemBar>
           <UserIcon></UserIcon>
           <TextBar>구독과좋아요부탁드립니다</TextBar>
-          {/* 10자까지만 표시되므로 9자까지 쓰고 뒤는 ... 으로 변환 */}
         </ItemBar>
         <ItemBar>
           <UserIcon></UserIcon>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const BtnsWrap = styled.div`
@@ -14,18 +14,31 @@ const StyledBtn = styled.button`
   border-radius: 16px;
   min-width: 52.67px;
   flex-shrink: 0;
-  /* width > 반응형, 글자 수를 받아와서 그만큼 넓히기 ? n rem(글자수) + 24px(패딩) */
+  :hover {
+    cursor: pointer;
+    background-color: var(--default-bg-color);
+  }
+  :active {
+    transition-duration: 0.2s;
+    background-color: black;
+    color: white;
+  }
 `;
 
 const FilterBtns = () => {
+  const [isSelected, setIsSelected] = useState(false);
+  const onClickBtn = () => {
+    setIsSelected(true);
+  };
   return (
     <BtnsWrap>
-      <StyledBtn className="first">전체</StyledBtn>
+      <StyledBtn className="first selected_filter">전체</StyledBtn>
       <StyledBtn>농구</StyledBtn>
       <StyledBtn>요리 프로그램</StyledBtn>
       <StyledBtn>음악</StyledBtn>
       <StyledBtn>믹스</StyledBtn>
       <StyledBtn>피트니스</StyledBtn>
+      <StyledBtn>실시간</StyledBtn>
       <StyledBtn>스포츠 비디오 게임</StyledBtn>
       <StyledBtn>배구</StyledBtn>
       <StyledBtn>침착맨</StyledBtn>

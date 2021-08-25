@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const IconsWrap = styled.div`
@@ -24,6 +24,9 @@ const LikeIcon = styled.div`
   position: relative;
   .globalBlackExplanation {
     white-space: nowrap;
+  }
+  :hover .globalBlackExplanation {
+    display: block;
   }
   .fas {
     color: hsl(0, 0%, 56%);
@@ -51,30 +54,12 @@ const ReplyBox = styled.div`
 `;
 
 const CommentLikeBtns = ({ commentThumbUp = "", commentThumbDown = "" }) => {
-  const [willBeShown, setWillBeShown] = useState(false);
-  const showBlackExplanation = () => {
-    setWillBeShown(true);
-  };
-  const hideBlackExplanation = () => {
-    setWillBeShown(false);
-  };
-
   return (
     <IconsWrap>
       <LikeBox>
-        <LikeIcon
-          className="globalIconBtn"
-          onMouseEnter={showBlackExplanation}
-          onMouseLeave={hideBlackExplanation}
-        >
+        <LikeIcon className="globalIconBtn">
           <i className="fas fa-thumbs-up"></i>
-          <div
-            className={`globalBlackExplanation ${
-              willBeShown ? "display__on" : "display__off"
-            }`}
-          >
-            좋아요
-          </div>
+          <div className="globalBlackExplanation">좋아요</div>
         </LikeIcon>
         <LikeNumber>{parseInt(commentThumbUp).toLocaleString()}</LikeNumber>
       </LikeBox>
