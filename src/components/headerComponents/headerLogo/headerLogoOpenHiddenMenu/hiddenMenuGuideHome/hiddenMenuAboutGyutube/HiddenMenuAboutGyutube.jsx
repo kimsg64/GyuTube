@@ -20,83 +20,84 @@ const TitleWrap = styled.div`
   color: hsl(0, 0%, 40%);
 `;
 
-const ItemsWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+// 글로벌 스타일 적용! 필요없다
+// const ItemsWrap = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `;
 
-const ItemBar = styled.div`
-  height: 40px;
-  padding: 0 20px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  :hover {
-    cursor: pointer;
-    background-color: var(--hover-bg-color);
-  }
-  :active {
-    background-color: var(--active-bg-color);
-  }
-`;
+// const ItemBar = styled.div`
+//   height: 40px;
+//   padding: 0 20px;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   :hover {
+//     cursor: pointer;
+//     background-color: var(--hover-bg-color);
+//   }
+//   :active {
+//     background-color: var(--active-bg-color);
+//   }
+// `;
 
-const TextBar = styled.div`
-  width: 144px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 400;
-`;
+// const TextBar = styled.div`
+//   width: 144px;
+//   height: 20px;
+//   display: flex;
+//   align-items: center;
+//   font-size: 14px;
+//   font-weight: 400;
+// `;
 
-const IconWrap = styled.div`
-  width: 30px;
-  height: 30px;
-  margin-right: 18px;
-`;
+// const div = styled.div`
+//   width: 30px;
+//   height: 30px;
+//   margin-right: 18px;
+// `;
 
 const HiddenMenuAboutGyutube = () => {
   return (
     <HiddenMenuAboutGyutubeWrap>
       <TitleWrap>GyuTube 더보기</TitleWrap>
-      <ItemsWrap>
-        <ItemBar>
-          <IconWrap className="globalIconBtnRect">
+      <div className="globalItemsWrap">
+        <div className="globalItemBar">
+          <div className="globalIconBtnRect globalIconWrap">
             <i className="fab fa-youtube"></i>
-          </IconWrap>
-          <TextBar>GyuTube Premium</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <IconWrap className="globalIconBtnRect">
+          </div>
+          <div className="globalTextBar">GyuTube Premium</div>
+        </div>
+        <div className="globalItemBar">
+          <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-film"></i>
-          </IconWrap>
-          <TextBar>영화</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <IconWrap className="globalIconBtnRect">
+          </div>
+          <div className="globalTextBar">영화</div>
+        </div>
+        <div className="globalItemBar">
+          <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-gamepad"></i>
-          </IconWrap>
-          <TextBar>게임</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <IconWrap className="globalIconBtnRect">
+          </div>
+          <div className="globalTextBar">게임</div>
+        </div>
+        <div className="globalItemBar">
+          <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-podcast"></i>
-          </IconWrap>
-          <TextBar>실시간</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <IconWrap className="globalIconBtnRect">
+          </div>
+          <div className="globalTextBar">실시간</div>
+        </div>
+        <div className="globalItemBar">
+          <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-lightbulb"></i>
-          </IconWrap>
-          <TextBar>학습</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <IconWrap className="globalIconBtnRect">
+          </div>
+          <div className="globalTextBar">학습</div>
+        </div>
+        <div className="globalItemBar">
+          <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-trophy"></i>
-          </IconWrap>
-          <TextBar>스포츠</TextBar>
-        </ItemBar>
-      </ItemsWrap>
+          </div>
+          <div className="globalTextBar">스포츠</div>
+        </div>
+      </div>
     </HiddenMenuAboutGyutubeWrap>
   );
 };

@@ -89,6 +89,26 @@
       "commentThumbUp": "23311",
       "commentThumbDown": "",
       "commentPinned": true
+    },
+    {
+      "commentNo": "0011",
+      "videoNo": "1008",
+      "userId": "kimusungyu",
+      "commentDate": "2018.05.25",
+      "commentContent": "また来ましょう",
+      "commentThumbUp": "2",
+      "commentThumbDown": "",
+      "commentPinned": false
+    },
+    {
+      "commentNo": "0012",
+      "videoNo": "1008",
+      "userId": "sunchan",
+      "commentDate": "2018.05.24",
+      "commentContent": "きれいやんか",
+      "commentThumbUp": "88",
+      "commentThumbDown": "2",
+      "commentPinned": false
     }
   ]
 }

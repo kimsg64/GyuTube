@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import HeaderUserInfoDetails from "./headerUserInfoDetails/HeaderUserInfoDetails";
+import HeaderUserInfoIcon from "./HeaderUserInfoIcon";
 
 const HeaderUserInfoWrap = styled.div`
   width: 60px;
@@ -9,28 +11,21 @@ const HeaderUserInfoWrap = styled.div`
   align-items: center;
 `;
 
-const HeaderUserInfoCircle = styled.div`
-  /* 개인정보 창 */
-  width: calc(36px - 0px);
-  height: calc(36px - 4px);
-  padding-bottom: 4px;
-  border-radius: 100%;
-  background-color: hsl(17, 18%, 47%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  :hover {
-    cursor: pointer;
-  }
-`;
-
 const HeaderUserInfo = () => {
+  const [willBeShown, setWillBeShown] = useState(false);
+
   return (
-    <HeaderUserInfoWrap>
-      {/* 서버 연결 후 로그인 ID로 바꾸기 */}
-      <HeaderUserInfoCircle className="usericon">Gyu</HeaderUserInfoCircle>
-    </HeaderUserInfoWrap>
+    <>
+      <HeaderUserInfoWrap>
+        {/* 서버 연결 후 로그인 ID로 바꾸기 */}
+
+        <HeaderUserInfoIcon
+          willBeShown={willBeShown}
+          setWillBeShown={setWillBeShown}
+        />
+      </HeaderUserInfoWrap>
+      <HeaderUserInfoDetails willBeShown={willBeShown} />
+    </>
   );
 };
 

@@ -10,23 +10,23 @@ const HiddenMenuPreferenceWrap = styled.div`
   justify-content: space-evenly;
 `;
 
-const ItemBar = styled.div`
-  height: 40px;
-  padding: 0 20px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  .text {
-    display: none;
-  }
-  :hover {
-    cursor: pointer;
-    background-color: var(--hover-bg-color);
-  }
-  :active {
-    background-color: var(--active-bg-color);
-  }
-`;
+// const ItemBar = styled.div`
+//   height: 40px;
+//   padding: 0 20px;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   .text {
+//     display: none;
+//   }
+//   :hover {
+//     cursor: pointer;
+//     background-color: var(--hover-bg-color);
+//   }
+//   :active {
+//     background-color: var(--active-bg-color);
+//   }
+// `;
 
 const TextBar = styled.div`
   width: 144px;
@@ -50,36 +50,36 @@ const IconWrap = styled.div`
 const HiddenMenuPreference = () => {
   return (
     <HiddenMenuPreferenceWrap>
-      <ItemBar>
-        <IconWrap className="globalIconBtnRect">
+      <div className="globalItemBar">
+        <div className="globalIconBtnRect globalIconWrap">
           <i className="fas fa-clone"></i>
-        </IconWrap>
-        <TextBar>보관함</TextBar>
-      </ItemBar>
-      <ItemBar>
-        <IconWrap className="globalIconBtnRect">
+        </div>
+        <div className="globalTextBar">보관함</div>
+      </div>
+      <div className="globalItemBar">
+        <div className="globalIconBtnRect globalIconWrap">
           <i className="fas fa-history"></i>
-        </IconWrap>
-        <TextBar>시청 기록</TextBar>
-      </ItemBar>
-      <ItemBar>
-        <IconWrap className="globalIconBtnRect">
+        </div>
+        <div className="globalTextBar">시청 기록</div>
+      </div>
+      <div className="globalItemBar">
+        <div className="globalIconBtnRect globalIconWrap">
           <i className="far fa-play-circle"></i>
-        </IconWrap>
-        <TextBar>내 동영상</TextBar>
-      </ItemBar>
-      <ItemBar>
-        <IconWrap className="globalIconBtnRect">
+        </div>
+        <div className="globalTextBar">내 동영상</div>
+      </div>
+      <div className="globalItemBar">
+        <div className="globalIconBtnRect globalIconWrap">
           <i className="fas fa-clock"></i>
-        </IconWrap>
-        <TextBar>나중에 볼 동영상</TextBar>
-      </ItemBar>
-      <ItemBar>
-        <IconWrap className="globalIconBtnRect">
+        </div>
+        <div className="globalTextBar">나중에 볼 동영상</div>
+      </div>
+      <div className="globalItemBar">
+        <div className="globalIconBtnRect globalIconWrap">
           <i className="fas fa-thumbs-up"></i>
-        </IconWrap>
-        <TextBar>좋아요 표시한 동영상</TextBar>
-      </ItemBar>
+        </div>
+        <div className="globalTextBar">좋아요 표시한 동영상</div>
+      </div>
     </HiddenMenuPreferenceWrap>
   );
 };
