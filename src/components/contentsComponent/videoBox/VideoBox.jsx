@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const VideoBoxWrap = styled.ul`
   margin-top: 24px;
-  max-width: 88vw;
+  width: inherit;
   /* 너비를 변수화해서 계산해야 반응형으로 설정할 수 있을 듯... */
   /* width: calc(100%-32px); */
   /* max-width: calc(5 * 360 + 16) px; */

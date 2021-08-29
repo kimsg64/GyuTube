@@ -28,24 +28,24 @@ const HiddenMenuPreferenceWrap = styled.div`
 //   }
 // `;
 
-const TextBar = styled.div`
-  width: 144px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 400;
-`;
+// const TextBar = styled.div`
+//   width: 144px;
+//   height: 20px;
+//   display: flex;
+//   align-items: center;
+//   font-size: 14px;
+//   font-weight: 400;
+// `;
 
-const IconWrap = styled.div`
-  width: 30px;
-  height: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-right: 18px;
-`;
+// const IconWrap = styled.div`
+//   width: 30px;
+//   height: 30px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   margin-right: 18px;
+// `;
 
 const HiddenMenuPreference = () => {
   return (

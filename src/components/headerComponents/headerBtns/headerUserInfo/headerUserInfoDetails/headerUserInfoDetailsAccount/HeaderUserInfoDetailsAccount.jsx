@@ -30,11 +30,14 @@ const HeaderUserInfoDetailsAccount = () => {
         </div>
         <div className="globalTextBar">GyuTube 스튜디오</div>
       </div>
-      <div className="globalItemBar">
+      <div className="globalItemBar  with_arrow">
         <div className="globalIconBtn globalIconWrap">
           <i className="fas fa-sync-alt"></i>
         </div>
         <div className="globalTextBar">계정 전환</div>
+        <div className="arrow">
+          <i className="fas fa-chevron-right"></i>
+        </div>
       </div>
       <div className="globalItemBar">
         <div className="globalIconBtn globalIconWrap">

@@ -21,7 +21,10 @@ const HeaderUserInfoCircle = styled.div`
   }
 `;
 
-const HeaderUserInfoIcon = ({ willBeShown, setWillBeShown }) => {
+const HeaderUserInfoIcon = ({
+  willBeShown = false,
+  setWillBeShown = () => {},
+}) => {
   const onClickBtn = () => {
     setWillBeShown(!willBeShown);
   };

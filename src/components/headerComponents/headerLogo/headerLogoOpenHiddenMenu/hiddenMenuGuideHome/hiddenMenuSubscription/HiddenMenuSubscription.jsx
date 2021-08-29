@@ -52,7 +52,7 @@ const ItemBar = styled.div`
     font-size: 12px;
     margin: 0 16px 0 2px;
   }
-  .seeMore {
+  .moreOrLess {
     padding: 0px 12px;
   }
   :hover {
@@ -84,14 +84,16 @@ const ArrowWrap = styled.div`
 
 const HiddenMenuSubscription = () => {
   const [fullHeight, setFullHeight] = useState("min");
+  const [showMore, setShowMore] = useState(false);
 
-  const onClickMore = (e) => {
+  const onClickMore = () => {
     if (fullHeight === "full") {
       setFullHeight("min");
     } else {
       setFullHeight("full");
     }
-    console.log(fullHeight);
+    // console.log(fullHeight);
+    setShowMore(!showMore);
   };
   return (
     <HiddenMenuSubscriptionWrap>
@@ -134,11 +136,13 @@ const HiddenMenuSubscription = () => {
           <TextBar>너는숨겨질것이야</TextBar>
         </ItemBar>
       </ItemsWrap>
-      <ItemBar onClick={onClickMore} className="seeMore">
+      <ItemBar onClick={onClickMore} className="moreOrLess">
         <ArrowWrap className="globalIconBtnRect">
-          <i className="fas fa-chevron-down"></i>
+          <i
+            className={showMore ? "fas fa-chevron-up" : "fas fa-chevron-down"}
+          ></i>
         </ArrowWrap>
-        <TextBar>100개 더보기</TextBar>
+        <TextBar>{showMore ? "간략히 보기" : "100개 더보기"}</TextBar>
       </ItemBar>
     </HiddenMenuSubscriptionWrap>
   );

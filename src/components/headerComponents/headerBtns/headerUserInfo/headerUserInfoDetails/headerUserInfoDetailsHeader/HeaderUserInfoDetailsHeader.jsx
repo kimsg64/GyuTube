@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import HeaderUserInfoIcon from "../../HeaderUserInfoIcon";
 
@@ -28,14 +28,9 @@ const UserAccount = styled.a`
 `;
 
 const HeaderUserInfoDetailsHeader = () => {
-  const [willBeShown, setWillBeShown] = useState(false);
-
   return (
     <HeaderUserInfoDetailsHeaderWrap>
-      <HeaderUserInfoIcon
-        willBeShown={willBeShown}
-        setWillBeShown={setWillBeShown}
-      />
+      <HeaderUserInfoIcon />
       <ManagingAccountBox>
         <UserNameBox>김승규</UserNameBox>
         <UserAccount>Gyugle 계정 관리</UserAccount>

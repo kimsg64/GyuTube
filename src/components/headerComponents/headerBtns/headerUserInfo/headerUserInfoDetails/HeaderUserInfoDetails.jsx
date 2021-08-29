@@ -27,14 +27,33 @@ const HeaderUserInfoDetailsWrap = styled.div`
   .globalItemBar {
     padding: 0 36px 0 16px;
   }
+  .with_arrow {
+    padding-right: 20px;
+  }
   .globalIconBtn {
-    font-size: 24px;
+    font-size: 22px;
     margin-right: 16px;
+  }
+  .globalIconBtn:active {
+    background-color: var(--active-bg-color);
   }
   .globalTextBar {
     width: 206px;
     font-size: 14px;
   }
+  .arrow {
+    font-size: 18px;
+    color: hsl(0, 0%, 38%);
+  }
+  .mode {
+    margin-right: 56px;
+  }
+`;
+
+const HeaderUserInfoDetailsItemsWrap = styled.div`
+  max-height: 611px;
+  height: calc(100vh - 56px - 83px);
+  overflow-y: scroll;
 `;
 
 const HeaderUserInfoDetails = ({ willBeShown }) => {
@@ -43,9 +62,11 @@ const HeaderUserInfoDetails = ({ willBeShown }) => {
       className={willBeShown ? "display__on" : "display__off"}
     >
       <HeaderUserInfoDetailsHeader />
-      <HeaderUserInfoDetailsAccount />
-      <HeaderUserInfoDetailsSettings />
-      <HeaderUserInfoDetailsMode />
+      <HeaderUserInfoDetailsItemsWrap>
+        <HeaderUserInfoDetailsAccount />
+        <HeaderUserInfoDetailsSettings />
+        <HeaderUserInfoDetailsMode />
+      </HeaderUserInfoDetailsItemsWrap>
     </HeaderUserInfoDetailsWrap>
   );
 };

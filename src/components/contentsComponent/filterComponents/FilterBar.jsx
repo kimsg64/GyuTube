@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import FilterBtns from "./filterBtns/FilterBtns";
 
 const FilterBarWrap = styled.div`
-  width: 100%;
+  width: inherit;
   height: 56px;
   position: fixed;
   top: 0;
@@ -17,6 +17,7 @@ const FilterBarWrap = styled.div`
   background-color: white;
   overflow: hidden;
   box-sizing: border-box;
+
   .first {
     margin: 12px 12px 12px 24px;
   }
@@ -28,30 +29,76 @@ const FilterBarWrap = styled.div`
 `;
 
 const ArrowWrap = styled.div`
-  height: 36px;
-  width: 36px;
-  border-radius: 100%;
+  height: 56px;
+  width: 56px;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
+
   .fas {
     font-size: 10px;
   }
-  :active {
-    background-color: hsl(0, 0%, 80%);
+  div {
+    height: 36px;
+    width: 36px;
   }
 `;
+let time = 0;
 
 const FilterBar = () => {
+  const filterBarRef = useRef();
+
+  const onClickLeftArrow = () => {
+    console.log(filterBarRef.current.className);
+    const filterBarStyle = filterBarRef.current.style;
+    if (time === 2) {
+      filterBarStyle.setProperty("transform", "translateX(0)");
+    } else if (time === 4) {
+      filterBarStyle.setProperty("transform", "translateX(-20%)");
+      time = 2;
+    } else if (time === 6) {
+      filterBarStyle.setProperty("transform", "translateX(-40%)");
+      time = 4;
+    } else if (time === 8) {
+      filterBarStyle.setProperty("transform", "translateX(-60%)");
+      time = 6;
+    }
+    console.log(time);
+  };
+
+  const onClickRightArrow = () => {
+    console.log(filterBarRef.current.className);
+    const filterBarStyle = filterBarRef.current.style;
+    if (time === 0) {
+      filterBarStyle.setProperty("transform", "translateX(-20%)");
+      time = 2;
+    } else if (time === 2) {
+      filterBarStyle.setProperty("transform", "translateX(-40%)");
+      time = 4;
+    } else if (time === 4) {
+      filterBarStyle.setProperty("transform", "translateX(-60%)");
+      time = 6;
+    } else if (time === 6) {
+      filterBarStyle.setProperty("transform", "translateX(-80%)");
+      time = 8;
+    }
+    console.log(time);
+  };
+
   return (
     <FilterBarWrap>
-      <ArrowWrap className="globalIconBtnRect">
-        <i className="fas fa-chevron-left"></i>
+      <ArrowWrap onClick={onClickLeftArrow}>
+        <div className="globalIconBtn">
+          <i className="fas fa-chevron-left"></i>
+        </div>
       </ArrowWrap>
-      <FilterBtns></FilterBtns>
-      <ArrowWrap className="globalIconBtnRect">
-        <i className="fas fa-chevron-right"></i>
+      <FilterBtns ref={filterBarRef} />
+      <ArrowWrap onClick={onClickRightArrow}>
+        <div className="globalIconBtn">
+          <i className="fas fa-chevron-right"></i>
+        </div>
       </ArrowWrap>
     </FilterBarWrap>
   );
