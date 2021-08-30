@@ -47,34 +47,77 @@ const HiddenMenuPreferenceWrap = styled.div`
 //   margin-right: 18px;
 // `;
 
-const HiddenMenuPreference = () => {
+const HiddenMenuPreference = ({
+  isSelected = "Home",
+  setIsSelected = () => {},
+}) => {
+  const onClickStorage = () => {
+    setIsSelected("Storage");
+  };
+  const onClickRecord = () => {
+    setIsSelected("Record");
+  };
+  const onClickMyVideo = () => {
+    setIsSelected("MyVideo");
+  };
+  const onClickKeepVideo = () => {
+    setIsSelected("KeepVideo");
+  };
+  const onClickThumbsUpVideo = () => {
+    setIsSelected("ThumbsUpVideo");
+  };
   return (
     <HiddenMenuPreferenceWrap>
-      <div className="globalItemBar">
+      <div
+        className={`${
+          isSelected === "Storage" ? "selected" : null
+        } globalItemBar`}
+        onClick={onClickStorage}
+      >
         <div className="globalIconBtnRect globalIconWrap">
           <i className="fas fa-clone"></i>
         </div>
         <div className="globalTextBar">보관함</div>
       </div>
-      <div className="globalItemBar">
+      <div
+        className={`${
+          isSelected === "Record" ? "selected" : null
+        } globalItemBar`}
+        onClick={onClickRecord}
+      >
         <div className="globalIconBtnRect globalIconWrap">
           <i className="fas fa-history"></i>
         </div>
         <div className="globalTextBar">시청 기록</div>
       </div>
-      <div className="globalItemBar">
+      <div
+        className={`${
+          isSelected === "MyVideo" ? "selected" : null
+        } globalItemBar`}
+        onClick={onClickMyVideo}
+      >
         <div className="globalIconBtnRect globalIconWrap">
           <i className="far fa-play-circle"></i>
         </div>
         <div className="globalTextBar">내 동영상</div>
       </div>
-      <div className="globalItemBar">
+      <div
+        className={`${
+          isSelected === "KeepVideo" ? "selected" : null
+        } globalItemBar`}
+        onClick={onClickKeepVideo}
+      >
         <div className="globalIconBtnRect globalIconWrap">
           <i className="fas fa-clock"></i>
         </div>
         <div className="globalTextBar">나중에 볼 동영상</div>
       </div>
-      <div className="globalItemBar">
+      <div
+        className={`${
+          isSelected === "ThumbsUpVideo" ? "selected" : null
+        } globalItemBar`}
+        onClick={onClickThumbsUpVideo}
+      >
         <div className="globalIconBtnRect globalIconWrap">
           <i className="fas fa-thumbs-up"></i>
         </div>

@@ -15,9 +15,20 @@ const NavigatorSubscriptionWrap = styled.div`
   }
 `;
 
-const NavigatorSubscription = () => {
+const NavigatorSubscription = ({
+  isSelected = "Home",
+  setIsSelected = () => {},
+}) => {
+  const onClickSubscription = () => {
+    setIsSelected("Subscription");
+  };
   return (
-    <NavigatorSubscriptionWrap className="globalIconBtnRect">
+    <NavigatorSubscriptionWrap
+      className={`globalIconBtnRect ${
+        isSelected === "Subscription" ? "selected" : null
+      }`}
+      onClick={onClickSubscription}
+    >
       <i className="fas fa-layer-group"></i>
       <div className="text">구독</div>
     </NavigatorSubscriptionWrap>

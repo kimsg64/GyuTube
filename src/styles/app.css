@@ -47,6 +47,14 @@ body,
 a {
   text-decoration: none;
   color: hsl(0, 0%, 38%);
+  width: 100%;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* 메인 페이지 */

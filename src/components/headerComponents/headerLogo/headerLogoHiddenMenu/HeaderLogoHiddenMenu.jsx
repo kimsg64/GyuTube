@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import HeaderLogoMainLogo from "../headerLogoMainLogo/HeaderLogoMainLogo";
 import HeaderLogoOpenMenu from "../headerLogoOpenMenu/HeaderLogoOpenMenu";
@@ -25,10 +25,11 @@ const HiddenMenuWrap = styled.div`
 const BlackArea = styled.div`
   position: absolute;
   background-color: black;
-  top: -56px;
+  /* top: -56px; */
+  left: 240px;
   opacity: 0.3;
   height: calc(100vh + 56px);
-  width: calc(100vw);
+  width: calc(100vw - 240px);
   transition-duration: 0.2s;
   z-index: 1;
 `;
@@ -38,7 +39,7 @@ const HiddenMenuLogoWrap = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 16px;
+  /* margin-left: 16px; */
   padding-left: 16px;
   border-bottom: solid 1px hsl(0, 0%, 80%);
 `;
@@ -49,35 +50,29 @@ const HiddenMenuGuideWrap = styled.div`
   background-color: white;
 `;
 
-const HeaderLogoOpenHiddenMenu = ({ willBeShown, setWillBeShown }) => {
-  const [isSelected, setIsSelected] = useState(false);
+const HeaderLogoHiddenMenu = ({ willBeShown, setWillBeShown }) => {
   const onClickLogo = () => {
     setWillBeShown(!willBeShown);
   };
 
   return (
-    <>
-      <HiddenMenuWrap className={willBeShown ? "visible" : "invisible"}>
-        <HiddenMenuLogoWrap className={willBeShown ? "visible" : "invisible"}>
-          <HeaderLogoOpenMenu
-            willBeShown={willBeShown}
-            setWillBeShown={setWillBeShown}
-          />
-          <HeaderLogoMainLogo />
-        </HiddenMenuLogoWrap>
-        <HiddenMenuGuideWrap>
-          <HiddenMenuGuideHome
-            isSelected={isSelected}
-            setIsSelected={setIsSelected}
-          />
-        </HiddenMenuGuideWrap>
-      </HiddenMenuWrap>
+    <HiddenMenuWrap className={willBeShown ? "visible" : "invisible"}>
+      <HiddenMenuLogoWrap className={willBeShown ? "visible" : "invisible"}>
+        <HeaderLogoOpenMenu
+          willBeShown={willBeShown}
+          setWillBeShown={setWillBeShown}
+        />
+        <HeaderLogoMainLogo />
+      </HiddenMenuLogoWrap>
+      <HiddenMenuGuideWrap>
+        <HiddenMenuGuideHome />
+      </HiddenMenuGuideWrap>
       <BlackArea
         onClick={onClickLogo}
         className={willBeShown ? "display__on" : "display__off"}
       />
-    </>
+    </HiddenMenuWrap>
   );
 };
 
-export default HeaderLogoOpenHiddenMenu;
+export default HeaderLogoHiddenMenu;

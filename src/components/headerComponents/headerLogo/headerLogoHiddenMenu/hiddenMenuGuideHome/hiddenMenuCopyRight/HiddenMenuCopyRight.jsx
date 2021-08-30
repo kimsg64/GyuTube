@@ -33,6 +33,7 @@ const ItemBar = styled.div`
 const TextBar = styled.a`
   margin-right: 8px;
   font-size: 13px;
+  width: auto;
 `;
 
 const HiddenMenuCopyRight = () => {

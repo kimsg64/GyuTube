@@ -1,30 +1,43 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import VideoData from "../../../../../../DB/VideoData.json";
 
 const TitleBoxWrap = styled.div`
   overflow: hidden;
-  padding-right: 24px;
-  h3 {
-    width: calc(100% - 48px - 24px);
-    height: 40px;
-    margin: 12px 0 4px 0;
-    font-size: 14px;
-    font-weight: normal;
-    color: black;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  div {
-    /* div 나눠서 부모만 height: 36px */
-    font-size: 13px;
-    color: hsl(0, 0%, 38%);
-  }
+  /* padding-right: 24px; */
+`;
+
+const TitleWrap = styled.div`
+  width: 100%;
+  height: 40px;
+  margin: 12px 0 4px 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: black;
+  /* overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; */
+  white-space: normal;
+  word-wrap: break-word;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+`;
+
+const UserNameWrap = styled.div`
+  font-size: 13px;
+  color: hsl(0, 0%, 38%);
+`;
+
+const ViewsWrap = styled.div`
+  font-size: 13px;
+  color: hsl(0, 0%, 38%);
 `;
 
 const TitleBox = ({ videoData = {} }) => {
-  // console.log("타이틀박스", videoData);
+  console.log("타이틀박스", videoData);
   const views = videoData.videoViews;
 
   const setViews = () => {
@@ -75,19 +88,15 @@ const TitleBox = ({ videoData = {} }) => {
       : `${dateGap}일 `;
   };
 
-  // ???
-  // const setTitleLenght = () => {
-  // };
-
   return (
-    <Link to="/playing">
+    <Link to={`/playing/${videoData.videoNo}/${videoData.videoTitle}`}>
       <TitleBoxWrap>
-        <h3>{videoData.mainTitle}</h3>
+        <TitleWrap className="next_vdieo">{videoData.mainTitle}</TitleWrap>
         <div>
-          <div>{videoData.userName}</div>
-          <div>
+          <UserNameWrap>{videoData.userName}</UserNameWrap>
+          <ViewsWrap>
             조회수 {setViews()}회・{setYears()}전
-          </div>
+          </ViewsWrap>
         </div>
       </TitleBoxWrap>
     </Link>

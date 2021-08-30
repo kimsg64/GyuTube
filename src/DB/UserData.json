@@ -5,7 +5,21 @@
       "userPassword": "uketamawaru",
       "userName": "김승규",
       "userImageUrl": "/images/kimsg64.png",
-      "subscriber": ["kimusungyu", "sunchan", "swimmingpool"]
+      "subscriber": ["kimusungyu", "sunchan", "swimmingpool"],
+      "subscription": ["kimusungyu", "sunchan", "swimmingpool"],
+      "preferredTheme": [
+        "농구",
+        "요리 프로그램",
+        "음악",
+        "믹스",
+        "피트니스",
+        "실시간",
+        "스포츠 비디오 게임",
+        "일본 생활",
+        "유럽 여행",
+        "반려동물",
+        "짐짝맨"
+      ]
     },
     {
       "userId": "kimusungyu",

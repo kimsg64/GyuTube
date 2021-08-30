@@ -14,9 +14,20 @@ const NavigatorStorageWrap = styled.div`
   }
 `;
 
-const NavigatorStorage = () => {
+const NavigatorStorage = ({
+  isSelected = "Home",
+  setIsSelected = () => {},
+}) => {
+  const onClickStorage = () => {
+    setIsSelected("Storage");
+  };
   return (
-    <NavigatorStorageWrap className="globalIconBtnRect">
+    <NavigatorStorageWrap
+      className={`globalIconBtnRect ${
+        isSelected === "Storage" ? "selected" : null
+      }`}
+      onClick={onClickStorage}
+    >
       <i className="fas fa-clone"></i>
       <div className="text">보관함</div>
     </NavigatorStorageWrap>

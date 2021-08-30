@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import NavigatorCompass from "./navigatorCompass/NavigatorCompass";
 import NavigatorHome from "./navigatorHome/NavigatorHome";
@@ -17,12 +17,16 @@ const NavigatorWrap = styled.aside`
 `;
 
 const Navigator = () => {
+  const [isSelected, setIsSelected] = useState("Home");
   return (
     <NavigatorWrap>
-      <NavigatorHome />
-      <NavigatorCompass />
-      <NavigatorSubscription />
-      <NavigatorStorage />
+      <NavigatorHome isSelected={isSelected} setIsSelected={setIsSelected} />
+      <NavigatorCompass isSelected={isSelected} setIsSelected={setIsSelected} />
+      <NavigatorSubscription
+        isSelected={isSelected}
+        setIsSelected={setIsSelected}
+      />
+      <NavigatorStorage isSelected={isSelected} setIsSelected={setIsSelected} />
     </NavigatorWrap>
   );
 };

@@ -32,6 +32,9 @@ const HeaderLogoWrap = styled.div`
     top: -4px;
     left: 4px;
   }
+  a {
+    width: auto;
+  }
 `;
 
 const HeaderLogoMainLogo = () => {

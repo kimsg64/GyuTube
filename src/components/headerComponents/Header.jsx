@@ -11,7 +11,7 @@ const HeaderStyle = styled.header`
   display: flex;
   justify-content: space-between;
   position: fixed;
-  z-index: 20;
+  z-index: 10;
   top: 0px;
   left: 0px;
   background-color: white;

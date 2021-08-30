@@ -56,42 +56,94 @@ const TitleWrap = styled.div`
 //   margin-right: 18px;
 // `;
 
-const HiddenMenuAboutGyutube = () => {
+const HiddenMenuAboutGyutube = ({
+  isSelected = "Home",
+  setIsSelected = () => {},
+}) => {
+  const onClickPremium = () => {
+    setIsSelected("Premium");
+  };
+  const onClickMovie = () => {
+    setIsSelected("Movie");
+  };
+  const onClickGame = () => {
+    setIsSelected("Game");
+  };
+  const onClickLive = () => {
+    setIsSelected("Live");
+  };
+  const onClickStudy = () => {
+    setIsSelected("Study");
+  };
+  const onClickSports = () => {
+    setIsSelected("Sports");
+  };
+
   return (
     <HiddenMenuAboutGyutubeWrap>
       <TitleWrap>GyuTube 더보기</TitleWrap>
       <div className="globalItemsWrap">
-        <div className="globalItemBar">
+        <div
+          className={`${
+            isSelected === "Premium" ? "selected" : null
+          } globalItemBar`}
+          onClick={onClickPremium}
+        >
           <div className="globalIconBtnRect globalIconWrap">
             <i className="fab fa-youtube"></i>
           </div>
           <div className="globalTextBar">GyuTube Premium</div>
         </div>
-        <div className="globalItemBar">
+        <div
+          className={`${
+            isSelected === "Movie" ? "selected" : null
+          } globalItemBar`}
+          onClick={onClickMovie}
+        >
           <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-film"></i>
           </div>
           <div className="globalTextBar">영화</div>
         </div>
-        <div className="globalItemBar">
+        <div
+          className={`${
+            isSelected === "Game" ? "selected" : null
+          } globalItemBar`}
+          onClick={onClickGame}
+        >
           <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-gamepad"></i>
           </div>
           <div className="globalTextBar">게임</div>
         </div>
-        <div className="globalItemBar">
+        <div
+          className={`${
+            isSelected === "Live" ? "selected" : null
+          } globalItemBar`}
+          onClick={onClickLive}
+        >
           <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-podcast"></i>
           </div>
           <div className="globalTextBar">실시간</div>
         </div>
-        <div className="globalItemBar">
+        <div
+          className={`${
+            isSelected === "Study" ? "selected" : null
+          } globalItemBar`}
+          onClick={onClickStudy}
+        >
           <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-lightbulb"></i>
           </div>
           <div className="globalTextBar">학습</div>
         </div>
-        <div className="globalItemBar">
+        <div
+          className={`${
+            isSelected === "Sports" ? "selected" : null
+          } globalItemBar`}
+          onClick={onClickSports}
+        >
           <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-trophy"></i>
           </div>

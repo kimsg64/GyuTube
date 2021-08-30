@@ -17,6 +17,7 @@ const BtnWrap = styled.div`
   margin-left: 8px;
   display: flex;
   align-items: center;
+  position: relative;
   :hover {
     cursor: pointer;
   }
@@ -30,7 +31,6 @@ const IconsWrap = styled.div`
   width: 36px;
   height: 36px;
   display: flex;
-  position: relative;
   .globalBlackExplanation {
     white-space: nowrap;
   }
@@ -39,7 +39,7 @@ const IconsWrap = styled.div`
 const LikeLine = styled.span`
   position: absolute;
   height: 1px;
-  width: 80px;
+  width: 140%;
   border: 2px solid hsl(0, 0%, 40%);
   top: 44px;
   left: -6px;

@@ -21,9 +21,17 @@ const NavigatorHomeWrap = styled.div`
   } */
 `;
 
-const NavigatorHome = () => {
+const NavigatorHome = ({ isSelected = "Home", setIsSelected = () => {} }) => {
+  const onClickHome = () => {
+    setIsSelected("Home");
+  };
   return (
-    <NavigatorHomeWrap className="globalIconBtnRect selected">
+    <NavigatorHomeWrap
+      className={`globalIconBtnRect ${
+        isSelected === "Home" ? "selected" : null
+      }`}
+      onClick={onClickHome}
+    >
       <i className="fas fa-home"></i>
       <div className="text">홈</div>
     </NavigatorHomeWrap>

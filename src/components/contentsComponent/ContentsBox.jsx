@@ -14,7 +14,7 @@ const ContentsBoxWrap = styled.article`
 `;
 
 const ContentsBox = ({ videoData = {} }) => {
-  console.log("콘텐츠박스", videoData);
+  // console.log("콘텐츠박스", videoData);
   return (
     <ContentsBoxWrap>
       <FilterBar />

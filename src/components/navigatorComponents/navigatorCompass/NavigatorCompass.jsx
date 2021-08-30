@@ -14,9 +14,20 @@ const NavigatorCompassWrap = styled.div`
   }
 `;
 
-const NavigatorCompass = () => {
+const NavigatorCompass = ({
+  isSelected = "Home",
+  setIsSelected = () => {},
+}) => {
+  const onClickCompass = () => {
+    setIsSelected("Compass");
+  };
   return (
-    <NavigatorCompassWrap className="globalIconBtnRect">
+    <NavigatorCompassWrap
+      className={`globalIconBtnRect ${
+        isSelected === "Compass" ? "selected" : null
+      }`}
+      onClick={onClickCompass}
+    >
       <i className="fas fa-compass"></i>
       <div className="text">탐색</div>
     </NavigatorCompassWrap>

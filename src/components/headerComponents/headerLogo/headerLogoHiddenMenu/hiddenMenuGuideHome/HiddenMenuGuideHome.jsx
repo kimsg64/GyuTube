@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import HiddenMenuAboutGyutube from "./hiddenMenuAboutGyutube/HiddenMenuAboutGyutube";
 import HiddenMenuHome from "./hiddenMenuHome/HiddenMenuHome";
@@ -8,26 +8,36 @@ import HiddenMenuSubscription from "./hiddenMenuSubscription/HiddenMenuSubscript
 import HiddenMenuCopyRight from "./hiddenMenuCopyRight/HiddenMenuCopyRight";
 
 const HiddenMenuGuideHomeWrap = styled.div`
-  width: inherit;
+  width: 100%;
   height: 100%;
-  display: inline-block;
+  /* display: inline-block; */
   overflow-y: scroll;
 `;
 
-const HiddenMenuGuideHome = ({ isSelected, setIsSelected }) => {
-  // 여기서 props를 ItemBar가 있는 곳까지 더 내려야 하나?
+const HiddenMenuGuideHome = () => {
+  const [isSelected, setIsSelected] = useState("Home");
   return (
     <HiddenMenuGuideHomeWrap>
-      <HiddenMenuHome />
-      <HiddenMenuPreference />
-      <HiddenMenuSubscription />
-      <HiddenMenuAboutGyutube />
-      <HiddenMenuSettings />
+      <HiddenMenuHome isSelected={isSelected} setIsSelected={setIsSelected} />
+      <HiddenMenuPreference
+        isSelected={isSelected}
+        setIsSelected={setIsSelected}
+      />
+      <HiddenMenuSubscription
+        isSelected={isSelected}
+        setIsSelected={setIsSelected}
+      />
+      <HiddenMenuAboutGyutube
+        isSelected={isSelected}
+        setIsSelected={setIsSelected}
+      />
+      <HiddenMenuSettings
+        isSelected={isSelected}
+        setIsSelected={setIsSelected}
+      />
       <HiddenMenuCopyRight />
     </HiddenMenuGuideHomeWrap>
   );
 };
 
 export default HiddenMenuGuideHome;
-
-// 글자 크기 맞추고 패딩 조절하기

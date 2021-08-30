@@ -63,16 +63,19 @@ const GlobalStyle = createGlobalStyle`
 
   /* 아이콘 선택됐을 때(디폴트) */
   .selected,
-  .selected > * {
+  .selected > *,
+  .selected > div > * {
     color: red;
     background-color: var(--default-bg-color);
   }
   .selected:hover,
-  .selected:hover > * {
+  .selected:hover > *,
+  .selected:hover > div > * {
     background-color: var(--hover-bg-color);
   }
   .selected:active,
-  .selected:active > * {
+  .selected:active > *,
+  .selected:active > div > * {
     background-color: var(--active-bg-color);
   }
 

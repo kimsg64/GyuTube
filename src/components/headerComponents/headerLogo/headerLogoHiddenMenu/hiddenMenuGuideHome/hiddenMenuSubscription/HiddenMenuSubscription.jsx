@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import UserIcon from "../../../../../contentsComponent/videoBox/videoSummary/videoExplanaion/videoExplanaionDetails/UserIcon";
+import UserData from "../../../../../../DB/UserData.json";
 
 const HiddenMenuSubscriptionWrap = styled.div`
   min-height: 371px;
@@ -45,6 +46,7 @@ const ItemBar = styled.div`
       width: 24px;
       height: 24px;
     }
+    color: black;
   }
   div:first-child {
     height: 24px;
@@ -82,9 +84,15 @@ const ArrowWrap = styled.div`
   align-items: center;
 `;
 
-const HiddenMenuSubscription = () => {
+const HiddenMenuSubscription = ({
+  isSelected = "Home",
+  setIsSelected = () => {},
+}) => {
   const [fullHeight, setFullHeight] = useState("min");
   const [showMore, setShowMore] = useState(false);
+
+  const subscriptions = [...UserData.users[0].subscription];
+  console.log(subscriptions);
 
   const onClickMore = () => {
     if (fullHeight === "full") {
@@ -99,40 +107,41 @@ const HiddenMenuSubscription = () => {
     <HiddenMenuSubscriptionWrap>
       <TitleWrap>구독</TitleWrap>
       <ItemsWrap className={fullHeight}>
-        <ItemBar>
-          <UserIcon></UserIcon>
+        {/* 여기는 데이터를 받아와서 선택되어야 하므로.. 잠시 대기 */}
+        <ItemBar className={isSelected === "Gyutube" ? "selected" : null}>
+          <UserIcon />
           <TextBar>규튜브</TextBar>
         </ItemBar>
         <ItemBar>
-          <UserIcon></UserIcon>
+          <UserIcon />
           <TextBar>구독과좋아요부탁드립니다</TextBar>
         </ItemBar>
         <ItemBar>
-          <UserIcon></UserIcon>
+          <UserIcon />
           <TextBar>너무길면뒤에잘라</TextBar>
         </ItemBar>
         <ItemBar>
-          <UserIcon></UserIcon>
+          <UserIcon />
           <TextBar>몇글자까지살려야하나</TextBar>
         </ItemBar>
         <ItemBar>
-          <UserIcon></UserIcon>
+          <UserIcon />
           <TextBar>요위까지ㄱㅊ</TextBar>
         </ItemBar>
         <ItemBar>
-          <UserIcon></UserIcon>
+          <UserIcon />
           <TextBar>귀찮당</TextBar>
         </ItemBar>
         <ItemBar>
-          <UserIcon></UserIcon>
-          <TextBar>리액트넘얼여워용</TextBar>
+          <UserIcon />
+          <TextBar>리액트넘어려워</TextBar>
         </ItemBar>
         <ItemBar>
-          <UserIcon></UserIcon>
+          <UserIcon />
           <TextBar>히히!</TextBar>
         </ItemBar>
         <ItemBar>
-          <UserIcon></UserIcon>
+          <UserIcon />
           <TextBar>너는숨겨질것이야</TextBar>
         </ItemBar>
       </ItemsWrap>

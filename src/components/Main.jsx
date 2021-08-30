@@ -13,7 +13,7 @@ const StyledPage = styled.div`
 
 const Main = () => {
   const videoData = VideoData.videos;
-  console.log("메인", videoData);
+  // console.log("메인", videoData);
   return (
     <StyledPage>
       <Header />

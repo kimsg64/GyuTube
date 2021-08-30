@@ -56,29 +56,64 @@ const HiddenMenuSettingsWrap = styled.div`
 //   margin-right: 18px;
 // `;
 
-const HiddenMenuSettings = () => {
+const HiddenMenuSettings = ({
+  isSelected = "Home",
+  setIsSelected = () => {},
+}) => {
+  const onClickSettings = () => {
+    setIsSelected("Settings");
+  };
+  const onClickReport = () => {
+    setIsSelected("Report");
+  };
+  const onClickCustomerCenter = () => {
+    setIsSelected("CustomerCenter");
+  };
+  const onClickOpinion = () => {
+    setIsSelected("Opinion");
+  };
   return (
     <HiddenMenuSettingsWrap>
       <div className="globalItemsWrap">
-        <div className="globalItemBar">
+        <div
+          className={`${
+            isSelected === "Settings" ? "selected" : null
+          } globalItemBar`}
+          onClick={onClickSettings}
+        >
           <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-cog"></i>
           </div>
           <div className="globalTextBar">설정</div>
         </div>
-        <div className="globalItemBar">
+        <div
+          className={`${
+            isSelected === "Report" ? "selected" : null
+          } globalItemBar`}
+          onClick={onClickReport}
+        >
           <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-flag"></i>
           </div>
           <div className="globalTextBar">신고 기록</div>
         </div>
-        <div className="globalItemBar">
+        <div
+          className={`${
+            isSelected === "CustomerCenter" ? "selected" : null
+          } globalItemBar`}
+          onClick={onClickCustomerCenter}
+        >
           <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-question-circle"></i>
           </div>
           <div className="globalTextBar">고객센터</div>
         </div>
-        <div className="globalItemBar">
+        <div
+          className={`${
+            isSelected === "Opinion" ? "selected" : null
+          } globalItemBar`}
+          onClick={onClickOpinion}
+        >
           <div className="globalIconBtnRect globalIconWrap">
             <i className="fas fa-comment-alt"></i>
           </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import HeaderLogoMainLogo from "./headerLogoMainLogo/HeaderLogoMainLogo";
 import HeaderLogoOpenMenu from "./headerLogoOpenMenu/HeaderLogoOpenMenu";
-import HeaderLogoOpenHiddenMenu from "./headerLogoOpenHiddenMenu/HeaderLogoOpenHiddenMenu";
+import HeaderLogoHiddenMenu from "./headerLogoHiddenMenu/HeaderLogoHiddenMenu";
 
 const HeaderLogoWrap = styled.div`
   width: 169px;
@@ -29,7 +29,7 @@ const HeaderLogo = () => {
         setWillBeShown={setWillBeShown}
       />
       <HeaderLogoMainLogo />
-      <HeaderLogoOpenHiddenMenu
+      <HeaderLogoHiddenMenu
         willBeShown={willBeShown}
         setWillBeShown={setWillBeShown}
       />

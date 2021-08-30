@@ -1,6 +1,9 @@
 import React from "react";
 
-const HeaderLogoOpenMenu = ({ willBeShown, setWillBeShown }) => {
+const HeaderLogoOpenMenu = ({
+  willBeShown = false,
+  setWillBeShown = () => {},
+}) => {
   const onClickLogo = () => {
     setWillBeShown(!willBeShown);
   };
