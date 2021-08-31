@@ -6,6 +6,7 @@ const HeaderUserInfoDetailsModeWrap = styled.div`
   height: 56px;
   padding: 8px 0;
   background-color: white;
+  border-bottom: 1px solid hsl(0, 0%, 80%);
 `;
 
 const HeaderUserInfoDetailsMode = () => {

@@ -41,6 +41,27 @@
       "userName": "장수영",
       "userImageUrl": "/images/swimmingpool.png",
       "subscriber": []
+    },
+    {
+      "userId": "drumkim",
+      "userPassword": "123456346",
+      "userName": "DrumKim",
+      "userImageUrl": "/images/drumkim.jpg",
+      "subscriber": []
+    },
+    {
+      "userId": "narakim",
+      "userPassword": "123456346",
+      "userName": "奈良県のキム",
+      "userImageUrl": "/images/narakim.jpg",
+      "subscriber": []
+    },
+    {
+      "userId": "osakakim",
+      "userPassword": "123456346",
+      "userName": "大阪キム",
+      "userImageUrl": "/images/osakakim.jpg",
+      "subscriber": []
     }
   ]
 }

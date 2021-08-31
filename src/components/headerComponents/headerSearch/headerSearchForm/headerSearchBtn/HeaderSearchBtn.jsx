@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledBtn = styled.button`
+const StyledBtnWrap = styled.div`
   width: 72px;
-  height: 30px;
+  height: 32px;
   border: none;
-  border-left: solid 1.5px hsl(0, 0%, 80%);
+  border-left: solid 1px hsl(0, 0%, 80%);
+  text-align: center;
+  line-height: 32px;
+  position: relative;
   :hover {
     cursor: pointer;
     background-color: hsl(0, 0%, 80%);
@@ -15,7 +18,10 @@ const StyledBtn = styled.button`
     }
   }
   :hover .globalBlackExplanation {
+    line-height: normal;
     display: block;
+    top: 44px;
+    left: 7.87px;
   }
   .fa-search {
     font-size: 16px;
@@ -23,12 +29,22 @@ const StyledBtn = styled.button`
   }
 `;
 
+const StyledBtn = styled.button`
+  background-color: hsl(0, 0%, 90%);
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+`;
+
 const HeaderSearchBtn = () => {
   return (
-    <StyledBtn>
-      <i className="fas fa-search"></i>
+    <StyledBtnWrap>
+      <StyledBtn type="submit">
+        <i className="fas fa-search"></i>
+      </StyledBtn>
       <div className="globalBlackExplanation">검색</div>
-    </StyledBtn>
+    </StyledBtnWrap>
   );
 };
 

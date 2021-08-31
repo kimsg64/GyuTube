@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import HeaderSearchBtn from "./headerSearchBtn/HeaderSearchBtn";
 import HeaderSearchKeyboard from "./headerSearchKeyboard/HeaderSearchKeyboard";
+import VideoData from "../../../../DB/VideoData.json";
 
 const HeaderSearchFormWrap = styled.form`
   width: 100%;
@@ -17,6 +18,7 @@ const HeaderSearchFormBar = styled.div`
   width: 100%;
   max-width: 575;
   display: flex;
+  position: relative;
   .search_input {
     width: 100%;
     border: none;
@@ -24,27 +26,80 @@ const HeaderSearchFormBar = styled.div`
   }
 `;
 
+const HeaderSearchFormMatchedBox = styled.ol`
+  width: calc(100% + 5px);
+  padding: 8px 0 0 4px;
+  background-color: white;
+  position: absolute;
+  border: solid 1px hsl(0, 0%, 80%);
+  top: 120%;
+  left: -5px;
+  li {
+    margin: 4px 12px 8px 8px;
+    padding: 2px;
+    :hover {
+      cursor: pointer;
+      background-color: var(--hover-bg-color);
+    }
+  }
+`;
+
 const HeaderSearchForm = () => {
   const [value, setValue] = useState("");
+  const [matchedList, setMatchedList] = useState([]);
 
   const onChangeInput = (e) => {
     setValue(e.target.value);
+    // console.log(VideoData.videos);
+  };
+
+  const findMatches = (word, videos) => {
+    return videos.filter((video) => {
+      const regex = new RegExp(word, "gi");
+      return video.mainTitle.match(regex) || video.userId.match(regex);
+    });
+  };
+
+  const onKeyUpInput = (e) => {
+    // console.log(e.target.value);
+    const macthedVideos = findMatches(value, VideoData.videos);
+    // console.log(value);
+    // console.log(macthedVideos);
+    const titleOfMatchedVideo = macthedVideos.map((video) => {
+      return video.mainTitle;
+    });
+    setMatchedList(titleOfMatchedVideo);
   };
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
+    // console.log(e.target);
+    // console.log("제출성공!");
+    // console.log(value);
   };
+
   return (
-    <HeaderSearchFormWrap>
+    <HeaderSearchFormWrap onSubmit={onSubmitForm}>
       <HeaderSearchFormBar>
         <input
           placeholder="검색"
           className="search_input"
           value={value}
           onChange={onChangeInput}
-          onSubmit={onSubmitForm}
+          onKeyUp={onKeyUpInput}
         />
+        <HeaderSearchFormMatchedBox
+          className={
+            matchedList.length === 0 ||
+            matchedList.length === VideoData.videos.length
+              ? "display__off"
+              : "display__on"
+          }
+        >
+          {matchedList.map((match) => {
+            return <li>{match}</li>;
+          })}
+        </HeaderSearchFormMatchedBox>
         <HeaderSearchKeyboard />
       </HeaderSearchFormBar>
       <HeaderSearchBtn />
