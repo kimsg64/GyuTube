@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import HeaderSearchForm from "./headerSearchForm/HeaderSearchForm";
 import HeaderSearchMic from "./headerSearchMic/HeaderSearchMic";
@@ -13,10 +13,12 @@ const HeaderSearchWrap = styled.div`
 `;
 
 const HeaderSearch = () => {
+  const [value, setValue] = useState();
+  console.log(value);
   return (
     <HeaderSearchWrap>
-      <HeaderSearchForm />
-      <HeaderSearchMic />
+      <HeaderSearchForm value={value} setValue={setValue} />
+      <HeaderSearchMic setValue={setValue} />
     </HeaderSearchWrap>
   );
 };

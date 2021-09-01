@@ -12,8 +12,8 @@ const VideoList = styled.li`
   화면크기 887px 이하 => 비디오 2개 * 319px
   화면크기 551px 이하 => 비디오1개 * 336px
   */
-  max-width: 359px;
-  max-height: 298px;
+  max-width: 343px;
+  max-height: 289px;
   /* min-width: 250px; */
   min-height: 140px;
   width: calc((100%) / 4);

@@ -33,8 +33,11 @@ const StyledBtn = styled.button`
   background-color: hsl(0, 0%, 90%);
   border: none;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 1px);
   display: block;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const HeaderSearchBtn = () => {

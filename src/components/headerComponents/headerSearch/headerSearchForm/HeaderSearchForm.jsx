@@ -44,8 +44,8 @@ const HeaderSearchFormMatchedBox = styled.ol`
   }
 `;
 
-const HeaderSearchForm = () => {
-  const [value, setValue] = useState("");
+const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
+  // const [value, setValue] = useState("");
   const [matchedList, setMatchedList] = useState([]);
 
   const onChangeInput = (e) => {

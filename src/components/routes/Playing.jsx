@@ -65,7 +65,7 @@ const Playing = ({ match = {} }) => {
   const willBeSent = VideoData.videos.find(
     (video) => video.videoNo === params.videoNo
   );
-  console.log(willBeSent.videoNo);
+  // console.log(willBeSent.videoNo);
 
   return (
     <StyledPage>

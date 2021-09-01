@@ -28,7 +28,7 @@ body,
 }
 ::-webkit-scrollbar-track {
   margin: 4px;
-  background-color: transparent;
+  background-color: inherit;
 }
 ::-webkit-scrollbar-thumb {
   background-color: hsl(0, 0%, 38%);

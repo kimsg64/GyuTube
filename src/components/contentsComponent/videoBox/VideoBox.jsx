@@ -10,6 +10,7 @@ const VideoBoxWrap = styled.ul`
   /* max-width: calc(5 * 360 + 16) px; */
   height: 100%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   flex: 1 1 25%;
 `;
