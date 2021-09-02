@@ -14,7 +14,7 @@ const HeaderSearchWrap = styled.div`
 
 const HeaderSearch = () => {
   const [value, setValue] = useState();
-  console.log(value);
+  // console.log(value);
   return (
     <HeaderSearchWrap>
       <HeaderSearchForm value={value} setValue={setValue} />

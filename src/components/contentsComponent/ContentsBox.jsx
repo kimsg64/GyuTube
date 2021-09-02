@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import FilterBar from "./filterComponents/FilterBar";
 import VideoBox from "./videoBox/VideoBox";
@@ -14,11 +14,17 @@ const ContentsBoxWrap = styled.article`
 `;
 
 const ContentsBox = ({ videoData = {} }) => {
+  const [checkTheme, setCheckTheme] = useState("전체");
+  // console.log(setCheckTheme);
   // console.log("콘텐츠박스", videoData);
   return (
     <ContentsBoxWrap>
-      <FilterBar />
-      <VideoBox key={videoData.videoNo} videoData={videoData} />
+      <FilterBar setCheckTheme={setCheckTheme} />
+      <VideoBox
+        key={videoData.videoNo}
+        videoData={videoData}
+        checkTheme={checkTheme}
+      />
     </ContentsBoxWrap>
   );
 };

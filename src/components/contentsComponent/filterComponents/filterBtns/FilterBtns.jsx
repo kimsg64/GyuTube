@@ -1,4 +1,4 @@
-import React, { useRef, forwardRef } from "react";
+import React, { useRef, forwardRef, useState } from "react";
 import styled from "styled-components";
 import UserData from "../../../../DB/UserData.json";
 
@@ -37,19 +37,28 @@ const StyledBtn = styled.button`
   }
 `;
 
-const FilterBtns = forwardRef((props, ref) => {
+const FilterBtns = forwardRef(({ setCheckTheme = () => {} }, ref) => {
   // console.log(UserData.users[0].preferredTheme);
   const preferredThemes = [...UserData.users[0].preferredTheme];
   // console.log(preferredThemes);
+  const onClickBtn = (e) => {
+    const btnValue = e.target.innerText;
+    // console.log(setCheckTheme);
+    // console.log(btnValue);
+    setCheckTheme(btnValue);
+  };
+
   return (
     <ShowCase>
       <BtnsWrap ref={ref}>
-        <StyledBtn className="first selected_filter">전체</StyledBtn>
+        <StyledBtn className="first selected_filter" onClick={onClickBtn}>
+          전체
+        </StyledBtn>
         {preferredThemes.map((preferredTheme) => {
-          return <StyledBtn>{preferredTheme}</StyledBtn>;
+          return <StyledBtn onClick={onClickBtn}>{preferredTheme}</StyledBtn>;
         })}
-        <StyledBtn>최근에 업로드된 동영상</StyledBtn>
-        <StyledBtn>감상한 동영상</StyledBtn>
+        <StyledBtn onClick={onClickBtn}>최근에 업로드된 동영상</StyledBtn>
+        <StyledBtn onClick={onClickBtn}>감상한 동영상</StyledBtn>
       </BtnsWrap>
     </ShowCase>
   );

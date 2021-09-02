@@ -30,6 +30,7 @@ const StyledColumnsWrap = styled.div`
   flex-direction: row;
 
   /* aside */
+  /* width 1175px보다 작으면 레이아웃 배치 변경 */
   aside {
     height: auto;
     flex: 1 1 25%;
@@ -38,7 +39,7 @@ const StyledColumnsWrap = styled.div`
 `;
 
 const PrimaryWrap = styled.div`
-  flex: 1 1 75%;
+  flex: 1 1 50%;
   padding: 24px 24px 0 0;
   margin-left: 24px;
   video {

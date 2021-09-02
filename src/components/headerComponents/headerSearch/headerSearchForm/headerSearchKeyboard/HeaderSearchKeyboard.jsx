@@ -22,29 +22,21 @@ const HeaderSearchFormKeyboard = styled.div`
   .simple-keyboard {
     position: absolute;
     top: 56px;
-    width: auto;
+    width: 850px;
   }
 `;
 
 const HeaderSearchKeyboard = () => {
   const [showKeyBoard, setShowKeyBoard] = useState(false);
 
-  const onChange = (input) => {
-    console.log("Input changed", input);
-  };
-
-  const onKeyPress = (button) => {
-    console.log("Button pressed", button);
-  };
-
-  const onBtnClick = () => {
+  const onClickBtn = () => {
     // console.log(showKeyBoard);
     setShowKeyBoard(!showKeyBoard);
   };
 
   return (
-    <HeaderSearchFormKeyboard onClick={onBtnClick}>
-      {showKeyBoard ? <EnglishKeyboard /> : null}
+    <HeaderSearchFormKeyboard onClick={onClickBtn}>
+      {showKeyBoard ? <JapaneseKeyboard /> : null}
       <i className="far fa-keyboard"></i>
     </HeaderSearchFormKeyboard>
   );

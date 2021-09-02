@@ -47,8 +47,9 @@ const ArrowWrap = styled.div`
 `;
 let time = 0;
 
-const FilterBar = () => {
+const FilterBar = ({ setCheckTheme = () => {} }) => {
   const filterBarRef = useRef();
+  // console.log(setCheckTheme);
 
   const onClickLeftArrow = () => {
     console.log(filterBarRef.current.className);
@@ -69,7 +70,7 @@ const FilterBar = () => {
   };
 
   const onClickRightArrow = () => {
-    console.log(filterBarRef.current.className);
+    // console.log(filterBarRef.current.className);
     const filterBarStyle = filterBarRef.current.style;
     if (time === 0) {
       filterBarStyle.setProperty("transform", "translateX(-20%)");
@@ -84,7 +85,7 @@ const FilterBar = () => {
       filterBarStyle.setProperty("transform", "translateX(-80%)");
       time = 8;
     }
-    console.log(time);
+    // console.log(time);
   };
 
   return (
@@ -94,7 +95,7 @@ const FilterBar = () => {
           <i className="fas fa-chevron-left"></i>
         </div>
       </ArrowWrap>
-      <FilterBtns ref={filterBarRef} />
+      <FilterBtns setCheckTheme={setCheckTheme} ref={filterBarRef} />
       <ArrowWrap onClick={onClickRightArrow}>
         <div className="globalIconBtn">
           <i className="fas fa-chevron-right"></i>

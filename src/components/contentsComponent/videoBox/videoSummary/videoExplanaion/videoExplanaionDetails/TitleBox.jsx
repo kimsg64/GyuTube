@@ -10,7 +10,7 @@ const TitleBoxWrap = styled.div`
 
 const TitleWrap = styled.div`
   width: 100%;
-  height: 40px;
+  height: 38px;
   margin: 12px 0 4px 0;
   font-size: 14px;
   font-weight: normal;
