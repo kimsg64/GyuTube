@@ -21,8 +21,8 @@ const FilterBarWrap = styled.div`
   .first {
     margin: 12px 12px 12px 24px;
   }
-  .selected_filter,
-  .selected_filter:hover {
+  .selected_btn,
+  .selected_btn:hover {
     background-color: black;
     color: white;
   }

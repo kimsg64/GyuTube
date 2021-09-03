@@ -38,6 +38,7 @@ const StyledBtn = styled.button`
 `;
 
 const FilterBtns = forwardRef(({ setCheckTheme = () => {} }, ref) => {
+  const [isSelected, setIsSelected] = useState("전체");
   // console.log(UserData.users[0].preferredTheme);
   const preferredThemes = [...UserData.users[0].preferredTheme];
   // console.log(preferredThemes);
@@ -51,7 +52,7 @@ const FilterBtns = forwardRef(({ setCheckTheme = () => {} }, ref) => {
   return (
     <ShowCase>
       <BtnsWrap ref={ref}>
-        <StyledBtn className="first selected_filter" onClick={onClickBtn}>
+        <StyledBtn className={`first } onClick={onClickBtn}>
           전체
         </StyledBtn>
         {preferredThemes.map((preferredTheme) => {
