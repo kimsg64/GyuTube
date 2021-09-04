@@ -47,6 +47,9 @@ const HeaderSearchFormMatchedBox = styled.ol`
 const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
   // const [value, setValue] = useState("");
   const [matchedList, setMatchedList] = useState([]);
+  const [virtualKeyboardInput, setVirtualKeyboardInput] = useState("");
+  const [showVirtualKeyboard, setShowVirtualKeyboard] = useState(false);
+  console.log("와! 여기까지 왔다", virtualKeyboardInput);
 
   const onChangeInput = (e) => {
     setValue(e.target.value);
@@ -56,11 +59,11 @@ const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
   const findMatches = (word, videos) => {
     return videos.filter((video) => {
       const regex = new RegExp(word, "gi");
-      return video.mainTitle.match(regex) || video.userId.match(regex);
+      return video.mainTitle.match(regex);
     });
   };
 
-  const onKeyUpInput = (e) => {
+  const showMatchedList = () => {
     // console.log(e.target.value);
     const macthedVideos = findMatches(value, VideoData.videos);
     // console.log(value);
@@ -73,9 +76,10 @@ const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
+    // 검색시 관련 동영상 보여주기, 새 페이지 작성
     // console.log(e.target);
     // console.log("제출성공!");
-    // console.log(value);
+    console.log(value);
   };
 
   return (
@@ -84,9 +88,9 @@ const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
         <input
           placeholder="검색"
           className="search_input"
-          value={value}
+          value={showVirtualKeyboard ? virtualKeyboardInput : value}
           onChange={onChangeInput}
-          onKeyUp={onKeyUpInput}
+          onKeyUp={showMatchedList}
         />
         <HeaderSearchFormMatchedBox
           className={
@@ -100,7 +104,13 @@ const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
             return <li>{match}</li>;
           })}
         </HeaderSearchFormMatchedBox>
-        <HeaderSearchKeyboard />
+        <HeaderSearchKeyboard
+          onChange={showMatchedList}
+          showVirtualKeyboard={showVirtualKeyboard}
+          setShowVirtualKeyboard={setShowVirtualKeyboard}
+          virtualKeyboardInput={virtualKeyboardInput}
+          setVirtualKeyboardInput={setVirtualKeyboardInput}
+        />
       </HeaderSearchFormBar>
       <HeaderSearchBtn />
     </HeaderSearchFormWrap>

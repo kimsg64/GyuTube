@@ -41,7 +41,7 @@ const LikeLine = styled.span`
   height: 1px;
   width: 140%;
   border: 2px solid hsl(0, 0%, 40%);
-  top: 44px;
+  top: 46px;
   left: -6px;
 `;
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import EnglishKeyboard from "./EnglishKeyboard";
 import JapaneseKeyboard from "./JapaneseKeyboard";
@@ -26,18 +26,31 @@ const HeaderSearchFormKeyboard = styled.div`
   }
 `;
 
-const HeaderSearchKeyboard = () => {
-  const [showKeyBoard, setShowKeyBoard] = useState(false);
+// https://hodgef.com/simple-keyboard/getting-started/react/ 참조(documentation / layout)
+// 콘솔 창의 SimpleKeyboardInstances 참조
+// caps Lock, Shift, enter 제어
+// 혹은 키보드를 새로 만들기...
 
+const HeaderSearchKeyboard = ({
+  virtualKeyboardInput = "",
+  setVirtualKeyboardInput = () => {},
+  showVirtualKeyboard = false,
+  setShowVirtualKeyboard = () => {},
+}) => {
   const onClickBtn = () => {
     // console.log(showKeyBoard);
-    setShowKeyBoard(!showKeyBoard);
+    setShowVirtualKeyboard(!showVirtualKeyboard);
+    showVirtualKeyboard
+      ? setVirtualKeyboardInput(virtualKeyboardInput)
+      : setVirtualKeyboardInput("");
   };
 
   return (
-    <HeaderSearchFormKeyboard onClick={onClickBtn}>
-      {showKeyBoard ? <JapaneseKeyboard /> : null}
-      <i className="far fa-keyboard"></i>
+    <HeaderSearchFormKeyboard>
+      {showVirtualKeyboard ? (
+        <KoreanKeyboard setVirtualKeyboardInput={setVirtualKeyboardInput} />
+      ) : null}
+      <i className="far fa-keyboard" onClick={onClickBtn}></i>
     </HeaderSearchFormKeyboard>
   );
 };

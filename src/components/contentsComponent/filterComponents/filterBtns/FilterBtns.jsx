@@ -1,4 +1,4 @@
-import React, { useRef, forwardRef, useState } from "react";
+import React, { forwardRef, useState } from "react";
 import styled from "styled-components";
 import UserData from "../../../../DB/UserData.json";
 
@@ -32,13 +32,11 @@ const StyledBtn = styled.button`
   }
   :active {
     transition-duration: 0.2s;
-    background-color: black;
-    color: white;
   }
 `;
 
 const FilterBtns = forwardRef(({ setCheckTheme = () => {} }, ref) => {
-  const [isSelected, setIsSelected] = useState("전체");
+  const [selectedBtn, setSelectedBtn] = useState("전체");
   // console.log(UserData.users[0].preferredTheme);
   const preferredThemes = [...UserData.users[0].preferredTheme];
   // console.log(preferredThemes);
@@ -47,19 +45,42 @@ const FilterBtns = forwardRef(({ setCheckTheme = () => {} }, ref) => {
     // console.log(setCheckTheme);
     // console.log(btnValue);
     setCheckTheme(btnValue);
+    setSelectedBtn(btnValue);
   };
 
   return (
     <ShowCase>
       <BtnsWrap ref={ref}>
-        <StyledBtn className={`first } onClick={onClickBtn}>
+        <StyledBtn
+          className={`first ${selectedBtn === "전체" ? "selected_btn" : null}`}
+          onClick={onClickBtn}
+        >
           전체
         </StyledBtn>
         {preferredThemes.map((preferredTheme) => {
-          return <StyledBtn onClick={onClickBtn}>{preferredTheme}</StyledBtn>;
+          return (
+            <StyledBtn
+              className={preferredTheme === selectedBtn ? "selected_btn" : null}
+              onClick={onClickBtn}
+            >
+              {preferredTheme}
+            </StyledBtn>
+          );
         })}
-        <StyledBtn onClick={onClickBtn}>최근에 업로드된 동영상</StyledBtn>
-        <StyledBtn onClick={onClickBtn}>감상한 동영상</StyledBtn>
+        <StyledBtn
+          className={
+            selectedBtn === "최근에 업로드된 동영상" ? "selected_btn" : null
+          }
+          onClick={onClickBtn}
+        >
+          최근에 업로드된 동영상
+        </StyledBtn>
+        <StyledBtn
+          className={selectedBtn === "감상한 동영상" ? "selected_btn" : null}
+          onClick={onClickBtn}
+        >
+          감상한 동영상
+        </StyledBtn>
       </BtnsWrap>
     </ShowCase>
   );

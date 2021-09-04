@@ -22,10 +22,11 @@ const StyledArticle = styled.article`
 `;
 
 const StyledColumnsWrap = styled.div`
-  top: 56px;
   width: calc(100% - 56px - 60px);
   height: 100%;
+  background-color: hsl(0, 0%, 98%);
   position: relative;
+  top: 56px;
   display: flex;
   flex-direction: row;
 
@@ -42,15 +43,22 @@ const PrimaryWrap = styled.div`
   flex: 1 1 50%;
   padding: 24px 24px 0 0;
   margin-left: 24px;
-  video {
-    width: 100%;
-    max-height: 720px;
-  }
 `;
 
 const PlayerWrap = styled.div`
   max-width: 1280px;
   max-height: 720px;
+  display: flex;
+  justify-content: center;
+`;
+
+// 화면이 줄어들면 가로만 좁아짐
+const VideoBox = styled.div`
+  width: 100%;
+  video {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const InfoWrap = styled.div`
@@ -77,7 +85,9 @@ const Playing = ({ match = {} }) => {
             <PlayerWrap>
               {/* 경로를 ./으로 하면 안되고 다 지우거나 ../로 하니까 된다. */}
               {/* 리액트 라우터가 마치 url을 이동하고 있는 것 같이 생겼지만 사실은 그냥 컴포넌트 갈아끼워서 페이지 이동한 것 처럼 보이게하는 눈속임 마술을 부리는 새끼라서  */}
-              <video src={`/videos/${willBeSent.videoTitle}.mp4`} controls />
+              <VideoBox>
+                <video src={`/videos/${willBeSent.videoTitle}.mp4`} controls />
+              </VideoBox>
             </PlayerWrap>
 
             <InfoWrap>

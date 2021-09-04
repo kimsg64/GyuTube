@@ -14,6 +14,7 @@ const NavigatorWrap = styled.aside`
   position: fixed;
   top: 56px;
   left: 0;
+  background-color: white;
 `;
 
 const Navigator = () => {

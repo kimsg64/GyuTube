@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import HeaderUserInfo from "../../../../headerComponents/headerBtns/headerUserInfo/HeaderUserInfo";
 
@@ -15,14 +15,26 @@ const InputCommentWrap = styled.div`
 `;
 
 const InputComment = styled.input`
+  height: 60px;
   margin-bottom: 3.5px;
   padding-bottom: 4px;
   border: none;
   border-bottom: 1px solid hsl(0, 0%, 56%);
-  font-size: 14px;
+  font-size: 15px;
+  background-color: inherit;
   :focus {
     outline: none;
   }
+`;
+
+// 이펙트 주고 크기 조절...
+const FocusEffect = styled.span`
+  width: 100%;
+  height: 1px;
+  border: 1px solid black;
+  position: relative;
+  top: -4px;
+  transition-duration: 0.3s;
 `;
 
 const BtnsWrap = styled.div`
@@ -40,7 +52,7 @@ const CancleBtn = styled.button`
   text-align: center;
   border: none;
   border-radius: 2px;
-  background-color: white;
+  background-color: hsl(0, 0%, 98%);
   color: hsl(0, 0%, 40%);
   :hover {
     cursor: pointer;
@@ -52,6 +64,14 @@ const CommentBtn = styled(CancleBtn)`
 `;
 
 const VideoCommentsLeaveComment = () => {
+  const [showEffect, setShowEffect] = useState(false);
+  const onFocusEffect = () => {
+    setShowEffect(true);
+  };
+  const onBlurEffect = () => {
+    setShowEffect(false);
+  };
+
   return (
     <VideoCommentsLeaveCommentWrap>
       <HeaderUserInfo />
@@ -59,7 +79,10 @@ const VideoCommentsLeaveComment = () => {
         <InputComment
           type="text"
           placeholder="공개 댓글 추가..."
-        ></InputComment>
+          onFocus={onFocusEffect}
+          onBlur={onBlurEffect}
+        />
+        {showEffect ? <FocusEffect /> : null}
         <BtnsWrap>
           <CancleBtn>취소</CancleBtn>
           <CommentBtn>댓글</CommentBtn>

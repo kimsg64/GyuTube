@@ -52,7 +52,7 @@ const FilterBar = ({ setCheckTheme = () => {} }) => {
   // console.log(setCheckTheme);
 
   const onClickLeftArrow = () => {
-    console.log(filterBarRef.current.className);
+    // console.log(filterBarRef.current.className);
     const filterBarStyle = filterBarRef.current.style;
     if (time === 2) {
       filterBarStyle.setProperty("transform", "translateX(0)");
@@ -66,7 +66,7 @@ const FilterBar = ({ setCheckTheme = () => {} }) => {
       filterBarStyle.setProperty("transform", "translateX(-60%)");
       time = 6;
     }
-    console.log(time);
+    // console.log(time);
   };
 
   const onClickRightArrow = () => {
