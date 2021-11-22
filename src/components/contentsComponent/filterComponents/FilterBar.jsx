@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import FilterBtns from "./filterBtns/FilterBtns";
 
@@ -45,47 +45,21 @@ const ArrowWrap = styled.div`
     width: 36px;
   }
 `;
-let time = 0;
 
 const FilterBar = ({ setCheckTheme = () => {} }) => {
-  const filterBarRef = useRef();
-  // console.log(setCheckTheme);
+  const [moveX, setMoveX] = useState(0);
 
   const onClickLeftArrow = () => {
-    // console.log(filterBarRef.current.className);
-    const filterBarStyle = filterBarRef.current.style;
-    if (time === 2) {
-      filterBarStyle.setProperty("transform", "translateX(0)");
-    } else if (time === 4) {
-      filterBarStyle.setProperty("transform", "translateX(-20%)");
-      time = 2;
-    } else if (time === 6) {
-      filterBarStyle.setProperty("transform", "translateX(-40%)");
-      time = 4;
-    } else if (time === 8) {
-      filterBarStyle.setProperty("transform", "translateX(-60%)");
-      time = 6;
-    }
-    // console.log(time);
+    setMoveX((prevMoveX) => {
+      return prevMoveX === 0 ? prevMoveX : prevMoveX + 1;
+    });
   };
 
   const onClickRightArrow = () => {
-    // console.log(filterBarRef.current.className);
-    const filterBarStyle = filterBarRef.current.style;
-    if (time === 0) {
-      filterBarStyle.setProperty("transform", "translateX(-20%)");
-      time = 2;
-    } else if (time === 2) {
-      filterBarStyle.setProperty("transform", "translateX(-40%)");
-      time = 4;
-    } else if (time === 4) {
-      filterBarStyle.setProperty("transform", "translateX(-60%)");
-      time = 6;
-    } else if (time === 6) {
-      filterBarStyle.setProperty("transform", "translateX(-80%)");
-      time = 8;
-    }
-    // console.log(time);
+    setMoveX((prevMoveX) => {
+      console.log(prevMoveX);
+      return prevMoveX < -2 ? prevMoveX : prevMoveX - 1;
+    });
   };
 
   return (
@@ -95,7 +69,7 @@ const FilterBar = ({ setCheckTheme = () => {} }) => {
           <i className="fas fa-chevron-left"></i>
         </div>
       </ArrowWrap>
-      <FilterBtns setCheckTheme={setCheckTheme} ref={filterBarRef} />
+      <FilterBtns setCheckTheme={setCheckTheme} moveX={moveX} />
       <ArrowWrap onClick={onClickRightArrow}>
         <div className="globalIconBtn">
           <i className="fas fa-chevron-right"></i>

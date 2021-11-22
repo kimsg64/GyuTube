@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# GyuTube
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 유튜브 동영상 플레이어 페이지 클론 코딩 개인 프로젝트 "GyuTube"입니다.
+> ![main.JPG](./markdown_image/main.JPG)
 
-## Available Scripts
+## 1. 프로젝트 개요
 
-In the project directory, you can run:
+### 개요
 
-### `yarn start`
+- 유튜브
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 목표
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- REST API 서버에서 데이터를 받아왔다는 전제 하에 유튜브 메인 페이지 및 동영상 페이지 화면 구현
+- React.js의 숙련도 향상
+- 웹 페이지의 디자인 시안에 맞추어 뷰 페이지 제작
 
-### `yarn test`
+### 기간
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 2021.08.03 ~ 2021.09.04
 
-### `yarn build`
+### 프로젝트를 통해 배운 것
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- HTML, CSS의 다양한 속성들을 공부하고, 활용할 수 있게 되었습니다.
+- Javascript의 이벤트 관련 개념들에 대해 익숙해졌습니다.
+- React.js의 함수형 컴포넌트를 통해 OOP의 강력한 기능인 재사용성을 직접 체험해보고, 활용할 수 있게 되었습니다.
+- styled-components를 접하고 CSS in JS 방식으로 뷰 페이지를 구성할 수 있게 되었습니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 2. 기술 스택
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React.js
+  > 프로젝트 목표에 맞게 React.js를 이용해 뷰 페이지를 제작했습니다.
+- styled-components
+  > 컴포넌트 관리 효율성의 향상을 위해 이용하였으며, CSS in JS 방식에 익숙해졌습니다.
+- react-router
+  > 각 페이지를 개별적으로 관리하기 위해 이용했습니다.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 3. 구현 기능

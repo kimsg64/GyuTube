@@ -110,35 +110,35 @@ const HiddenMenuSubscription = ({
         {/* 여기는 데이터를 받아와서 선택되어야 하므로.. 잠시 대기 */}
         <ItemBar className={isSelected === "Gyutube" ? "selected" : null}>
           <UserIcon />
-          <TextBar>규튜브</TextBar>
+          <TextBar>승우엄마</TextBar>
         </ItemBar>
         <ItemBar>
           <UserIcon />
-          <TextBar>구독과좋아요부탁드립니다</TextBar>
+          <TextBar>침착우먼</TextBar>
         </ItemBar>
         <ItemBar>
           <UserIcon />
-          <TextBar>너무길면뒤에잘라</TextBar>
+          <TextBar>ChaseDownWNBA</TextBar>
         </ItemBar>
         <ItemBar>
           <UserIcon />
-          <TextBar>몇글자까지살려야하나</TextBar>
+          <TextBar>드럼코딩</TextBar>
         </ItemBar>
         <ItemBar>
           <UserIcon />
-          <TextBar>요위까지ㄱㅊ</TextBar>
+          <TextBar>코마드 노더</TextBar>
         </ItemBar>
         <ItemBar>
           <UserIcon />
-          <TextBar>귀찮당</TextBar>
+          <TextBar>일상생활코딩</TextBar>
         </ItemBar>
         <ItemBar>
           <UserIcon />
-          <TextBar>리액트넘어려워</TextBar>
+          <TextBar>Offline Tutorials</TextBar>
         </ItemBar>
         <ItemBar>
           <UserIcon />
-          <TextBar>히히!</TextBar>
+          <TextBar>싸이콜로지컬갤러리</TextBar>
         </ItemBar>
         <ItemBar>
           <UserIcon />

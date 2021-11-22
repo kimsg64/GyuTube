@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import UserData from "../../../../DB/UserData.json";
 
@@ -16,6 +16,7 @@ const BtnsWrap = styled.div`
   position: relative;
   left: 0;
   transition-duration: 0.2s;
+  transform: translateX(${(props) => props.moveX * 10 + "%"});
 `;
 
 const StyledBtn = styled.button`
@@ -35,7 +36,7 @@ const StyledBtn = styled.button`
   }
 `;
 
-const FilterBtns = forwardRef(({ setCheckTheme = () => {} }, ref) => {
+const FilterBtns = ({ moveX = 0, setCheckTheme = () => {} }) => {
   const [selectedBtn, setSelectedBtn] = useState("전체");
   // console.log(UserData.users[0].preferredTheme);
   const preferredThemes = [...UserData.users[0].preferredTheme];
@@ -50,7 +51,7 @@ const FilterBtns = forwardRef(({ setCheckTheme = () => {} }, ref) => {
 
   return (
     <ShowCase>
-      <BtnsWrap ref={ref}>
+      <BtnsWrap moveX={moveX}>
         <StyledBtn
           className={`first ${selectedBtn === "전체" ? "selected_btn" : null}`}
           onClick={onClickBtn}
@@ -84,6 +85,6 @@ const FilterBtns = forwardRef(({ setCheckTheme = () => {} }, ref) => {
       </BtnsWrap>
     </ShowCase>
   );
-});
+};
 
 export default FilterBtns;

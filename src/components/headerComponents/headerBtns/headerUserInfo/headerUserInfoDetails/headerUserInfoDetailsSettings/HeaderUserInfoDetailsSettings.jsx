@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import HeaderUserInfoDetailsDesignSetting from "./HeaderUserInfoDetailsDesignSetting";
 
 const HeaderUserInfoSettingsWrap = styled.div`
   width: 100%;
@@ -10,13 +11,20 @@ const HeaderUserInfoSettingsWrap = styled.div`
 `;
 
 const HeaderUserInfoDetailsSettings = () => {
+  const [isDark, setIsDark] = useState(false);
+  const [clickDesign, setClickDesign] = useState(false);
+  const handleTheme = () => {
+    setClickDesign(!clickDesign);
+  };
   return (
     <HeaderUserInfoSettingsWrap>
       <div className="globalItemBar with_arrow">
         <div className="globalIconBtn globalIconWrap">
           <i className="far fa-moon"></i>
         </div>
-        <div className="globalTextBar">디자인: 기기 테마</div>
+        <div className="globalTextBar" onClick={handleTheme}>
+          디자인: {isDark ? "어두운" : "밝은"} 테마
+        </div>
         <div className="arrow">
           <i className="fas fa-chevron-right"></i>
         </div>
