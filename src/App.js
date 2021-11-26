@@ -19,7 +19,7 @@ const App = () => {
   return (
     <Router>
       <GlobalStyle />
-      {console.log(ip, "!!!")}
+      {/* {console.log(ip, "!!!")} */}
       <Route exact path="/" component={Main} />
       <Route path="/playing/:videoNo/:videoTitle" component={Playing} />
     </Router>

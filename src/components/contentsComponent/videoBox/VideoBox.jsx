@@ -5,26 +5,16 @@ import styled from "styled-components";
 const VideoBoxWrap = styled.ul`
   margin-top: 24px;
   width: 100%;
-  /* 너비를 변수화해서 계산해야 반응형으로 설정할 수 있나??? */
-  /* width: calc(100%-32px); */
-  /* max-width: calc(5 * 360 + 16) px; */
   height: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   flex: 1 1 25%;
-`;
 
-const EmptyVideoList = styled.li`
-  width: 340px;
-  height: 287px;
-  margin: 0 8px 40px 8px;
-`;
-
-const EmptyVideoBox = styled.div`
-  width: 100%;
-  height: 60%;
-  background-color: inherit;
+  @media ${(props) => props.theme.mobile} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const VideoBox = ({ videoData = {}, checkTheme = "전체" }) => {
@@ -45,18 +35,6 @@ const VideoBox = ({ videoData = {}, checkTheme = "전체" }) => {
             .map((video) => {
               return <VideoSummary key={video.videoNo} video={video} />;
             })}
-      <EmptyVideoList>
-        <EmptyVideoBox />
-      </EmptyVideoList>
-      <EmptyVideoList>
-        <EmptyVideoBox />
-      </EmptyVideoList>
-      <EmptyVideoList>
-        <EmptyVideoBox />
-      </EmptyVideoList>
-      <EmptyVideoList>
-        <EmptyVideoBox />
-      </EmptyVideoList>
     </VideoBoxWrap>
   );
 };

@@ -4,18 +4,8 @@ import VideoExplanaion from "./videoExplanaion/VideoExplanaion";
 import { Link } from "react-router-dom";
 
 const VideoList = styled.li`
-  /* 
-  화면 크기에 따른 반응형 max-width
-  화면크기 ?px => 비디오 5개 * ?px
-  화면크기 ?px => 비디오 4개 * ?px
-  화면크기 1143px 이하 => 비디오 3개 * 319px
-  화면크기 887px 이하 => 비디오 2개 * 319px
-  화면크기 551px 이하 => 비디오1개 * 336px
-  */
-  /* 화면 크기에 따라 max-width, max-height 조절해서 블랙 바 없애기 */
   max-width: 340px;
   max-height: 287px;
-  /* min-width: 250px; */
   min-height: 140px;
   margin: 0 8px 40px 8px;
   :hover {
@@ -24,16 +14,39 @@ const VideoList = styled.li`
   :hover .fa-ellipsis-v {
     display: flex;
   }
+
+  @media ${(props) => props.theme.mobile} {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+  }
 `;
 
 const VideoWrap = styled.div`
   width: 99%;
   height: 66%;
   background-color: black;
+  @media ${(props) => props.theme.mobile} {
+    /* max-height: 79%; */
+    position: relative;
+    padding-top: 56.25%;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+  }
   video {
-    /* how to add black bar??? > 세로 영상 대응이 안된다... iframe? video? > 응 됨;*/
     width: 100%;
     height: 100%;
+
+    @media ${(props) => props.theme.mobile} {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: 100%;
+      height: auto;
+    }
   }
 `;
 

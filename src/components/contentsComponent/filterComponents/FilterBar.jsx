@@ -48,6 +48,9 @@ const ArrowWrap = styled.div`
 
 const FilterBar = ({ setCheckTheme = () => {} }) => {
   const [moveX, setMoveX] = useState(0);
+  const [currentWidth, setCurrentWidth] = useState(0);
+  console.log("moveX: ", moveX);
+  console.log("currentWidth: ", currentWidth);
 
   const onClickLeftArrow = () => {
     setMoveX((prevMoveX) => {
@@ -57,8 +60,9 @@ const FilterBar = ({ setCheckTheme = () => {} }) => {
 
   const onClickRightArrow = () => {
     setMoveX((prevMoveX) => {
-      console.log(prevMoveX);
-      return prevMoveX < -2 ? prevMoveX : prevMoveX - 1;
+      console.log("prevMoveX: ", prevMoveX);
+      // 바의 총 너비는 1720px이므로... 그 안에서만 움직이게 하기
+      return prevMoveX < -3 ? prevMoveX : prevMoveX - 1;
     });
   };
 
@@ -69,7 +73,11 @@ const FilterBar = ({ setCheckTheme = () => {} }) => {
           <i className="fas fa-chevron-left"></i>
         </div>
       </ArrowWrap>
-      <FilterBtns setCheckTheme={setCheckTheme} moveX={moveX} />
+      <FilterBtns
+        setCheckTheme={setCheckTheme}
+        moveX={moveX}
+        setCurrentWidth={setCurrentWidth}
+      />
       <ArrowWrap onClick={onClickRightArrow}>
         <div className="globalIconBtn">
           <i className="fas fa-chevron-right"></i>
