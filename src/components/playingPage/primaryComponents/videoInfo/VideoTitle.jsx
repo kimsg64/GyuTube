@@ -10,7 +10,7 @@ const HashTagStyle = styled.a`
 `;
 
 const VideoTitle = ({ mainTitle = "", hashtags = "" }) => {
-  console.log("메인 타이틀 받는 곳!", mainTitle, "해시태그", hashtags);
+  // console.log("메인 타이틀 받는 곳!", mainTitle, "해시태그", hashtags);
   return (
     <>
       {hashtags.map((tag) => (

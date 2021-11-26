@@ -51,7 +51,7 @@ const NextVideoTitleWrap = styled.div`
 `;
 
 const NextVideoList = ({ willBeSent = {} }) => {
-  console.log(willBeSent);
+  // console.log(willBeSent);
 
   const setCandidates = () => {
     const candidates = [];

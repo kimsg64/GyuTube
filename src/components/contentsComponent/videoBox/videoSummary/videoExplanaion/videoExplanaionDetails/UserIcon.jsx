@@ -24,14 +24,14 @@ const UserIcon = ({ videoData = {}, commenters = {} }) => {
   };
 
   const setCommenterImagePath = () => {
-    return commenters.userImageUrl;
+    return `${process.env.PUBLIC_URL}` + commenters.userImageUrl;
   };
 
   const setUserImagePath = () => {
     const uploader = UserData.users.find(
       (user) => user.userId === videoData.userId
     );
-    return uploader.userImageUrl;
+    return `${process.env.PUBLIC_URL}` + uploader.userImageUrl;
   };
 
   return (

@@ -72,6 +72,7 @@ const FilterBtns = ({
         {preferredThemes.map((preferredTheme) => {
           return (
             <StyledBtn
+              key={preferredTheme}
               className={preferredTheme === selectedBtn ? "selected_btn" : null}
               onClick={onClickBtn}
             >

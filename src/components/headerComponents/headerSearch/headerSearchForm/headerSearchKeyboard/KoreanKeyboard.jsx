@@ -5,12 +5,12 @@ import layout from "simple-keyboard-layouts/build/layouts/korean";
 
 const KoreanKeyboard = ({ setVirtualKeyboardInput = () => {} }) => {
   const onChange = (input) => {
-    console.log("Input changed", input);
+    // console.log("Input changed", input);
     setVirtualKeyboardInput(input);
   };
 
   const onKeyPress = (button) => {
-    console.log("Button pressed", button);
+    // console.log("Button pressed", button);
   };
   return <KeyboardReact onChange={onChange} onKeyPress={onKeyPress} />;
 };

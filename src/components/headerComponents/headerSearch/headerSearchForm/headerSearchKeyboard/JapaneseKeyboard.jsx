@@ -10,7 +10,7 @@ const JapaneseKeyboard = () => {
 
   const onChange = (input) => {
     setInput(input);
-    console.log("Input changed", input);
+    // console.log("Input changed", input);
   };
 
   const handleShift = () => {
@@ -19,7 +19,7 @@ const JapaneseKeyboard = () => {
   };
 
   const onKeyPress = (button) => {
-    console.log("Button pressed", button);
+    // console.log("Button pressed", button);
 
     if (button === "{shift}" || button === "{lock}") handleShift();
   };

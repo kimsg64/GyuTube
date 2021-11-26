@@ -60,7 +60,7 @@ const FilterBar = ({ setCheckTheme = () => {} }) => {
 
   const onClickRightArrow = () => {
     setMoveX((prevMoveX) => {
-      console.log("prevMoveX: ", prevMoveX);
+      // console.log("prevMoveX: ", prevMoveX);
       // 바의 총 너비는 1720px이므로... 그 안에서만 움직이게 하기
       return prevMoveX < -3 ? prevMoveX : prevMoveX - 1;
     });

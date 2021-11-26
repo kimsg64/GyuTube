@@ -10,11 +10,11 @@ const VideoCommentsWrap = styled.div`
 `;
 
 const VideoComments = ({ willBeSent = {} }) => {
-  console.log(willBeSent.videoNo);
+  // console.log(willBeSent.videoNo);
   const comments = CommentData.comments.filter(
     (comment) => comment.videoNo === willBeSent.videoNo
   );
-  console.log(comments);
+  // console.log(comments);
   return (
     <VideoCommentsWrap>
       <VideoCommentsHeader commentData={comments} />

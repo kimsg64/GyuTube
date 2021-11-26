@@ -20,7 +20,7 @@ const VideoInfo = ({
   videoThumbUp = "",
   videoThumbDown = "",
 }) => {
-  console.log("비디오정보", videoViews, videoUploadDate);
+  // console.log("비디오정보", videoViews, videoUploadDate);
   return (
     <VideoInfoWrap>
       <ViewAndDate videoViews={videoViews} videoUploadDate={videoUploadDate} />
