@@ -6,7 +6,7 @@ import GlobalStyle from "./styles/GlobalStyle";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <GlobalStyle />
       <Route exact path="/" component={Main} />
       <Route path="/playing/:videoNo/:videoTitle" component={Playing} />
