@@ -86,7 +86,10 @@ const Playing = ({ match = {} }) => {
               {/* 경로를 ./으로 하면 안되고 다 지우거나 ../로 하니까 된다. */}
               {/* 리액트 라우터가 마치 url을 이동하고 있는 것 같이 생겼지만 사실은 그냥 컴포넌트 갈아끼워서 페이지 이동한 것 처럼 보이게하는 눈속임 마술을 부리는 새끼라서  */}
               <VideoBox>
-                <video src={`/videos/${willBeSent.videoTitle}.mp4`} controls />
+                <video
+                  src={`${process.env.PUBLIC_URL}/videos/${willBeSent.videoTitle}.mp4`}
+                  controls
+                />
               </VideoBox>
             </PlayerWrap>
 

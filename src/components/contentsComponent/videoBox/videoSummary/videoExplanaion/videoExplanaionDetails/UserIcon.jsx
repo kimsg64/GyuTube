@@ -20,7 +20,7 @@ const UserIcon = ({ videoData = {}, commenters = {} }) => {
   // console.log("댓글러", commenters);
 
   const setDefaultPath = () => {
-    return "/images/Happy(default).png";
+    return `${process.env.PUBLIC_URL}/images/Happy(default).png`;
   };
 
   const setCommenterImagePath = () => {

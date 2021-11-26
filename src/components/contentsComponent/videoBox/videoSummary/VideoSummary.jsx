@@ -77,7 +77,7 @@ const VideoSummary = ({ video = {} }) => {
         {/* video box를 하나 만들어서 video는 100% 100%로 */}
         <VideoWrap>
           <video
-            src={`/videos/${video.videoTitle}.mp4`}
+            src={`${process.env.PUBLIC_URL}/videos/${video.videoTitle}.mp4`}
             onMouseEnter={onMouseEnterVideo}
             onMouseOut={onMouseOutVideo}
             muted={true}
