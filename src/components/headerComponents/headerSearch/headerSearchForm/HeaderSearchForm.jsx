@@ -49,7 +49,7 @@ const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
   const [matchedList, setMatchedList] = useState([]);
   const [virtualKeyboardInput, setVirtualKeyboardInput] = useState("");
   const [showVirtualKeyboard, setShowVirtualKeyboard] = useState(false);
-  console.log("와! 여기까지 왔다", virtualKeyboardInput);
+  // console.log("와! 여기까지 왔다", virtualKeyboardInput);
 
   const onChangeInput = (e) => {
     setValue(e.target.value);
@@ -79,7 +79,7 @@ const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
     // 검색시 관련 동영상 보여주기, 새 페이지 작성
     // console.log(e.target);
     // console.log("제출성공!");
-    console.log(value);
+    // console.log(value);
   };
 
   return (

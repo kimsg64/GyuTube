@@ -49,8 +49,8 @@ const ArrowWrap = styled.div`
 const FilterBar = ({ setCheckTheme = () => {} }) => {
   const [moveX, setMoveX] = useState(0);
   const [currentWidth, setCurrentWidth] = useState(0);
-  console.log("moveX: ", moveX);
-  console.log("currentWidth: ", currentWidth);
+  // console.log("moveX: ", moveX);
+  // console.log("currentWidth: ", currentWidth);
 
   const onClickLeftArrow = () => {
     setMoveX((prevMoveX) => {

@@ -92,7 +92,7 @@ const HiddenMenuSubscription = ({
   const [showMore, setShowMore] = useState(false);
 
   const subscriptions = [...UserData.users[0].subscription];
-  console.log(subscriptions);
+  // console.log(subscriptions);
 
   const onClickMore = () => {
     if (fullHeight === "full") {
