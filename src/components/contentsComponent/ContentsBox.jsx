@@ -11,6 +11,10 @@ const ContentsBoxWrap = styled.article`
   justify-content: center;
   align-items: center;
   background-color: hsl(0, 0%, 98%);
+  @media ${(props) => props.theme.mobile} {
+    width: 100%;
+    margin-left: 0;
+  }
 `;
 
 const ContentsBox = ({ videoData = {} }) => {

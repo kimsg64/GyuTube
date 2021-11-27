@@ -37,6 +37,10 @@ const StyledColumnsWrap = styled.div`
     flex: 1 1 25%;
     padding: 24px 24px 0 0;
   }
+
+  @media ${(props) => props.theme.tablet} {
+    flex-direction: column;
+  }
 `;
 
 const PrimaryWrap = styled.div`

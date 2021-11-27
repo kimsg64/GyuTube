@@ -1,7 +1,4 @@
 import React from "react";
-import NavigatorHome from "../../../../../navigatorComponents/navigatorHome/NavigatorHome";
-import NavigatorCompass from "../../../../../navigatorComponents/navigatorCompass/NavigatorCompass";
-import NavigatorSubscription from "../../../../../navigatorComponents/navigatorSubscription/NavigatorSubscription";
 import styled from "styled-components";
 
 const HiddenMenuHomeWrap = styled.div`

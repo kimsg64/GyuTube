@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import HeaderUserInfoDetailsDesignSetting from "./HeaderUserInfoDetailsDesignSetting";
 
 const HeaderUserInfoSettingsWrap = styled.div`
   width: 100%;

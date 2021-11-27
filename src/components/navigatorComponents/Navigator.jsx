@@ -15,6 +15,10 @@ const NavigatorWrap = styled.aside`
   top: 56px;
   left: 0;
   background-color: white;
+
+  @media ${(props) => props.theme.mobile} {
+    display: none;
+  }
 `;
 
 const Navigator = () => {

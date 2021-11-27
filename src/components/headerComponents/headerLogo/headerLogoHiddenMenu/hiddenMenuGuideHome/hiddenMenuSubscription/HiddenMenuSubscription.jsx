@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import UserIcon from "../../../../../contentsComponent/videoBox/videoSummary/videoExplanaion/videoExplanaionDetails/UserIcon";
-import UserData from "../../../../../../DB/UserData.json";
+// import UserData from "../../../../../../DB/UserData.json";
 
 const HiddenMenuSubscriptionWrap = styled.div`
   min-height: 371px;
@@ -91,7 +91,7 @@ const HiddenMenuSubscription = ({
   const [fullHeight, setFullHeight] = useState("min");
   const [showMore, setShowMore] = useState(false);
 
-  const subscriptions = [...UserData.users[0].subscription];
+  // const subscriptions = [...UserData.users[0].subscription];
   // console.log(subscriptions);
 
   const onClickMore = () => {

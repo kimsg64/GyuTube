@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import UserData from "../../../../DB/UserData.json";
 
@@ -16,7 +16,17 @@ const BtnsWrap = styled.div`
   position: relative;
   left: 0;
   transition-duration: 0.2s;
-  transform: translateX(${(props) => props.moveX * props.rate + "px"});
+  @media ${(props) => props.theme.mobile} {
+    transform: translateX(${(props) => props.moveX * props.barWidth + "px"});
+  }
+  @media ${(props) => props.theme.tablet} {
+    transform: translateX(
+      ${(props) => (props.moveX * props.barWidth) / 5 + "px"}
+    );
+  }
+  transform: translateX(
+    ${(props) => (props.moveX * props.barWidth) / 20 + "px"}
+  );
 `;
 
 const StyledBtn = styled.button`
@@ -36,21 +46,11 @@ const StyledBtn = styled.button`
   }
 `;
 
-const FilterBtns = ({
-  moveX = 0,
-  setCheckTheme = () => {},
-  setCurrentWidth = () => {},
-}) => {
+const FilterBtns = ({ moveX = 0, barWidth = 0, setCheckTheme = () => {} }) => {
   const [selectedBtn, setSelectedBtn] = useState("전체");
-  const [rate, setRate] = useState(0);
   // console.log(UserData.users[0].preferredTheme);
   const preferredThemes = [...UserData.users[0].preferredTheme];
   // console.log(preferredThemes);
-
-  useEffect(() => {
-    setRate(1720 / (preferredThemes.length + 3));
-    setCurrentWidth((1720 / (preferredThemes.length + 3)) * (moveX * -1));
-  }, []);
 
   const onClickBtn = (e) => {
     const btnValue = e.target.innerText;
@@ -62,7 +62,7 @@ const FilterBtns = ({
 
   return (
     <ShowCase>
-      <BtnsWrap moveX={moveX} rate={rate}>
+      <BtnsWrap moveX={moveX} barWidth={barWidth}>
         <StyledBtn
           className={`first ${selectedBtn === "전체" ? "selected_btn" : null}`}
           onClick={onClickBtn}

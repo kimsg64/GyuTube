@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import KeyboardReact from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
-import layout from "simple-keyboard-layouts/build/layouts/japanese";
+// import layout from "simple-keyboard-layouts/build/layouts/japanese";
 
 const JapaneseKeyboard = () => {
   const [input, setInput] = useState("");

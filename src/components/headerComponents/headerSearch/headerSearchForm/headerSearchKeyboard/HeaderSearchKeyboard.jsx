@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import EnglishKeyboard from "./EnglishKeyboard";
-import JapaneseKeyboard from "./JapaneseKeyboard";
+// import EnglishKeyboard from "./EnglishKeyboard";
+// import JapaneseKeyboard from "./JapaneseKeyboard";
 import KoreanKeyboard from "./KoreanKeyboard";
 
 const HeaderSearchFormKeyboard = styled.div`

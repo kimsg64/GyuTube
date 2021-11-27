@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/GyuTube/static/css/main.4e6326ef.chunk.css",
-    "main.js": "/GyuTube/static/js/main.5e2ff753.chunk.js",
-    "main.js.map": "/GyuTube/static/js/main.5e2ff753.chunk.js.map",
+    "main.js": "/GyuTube/static/js/main.9759d94d.chunk.js",
+    "main.js.map": "/GyuTube/static/js/main.9759d94d.chunk.js.map",
     "runtime-main.js": "/GyuTube/static/js/runtime-main.efc639c1.js",
     "runtime-main.js.map": "/GyuTube/static/js/runtime-main.efc639c1.js.map",
     "static/css/2.1ab7f409.chunk.css": "/GyuTube/static/css/2.1ab7f409.chunk.css",
-    "static/js/2.0aa26e7b.chunk.js": "/GyuTube/static/js/2.0aa26e7b.chunk.js",
-    "static/js/2.0aa26e7b.chunk.js.map": "/GyuTube/static/js/2.0aa26e7b.chunk.js.map",
+    "static/js/2.172d3003.chunk.js": "/GyuTube/static/js/2.172d3003.chunk.js",
+    "static/js/2.172d3003.chunk.js.map": "/GyuTube/static/js/2.172d3003.chunk.js.map",
     "index.html": "/GyuTube/index.html",
     "static/css/2.1ab7f409.chunk.css.map": "/GyuTube/static/css/2.1ab7f409.chunk.css.map",
     "static/css/main.4e6326ef.chunk.css.map": "/GyuTube/static/css/main.4e6326ef.chunk.css.map",
-    "static/js/2.0aa26e7b.chunk.js.LICENSE.txt": "/GyuTube/static/js/2.0aa26e7b.chunk.js.LICENSE.txt"
+    "static/js/2.172d3003.chunk.js.LICENSE.txt": "/GyuTube/static/js/2.172d3003.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.efc639c1.js",
     "static/css/2.1ab7f409.chunk.css",
-    "static/js/2.0aa26e7b.chunk.js",
+    "static/js/2.172d3003.chunk.js",
     "static/css/main.4e6326ef.chunk.css",
-    "static/js/main.5e2ff753.chunk.js"
+    "static/js/main.9759d94d.chunk.js"
   ]
 }

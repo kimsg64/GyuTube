@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import FilterBtns from "./filterBtns/FilterBtns";
 
@@ -17,7 +17,9 @@ const FilterBarWrap = styled.div`
   background-color: white;
   overflow: hidden;
   box-sizing: border-box;
-
+  @media ${(props) => props.theme.mobile} {
+    left: 0;
+  }
   .first {
     margin: 12px 12px 12px 24px;
   }
@@ -48,9 +50,14 @@ const ArrowWrap = styled.div`
 
 const FilterBar = ({ setCheckTheme = () => {} }) => {
   const [moveX, setMoveX] = useState(0);
-  const [currentWidth, setCurrentWidth] = useState(0);
-  // console.log("moveX: ", moveX);
-  // console.log("currentWidth: ", currentWidth);
+  const [barWidth, setBarWidth] = useState(0);
+  const barRef = useRef(null);
+
+  useEffect(() => {
+    if (barRef !== null) {
+      setBarWidth(barRef.current.offsetWidth);
+    }
+  }, []);
 
   const onClickLeftArrow = () => {
     setMoveX((prevMoveX) => {
@@ -60,14 +67,12 @@ const FilterBar = ({ setCheckTheme = () => {} }) => {
 
   const onClickRightArrow = () => {
     setMoveX((prevMoveX) => {
-      // console.log("prevMoveX: ", prevMoveX);
-      // 바의 총 너비는 1720px이므로... 그 안에서만 움직이게 하기
-      return prevMoveX < -3 ? prevMoveX : prevMoveX - 1;
+      return prevMoveX < -4 ? prevMoveX : prevMoveX - 1;
     });
   };
 
   return (
-    <FilterBarWrap>
+    <FilterBarWrap ref={barRef}>
       <ArrowWrap onClick={onClickLeftArrow}>
         <div className="globalIconBtn">
           <i className="fas fa-chevron-left"></i>
@@ -76,7 +81,7 @@ const FilterBar = ({ setCheckTheme = () => {} }) => {
       <FilterBtns
         setCheckTheme={setCheckTheme}
         moveX={moveX}
-        setCurrentWidth={setCurrentWidth}
+        barWidth={barWidth}
       />
       <ArrowWrap onClick={onClickRightArrow}>
         <div className="globalIconBtn">

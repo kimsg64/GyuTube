@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import VideoData from "../../../../../../DB/VideoData.json";
+// import VideoData from "../../../../../../DB/VideoData.json";
 
 const TitleBoxWrap = styled.div`
   overflow: hidden;
