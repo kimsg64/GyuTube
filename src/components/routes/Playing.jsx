@@ -31,7 +31,6 @@ const StyledColumnsWrap = styled.div`
   flex-direction: row;
 
   /* aside */
-  /* width 1175px보다 작으면 레이아웃 배치 변경 */
   aside {
     height: auto;
     flex: 1 1 25%;

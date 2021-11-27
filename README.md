@@ -1,5 +1,7 @@
 # GyuTube
 
+https://kimsg64.github.io/GyuTube/
+
 > 유튜브 동영상 플레이어 페이지 클론 코딩 개인 프로젝트 "GyuTube"입니다.
 > ![main.JPG](./markdown_image/main.JPG)
 
@@ -36,3 +38,5 @@
   > 각 페이지를 개별적으로 관리하기 위해 이용했습니다.
 
 ## 3. 구현 기능
+
+-

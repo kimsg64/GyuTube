@@ -12,6 +12,11 @@ const VideoInfoWrap = styled.div`
   .fas {
     color: hsl(0, 0%, 56%);
   }
+  @media ${(props) => props.theme.tablet} {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
 `;
 
 const VideoInfo = ({

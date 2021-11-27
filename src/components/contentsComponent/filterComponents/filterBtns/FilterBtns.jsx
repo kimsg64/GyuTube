@@ -25,7 +25,7 @@ const BtnsWrap = styled.div`
     );
   }
   transform: translateX(
-    ${(props) => (props.moveX * props.barWidth) / 20 + "px"}
+    ${(props) => (props.moveX * props.barWidth) / 15 + "px"}
   );
 `;
 

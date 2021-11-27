@@ -9,7 +9,7 @@ const size = {
 
 const theme = {
   mobile: `(max-width: ${size.mobile})`,
-  table: `(max-width: ${size.tablet})`,
+  tablet: `(max-width: ${size.tablet})`,
   desktop: `(max-width: ${size.desktop})`,
 };
 
