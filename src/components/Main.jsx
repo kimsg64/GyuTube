@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ContentsBox from "./contentsComponent/ContentsBox";
 import Header from "./headerComponents/Header";
 import Navigator from "./navigatorComponents/Navigator";
@@ -12,11 +12,14 @@ const StyledPage = styled.div`
 `;
 
 const Main = () => {
-  const videoData = VideoData.videos;
+  const [searchedByKeyword, setSearchedByKeyword] = useState([]);
+  const videoData =
+    searchedByKeyword.length === 0 ? VideoData.videos : searchedByKeyword;
   // console.log("메인", videoData);
+  // console.log(searchedByKeyword);
   return (
     <StyledPage>
-      <Header />
+      <Header setSearchedByKeyword={setSearchedByKeyword} />
       <Navigator />
       <ContentsBox key={videoData.videoNo} videoData={videoData} />
     </StyledPage>

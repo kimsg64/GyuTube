@@ -44,8 +44,11 @@ const HeaderSearchFormMatchedBox = styled.ol`
   }
 `;
 
-const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
-  // const [value, setValue] = useState("");
+const HeaderSearchForm = ({
+  value = "",
+  setValue = () => {},
+  setSearchedByKeyword = () => {},
+}) => {
   const [matchedList, setMatchedList] = useState([]);
   const [virtualKeyboardInput, setVirtualKeyboardInput] = useState("");
   const [showVirtualKeyboard, setShowVirtualKeyboard] = useState(false);
@@ -73,13 +76,20 @@ const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
     });
     setMatchedList(titleOfMatchedVideo);
   };
+  // console.log(value);
+
+  const onClickMatchedTitle = (e) => {
+    // console.log(e.target.innerText);
+    setValue(e.target.innerText);
+  };
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    // 검색시 관련 동영상 보여주기, 새 페이지 작성
-    // console.log(e.target);
-    // console.log("제출성공!");
-    // console.log(value);
+    // console.log(macthedVideos);
+    const macthedVideos = findMatches(value, VideoData.videos);
+    setSearchedByKeyword(macthedVideos);
+    setMatchedList([]);
+    setValue("");
   };
 
   return (
@@ -101,11 +111,12 @@ const HeaderSearchForm = ({ value = "", setValue = () => {} }) => {
           }
         >
           {matchedList.map((match) => {
-            return <li>{match}</li>;
+            return <li onClick={onClickMatchedTitle}>{match}</li>;
           })}
         </HeaderSearchFormMatchedBox>
         <HeaderSearchKeyboard
           onChange={showMatchedList}
+          setValue={setValue}
           showVirtualKeyboard={showVirtualKeyboard}
           setShowVirtualKeyboard={setShowVirtualKeyboard}
           virtualKeyboardInput={virtualKeyboardInput}

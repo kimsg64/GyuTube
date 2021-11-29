@@ -12,12 +12,16 @@ const HeaderSearchWrap = styled.div`
   align-items: center;
 `;
 
-const HeaderSearch = () => {
+const HeaderSearch = ({ setSearchedByKeyword = () => {} }) => {
   const [value, setValue] = useState();
   // console.log(value);
   return (
     <HeaderSearchWrap>
-      <HeaderSearchForm value={value} setValue={setValue} />
+      <HeaderSearchForm
+        value={value}
+        setValue={setValue}
+        setSearchedByKeyword={setSearchedByKeyword}
+      />
       <HeaderSearchMic setValue={setValue} />
     </HeaderSearchWrap>
   );

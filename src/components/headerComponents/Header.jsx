@@ -17,11 +17,11 @@ const HeaderStyle = styled.header`
   background-color: white;
 `;
 
-const Header = () => {
+const Header = ({ setSearchedByKeyword = () => {} }) => {
   return (
     <HeaderStyle>
       <HeaderLogo />
-      <HeaderSearch />
+      <HeaderSearch setSearchedByKeyword={setSearchedByKeyword} />
       <HeaderBtns />
     </HeaderStyle>
   );

@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import EnglishKeyboard from "./EnglishKeyboard";
-// import JapaneseKeyboard from "./JapaneseKeyboard";
-import KoreanKeyboard from "./KoreanKeyboard";
+import VirtualKeyboard from "./VirtualKeyboard";
 
 const HeaderSearchFormKeyboard = styled.div`
   width: 31px;
@@ -32,6 +30,7 @@ const HeaderSearchFormKeyboard = styled.div`
 // 혹은 키보드를 새로 만들기...
 
 const HeaderSearchKeyboard = ({
+  setValue = () => {},
   virtualKeyboardInput = "",
   setVirtualKeyboardInput = () => {},
   showVirtualKeyboard = false,
@@ -48,7 +47,12 @@ const HeaderSearchKeyboard = ({
   return (
     <HeaderSearchFormKeyboard>
       {showVirtualKeyboard ? (
-        <KoreanKeyboard setVirtualKeyboardInput={setVirtualKeyboardInput} />
+        <VirtualKeyboard
+          setValue={setValue}
+          virtualKeyboardInput={virtualKeyboardInput}
+          setVirtualKeyboardInput={setVirtualKeyboardInput}
+          setShowVirtualKeyboard={setShowVirtualKeyboard}
+        />
       ) : null}
       <i className="far fa-keyboard" onClick={onClickBtn}></i>
     </HeaderSearchFormKeyboard>
