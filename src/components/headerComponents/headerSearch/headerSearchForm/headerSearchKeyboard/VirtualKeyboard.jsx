@@ -12,7 +12,7 @@ const VirtualKeyboard = ({
   setVirtualKeyboardInput = () => {},
   setShowVirtualKeyboard = () => {},
 }) => {
-  const [language, setLanguage] = useState(korean);
+  const [language, setLanguage] = useState(english);
   const [layoutState, setLayoutState] = useState("default");
   const onChange = (input) => {
     console.log("Input changed", input);

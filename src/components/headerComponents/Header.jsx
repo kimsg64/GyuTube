@@ -20,7 +20,7 @@ const HeaderStyle = styled.header`
 const Header = ({ setSearchedByKeyword = () => {} }) => {
   return (
     <HeaderStyle>
-      <HeaderLogo />
+      <HeaderLogo setSearchedByKeyword={setSearchedByKeyword} />
       <HeaderSearch setSearchedByKeyword={setSearchedByKeyword} />
       <HeaderBtns />
     </HeaderStyle>

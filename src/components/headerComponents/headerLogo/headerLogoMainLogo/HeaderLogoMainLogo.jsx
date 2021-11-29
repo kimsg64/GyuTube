@@ -37,9 +37,12 @@ const HeaderLogoWrap = styled.div`
   }
 `;
 
-const HeaderLogoMainLogo = () => {
+const HeaderLogoMainLogo = ({ setSearchedByKeyword = () => {} }) => {
+  const onClickLogo = () => {
+    setSearchedByKeyword([]);
+  };
   return (
-    <HeaderLogoWrap>
+    <HeaderLogoWrap onClick={onClickLogo}>
       <Link to="/" className="gyutube">
         <i className="fab fa-youtube"></i>
       </Link>

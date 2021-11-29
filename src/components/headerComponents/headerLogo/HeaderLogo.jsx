@@ -19,7 +19,7 @@ const HeaderLogoWrap = styled.div`
   }
 `;
 
-const HeaderLogo = () => {
+const HeaderLogo = ({ setSearchedByKeyword = () => {} }) => {
   const [willBeShown, setWillBeShown] = useState(false);
 
   return (
@@ -28,7 +28,7 @@ const HeaderLogo = () => {
         willBeShown={willBeShown}
         setWillBeShown={setWillBeShown}
       />
-      <HeaderLogoMainLogo />
+      <HeaderLogoMainLogo setSearchedByKeyword={setSearchedByKeyword} />
       <HeaderLogoHiddenMenu
         willBeShown={willBeShown}
         setWillBeShown={setWillBeShown}
