@@ -37,7 +37,7 @@ const ViewsWrap = styled.div`
 `;
 
 const TitleBox = ({ videoData = {} }) => {
-  // console.log("타이틀박스", videoData);
+  console.log("타이틀박스", videoData);
   const views = videoData.videoViews;
 
   const setViews = () => {
