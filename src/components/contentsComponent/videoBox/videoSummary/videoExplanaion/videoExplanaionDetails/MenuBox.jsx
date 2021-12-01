@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 
 const MenuBoxWrap = styled.div`
@@ -15,12 +15,12 @@ const MenuBoxWrap = styled.div`
   }
 `;
 
-const MenuBox = () => {
+const MenuBox = memo(() => {
   return (
     <MenuBoxWrap className="globalIconBtn">
       <i className="fas fa-ellipsis-v"></i>
     </MenuBoxWrap>
   );
-};
+});
 
 export default MenuBox;

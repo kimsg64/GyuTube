@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import UserData from "../../../../../../DB/UserData.json";
 
@@ -15,7 +15,7 @@ const UserIconWrap = styled.div`
   }
 `;
 
-const UserIcon = ({ videoData = {}, commenters = {} }) => {
+const UserIcon = memo(({ videoData = {}, commenters = {} }) => {
   // console.log("유저 아이콘", videoData);
   // console.log("댓글러", commenters);
 
@@ -48,6 +48,6 @@ const UserIcon = ({ videoData = {}, commenters = {} }) => {
       />
     </UserIconWrap>
   );
-};
+});
 
 export default UserIcon;

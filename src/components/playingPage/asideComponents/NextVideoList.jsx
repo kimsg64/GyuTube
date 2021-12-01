@@ -118,6 +118,7 @@ const NextVideoList = ({ willBeSent = {} }) => {
             <NextVideoBox>
               <Link to={`/playing/${video.videoNo}/${video.videoTitle}`}>
                 <video
+                  key={video.videoNo}
                   src={`${process.env.PUBLIC_URL}/videos/${video.videoTitle}.mp4`}
                   onMouseEnter={onMouseEnterVideo}
                   onMouseOut={onMouseOutVideo}

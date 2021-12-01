@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import VideoExplanaion from "./videoExplanaion/VideoExplanaion";
 import { Link } from "react-router-dom";
@@ -50,24 +50,33 @@ const VideoWrap = styled.div`
   }
 `;
 
-const onMouseEnterVideo = (e) => {
-  // console.log(e);
-  // console.log(e.target);
-  // const playPromise = e.target.play();
-  e.target.play();
-  // if (playPromise !== undefined) {
-  //   playPromise
-  //     .then(console.log("여기에 뭘 해야될게 있나?"))
-  //     .catch(console.log("아마 없을 듯"));
-  // }
-};
-
-const onMouseOutVideo = (e) => {
-  e.target.pause();
-  e.target.currentTime = 0;
-};
-
 const VideoSummary = ({ video = {} }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef();
+  useEffect(() => {
+    if (isPlaying) {
+      videoRef.current.play();
+    } else if (!isPlaying) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  }, [isPlaying]);
+
+  const onMouseEnterVideo = (e) => {
+    setIsPlaying(true);
+    // console.log(e);
+    // if (e.target.paused && !isPlaying) {
+    //   e.target.play();
+    // }
+  };
+
+  const onMouseOutVideo = (e) => {
+    setIsPlaying(false);
+    // if (!video.paused && isPlaying) {
+    //   e.target.pause();
+    //   e.target.currentTime = 0;
+    // }
+  };
   // console.log("비디오 서머리", video);
 
   return (
@@ -77,6 +86,7 @@ const VideoSummary = ({ video = {} }) => {
         {/* video box를 하나 만들어서 video는 100% 100%로 */}
         <VideoWrap>
           <video
+            ref={videoRef}
             src={`${process.env.PUBLIC_URL}/videos/${video.videoTitle}.mp4`}
             onMouseEnter={onMouseEnterVideo}
             onMouseOut={onMouseOutVideo}

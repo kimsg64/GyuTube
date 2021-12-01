@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 
 const HiddenMenuCopyRightWrap = styled.div`
@@ -36,7 +36,7 @@ const TextBar = styled.a`
   width: auto;
 `;
 
-const HiddenMenuCopyRight = () => {
+const HiddenMenuCopyRight = memo(() => {
   return (
     <HiddenMenuCopyRightWrap>
       <ItemsWrap>
@@ -65,6 +65,6 @@ const HiddenMenuCopyRight = () => {
       </ItemsWrap>
     </HiddenMenuCopyRightWrap>
   );
-};
+});
 
 export default HiddenMenuCopyRight;

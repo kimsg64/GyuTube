@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import styled from "styled-components";
 import UserIcon from "../../../../../contentsComponent/videoBox/videoSummary/videoExplanaion/videoExplanaionDetails/UserIcon";
 // import UserData from "../../../../../../DB/UserData.json";
@@ -84,77 +84,76 @@ const ArrowWrap = styled.div`
   align-items: center;
 `;
 
-const HiddenMenuSubscription = ({
-  isSelected = "Home",
-  setIsSelected = () => {},
-}) => {
-  const [fullHeight, setFullHeight] = useState("min");
-  const [showMore, setShowMore] = useState(false);
+const HiddenMenuSubscription = memo(
+  ({ isSelected = "Home", setIsSelected = () => {} }) => {
+    const [fullHeight, setFullHeight] = useState("min");
+    const [showMore, setShowMore] = useState(false);
 
-  // const subscriptions = [...UserData.users[0].subscription];
-  // console.log(subscriptions);
+    // const subscriptions = [...UserData.users[0].subscription];
+    // console.log(subscriptions);
 
-  const onClickMore = () => {
-    if (fullHeight === "full") {
-      setFullHeight("min");
-    } else {
-      setFullHeight("full");
-    }
-    // console.log(fullHeight);
-    setShowMore(!showMore);
-  };
-  return (
-    <HiddenMenuSubscriptionWrap>
-      <TitleWrap>구독</TitleWrap>
-      <ItemsWrap className={fullHeight}>
-        {/* 여기는 데이터를 받아와서 선택되어야 하므로.. 잠시 대기 */}
-        <ItemBar className={isSelected === "Gyutube" ? "selected" : null}>
-          <UserIcon />
-          <TextBar>승우엄마</TextBar>
+    const onClickMore = () => {
+      if (fullHeight === "full") {
+        setFullHeight("min");
+      } else {
+        setFullHeight("full");
+      }
+      // console.log(fullHeight);
+      setShowMore(!showMore);
+    };
+    return (
+      <HiddenMenuSubscriptionWrap>
+        <TitleWrap>구독</TitleWrap>
+        <ItemsWrap className={fullHeight}>
+          {/* 여기는 데이터를 받아와서 선택되어야 하므로.. 잠시 대기 */}
+          <ItemBar className={isSelected === "Gyutube" ? "selected" : null}>
+            <UserIcon />
+            <TextBar>승우엄마</TextBar>
+          </ItemBar>
+          <ItemBar>
+            <UserIcon />
+            <TextBar>침착우먼</TextBar>
+          </ItemBar>
+          <ItemBar>
+            <UserIcon />
+            <TextBar>ChaseDownWNBA</TextBar>
+          </ItemBar>
+          <ItemBar>
+            <UserIcon />
+            <TextBar>드럼코딩</TextBar>
+          </ItemBar>
+          <ItemBar>
+            <UserIcon />
+            <TextBar>코마드 노더</TextBar>
+          </ItemBar>
+          <ItemBar>
+            <UserIcon />
+            <TextBar>일상생활코딩</TextBar>
+          </ItemBar>
+          <ItemBar>
+            <UserIcon />
+            <TextBar>Offline Tutorials</TextBar>
+          </ItemBar>
+          <ItemBar>
+            <UserIcon />
+            <TextBar>싸이콜로지컬갤러리</TextBar>
+          </ItemBar>
+          <ItemBar>
+            <UserIcon />
+            <TextBar>너는숨겨질것이야</TextBar>
+          </ItemBar>
+        </ItemsWrap>
+        <ItemBar onClick={onClickMore} className="moreOrLess">
+          <ArrowWrap className="globalIconBtnRect">
+            <i
+              className={showMore ? "fas fa-chevron-up" : "fas fa-chevron-down"}
+            ></i>
+          </ArrowWrap>
+          <TextBar>{showMore ? "간략히 보기" : "100개 더보기"}</TextBar>
         </ItemBar>
-        <ItemBar>
-          <UserIcon />
-          <TextBar>침착우먼</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <UserIcon />
-          <TextBar>ChaseDownWNBA</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <UserIcon />
-          <TextBar>드럼코딩</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <UserIcon />
-          <TextBar>코마드 노더</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <UserIcon />
-          <TextBar>일상생활코딩</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <UserIcon />
-          <TextBar>Offline Tutorials</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <UserIcon />
-          <TextBar>싸이콜로지컬갤러리</TextBar>
-        </ItemBar>
-        <ItemBar>
-          <UserIcon />
-          <TextBar>너는숨겨질것이야</TextBar>
-        </ItemBar>
-      </ItemsWrap>
-      <ItemBar onClick={onClickMore} className="moreOrLess">
-        <ArrowWrap className="globalIconBtnRect">
-          <i
-            className={showMore ? "fas fa-chevron-up" : "fas fa-chevron-down"}
-          ></i>
-        </ArrowWrap>
-        <TextBar>{showMore ? "간략히 보기" : "100개 더보기"}</TextBar>
-      </ItemBar>
-    </HiddenMenuSubscriptionWrap>
-  );
-};
+      </HiddenMenuSubscriptionWrap>
+    );
+  }
+);
 
 export default HiddenMenuSubscription;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -37,7 +37,7 @@ const HeaderLogoWrap = styled.div`
   }
 `;
 
-const HeaderLogoMainLogo = ({ setSearchedByKeyword = () => {} }) => {
+const HeaderLogoMainLogo = memo(({ setSearchedByKeyword = () => {} }) => {
   const onClickLogo = () => {
     setSearchedByKeyword([]);
   };
@@ -51,6 +51,6 @@ const HeaderLogoMainLogo = ({ setSearchedByKeyword = () => {} }) => {
       </Link>
     </HeaderLogoWrap>
   );
-};
+});
 
 export default HeaderLogoMainLogo;

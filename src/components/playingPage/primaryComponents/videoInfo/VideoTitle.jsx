@@ -14,7 +14,7 @@ const VideoTitle = ({ mainTitle = "", hashtags = "" }) => {
   return (
     <>
       {hashtags.map((tag) => (
-        <HashTagStyle> {tag}</HashTagStyle>
+        <HashTagStyle key={tag}> {tag}</HashTagStyle>
       ))}
       <div>{mainTitle}</div>
     </>

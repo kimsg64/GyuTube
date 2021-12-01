@@ -47,7 +47,7 @@ const VideoUploaderArticle = ({ post = "" }) => {
     setIsFullHeight(!isFullHeight);
   };
 
-  console.log(post);
+  // console.log(post);
   return (
     <VideoUploaderArticleWrap>
       <ArticleBox className={isFullHeight ? "FullHeight" : null}>

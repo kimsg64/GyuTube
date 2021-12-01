@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import MenuBox from "./videoExplanaionDetails/MenuBox";
 import TitleBox from "./videoExplanaionDetails/TitleBox";
@@ -12,7 +12,7 @@ const VideoExplanationWrap = styled.div`
   }
 `;
 
-const VideoExplanaion = ({ videoData = {} }) => {
+const VideoExplanaion = memo(({ videoData = {} }) => {
   // console.log("설명박스", videoData);
   return (
     <VideoExplanationWrap>
@@ -21,6 +21,6 @@ const VideoExplanaion = ({ videoData = {} }) => {
       <MenuBox />
     </VideoExplanationWrap>
   );
-};
+});
 
 export default VideoExplanaion;

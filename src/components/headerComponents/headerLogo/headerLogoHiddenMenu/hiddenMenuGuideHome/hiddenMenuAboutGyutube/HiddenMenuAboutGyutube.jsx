@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 
 const HiddenMenuAboutGyutubeWrap = styled.div`
@@ -56,102 +56,101 @@ const TitleWrap = styled.div`
 //   margin-right: 18px;
 // `;
 
-const HiddenMenuAboutGyutube = ({
-  isSelected = "Home",
-  setIsSelected = () => {},
-}) => {
-  const onClickPremium = () => {
-    setIsSelected("Premium");
-  };
-  const onClickMovie = () => {
-    setIsSelected("Movie");
-  };
-  const onClickGame = () => {
-    setIsSelected("Game");
-  };
-  const onClickLive = () => {
-    setIsSelected("Live");
-  };
-  const onClickStudy = () => {
-    setIsSelected("Study");
-  };
-  const onClickSports = () => {
-    setIsSelected("Sports");
-  };
+const HiddenMenuAboutGyutube = memo(
+  ({ isSelected = "Home", setIsSelected = () => {} }) => {
+    const onClickPremium = () => {
+      setIsSelected("Premium");
+    };
+    const onClickMovie = () => {
+      setIsSelected("Movie");
+    };
+    const onClickGame = () => {
+      setIsSelected("Game");
+    };
+    const onClickLive = () => {
+      setIsSelected("Live");
+    };
+    const onClickStudy = () => {
+      setIsSelected("Study");
+    };
+    const onClickSports = () => {
+      setIsSelected("Sports");
+    };
 
-  return (
-    <HiddenMenuAboutGyutubeWrap>
-      <TitleWrap>GyuTube 더보기</TitleWrap>
-      <div className="globalItemsWrap">
-        <div
-          className={`${
-            isSelected === "Premium" ? "selected" : null
-          } globalItemBar`}
-          onClick={onClickPremium}
-        >
-          <div className="globalIconBtnRect globalIconWrap">
-            <i className="fab fa-youtube"></i>
+    return (
+      <HiddenMenuAboutGyutubeWrap>
+        <TitleWrap>GyuTube 더보기</TitleWrap>
+        <div className="globalItemsWrap">
+          <div
+            className={`${
+              isSelected === "Premium" ? "selected" : null
+            } globalItemBar`}
+            onClick={onClickPremium}
+          >
+            <div className="globalIconBtnRect globalIconWrap">
+              <i className="fab fa-youtube"></i>
+            </div>
+            <div className="globalTextBar">GyuTube Premium</div>
           </div>
-          <div className="globalTextBar">GyuTube Premium</div>
-        </div>
-        <div
-          className={`${
-            isSelected === "Movie" ? "selected" : null
-          } globalItemBar`}
-          onClick={onClickMovie}
-        >
-          <div className="globalIconBtnRect globalIconWrap">
-            <i className="fas fa-film"></i>
+          <div
+            className={`${
+              isSelected === "Movie" ? "selected" : null
+            } globalItemBar`}
+            onClick={onClickMovie}
+          >
+            <div className="globalIconBtnRect globalIconWrap">
+              <i className="fas fa-film"></i>
+            </div>
+            <div className="globalTextBar">영화</div>
           </div>
-          <div className="globalTextBar">영화</div>
-        </div>
-        <div
-          className={`${
-            isSelected === "Game" ? "selected" : null
-          } globalItemBar`}
-          onClick={onClickGame}
-        >
-          <div className="globalIconBtnRect globalIconWrap">
-            <i className="fas fa-gamepad"></i>
+          <div
+            className={`${
+              isSelected === "Game" ? "selected" : null
+            } globalItemBar`}
+            onClick={onClickGame}
+          >
+            <div className="globalIconBtnRect globalIconWrap">
+              <i className="fas fa-gamepad"></i>
+            </div>
+            <div className="globalTextBar">게임</div>
           </div>
-          <div className="globalTextBar">게임</div>
-        </div>
-        <div
-          className={`${
-            isSelected === "Live" ? "selected" : null
-          } globalItemBar`}
-          onClick={onClickLive}
-        >
-          <div className="globalIconBtnRect globalIconWrap">
-            <i className="fas fa-podcast"></i>
+          <div
+            className={`${
+              isSelected === "Live" ? "selected" : null
+            } globalItemBar`}
+            onClick={onClickLive}
+          >
+            <div className="globalIconBtnRect globalIconWrap">
+              <i className="fas fa-podcast"></i>
+            </div>
+            <div className="globalTextBar">실시간</div>
           </div>
-          <div className="globalTextBar">실시간</div>
-        </div>
-        <div
-          className={`${
-            isSelected === "Study" ? "selected" : null
-          } globalItemBar`}
-          onClick={onClickStudy}
-        >
-          <div className="globalIconBtnRect globalIconWrap">
-            <i className="fas fa-lightbulb"></i>
+          <div
+            className={`${
+              isSelected === "Study" ? "selected" : null
+            } globalItemBar`}
+            onClick={onClickStudy}
+          >
+            <div className="globalIconBtnRect globalIconWrap">
+              <i className="fas fa-lightbulb"></i>
+            </div>
+            <div className="globalTextBar">학습</div>
           </div>
-          <div className="globalTextBar">학습</div>
-        </div>
-        <div
-          className={`${
-            isSelected === "Sports" ? "selected" : null
-          } globalItemBar`}
-          onClick={onClickSports}
-        >
-          <div className="globalIconBtnRect globalIconWrap">
-            <i className="fas fa-trophy"></i>
+          <div
+            className={`${
+              isSelected === "Sports" ? "selected" : null
+            } globalItemBar`}
+            onClick={onClickSports}
+          >
+            <div className="globalIconBtnRect globalIconWrap">
+              <i className="fas fa-trophy"></i>
+            </div>
+            <div className="globalTextBar">스포츠</div>
           </div>
-          <div className="globalTextBar">스포츠</div>
         </div>
-      </div>
-    </HiddenMenuAboutGyutubeWrap>
-  );
-};
+      </HiddenMenuAboutGyutubeWrap>
+    );
+  }
+);
 
 export default HiddenMenuAboutGyutube;

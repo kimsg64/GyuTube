@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 // import VideoData from "../../../../../../DB/VideoData.json";
@@ -36,8 +36,8 @@ const ViewsWrap = styled.div`
   color: hsl(0, 0%, 38%);
 `;
 
-const TitleBox = ({ videoData = {} }) => {
-  console.log("타이틀박스", videoData);
+const TitleBox = memo(({ videoData = {} }) => {
+  // console.log("타이틀박스", videoData);
   const views = videoData.videoViews;
 
   const setViews = () => {
@@ -101,6 +101,6 @@ const TitleBox = ({ videoData = {} }) => {
       </TitleBoxWrap>
     </Link>
   );
-};
+});
 
 export default TitleBox;
